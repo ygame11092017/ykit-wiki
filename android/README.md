@@ -16,9 +16,9 @@
 
 + Add `libraries.gradle` to root project folder
 
-    ![](images/finish_new_module.png)
+    ![](images/libraries.png)
 
-+ Update top-level `build.gradle`
++ Update top-level `build.gradle` (`YKitDemo/proj.android-studio/build.gradle`)
 
 ```
     apply from: "./libraries.gradle"
@@ -52,7 +52,7 @@
     }
 ```
 
-+ Update module-level`build.gradle`
++ Update module-level`build.gradle` (`YKitDemo/proj.android-studio/app/build.gradle`)
 
     ```
     apply plugin: 'me.tatarka.retrolambda'
@@ -204,38 +204,62 @@
         protected void onCreate(Bundle savedInstanceState) {
             [...]
     
-            YKit.init(this);
-            YKit.setLauncherListener(new YKit.LauncherListener() {
-                @Override
-                public void onLogin(int userId, String accessToken) {
-    
-                }
-    
-                @Override
-                public void onLoginAuto(int userId, String accessToken) {
-    
-                }
-    
-                @Override
-                public void onLogout() {
-    
-                }
-    
-                @Override
-                public void onInAppPurchase(InAppDto inAppDto) {
-    
-                }
-    
-                @Override
-                public void onPause() {
-    
-                }
-    
-                @Override
-                public void onResume() {
-    
-                }
-            });
+            YKit.init(
+                this,
+                new YKit.GetPaymentInfo() {
+                    @Override
+                    public String getServerId() {
+                        return "MyServerId";
+                    }
+
+                    @Override
+                    public String getCharId() {
+                        return "MyCharId";
+                    }
+
+                    @Override
+                    public String getPaymentId() {
+                        return "MyPaymentId";
+                    }
+                },
+                new YKit.LauncherListener() {
+                    @Override
+                    public void onLogin(int userId, String accessToken) {
+
+                    }
+
+                    @Override
+                    public void onLoginAuto(int userId, String accessToken) {
+
+                    }
+
+                    @Override
+                    public void onLogout() {
+
+                    }
+
+                    @Override
+                    public void onInAppPurchase(InAppDto inAppDto) {
+
+                    }
+
+                    @Override
+                    public void onPause() {
+
+                    }
+
+                    @Override
+                    public void onResume() {
+
+                    }
+                });
+            
+            Intent intent = new Intent();
+            if (!Session.getInstance().isLogin())
+                intent.setAction(ACTION_OPEN_LOGIN);
+            else {
+                intent.setAction(ACTION_OPEN_ACCOUNT);
+            }
         }
     
         @Override
