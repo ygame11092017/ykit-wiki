@@ -14,19 +14,154 @@
 
     ![](images/finish_new_module.png)
 
-+ Add the following to `app/build.gradle`
++ Add `libraries.gradle` to root project folder
+
+    ![](images/finish_new_module.png)
+
++ Update top-level `build.gradle`
+
+```
+    apply from: "./libraries.gradle"
+    
+    buildscript {
+        repositories {
+            jcenter()
+            maven { url 'https://maven.fabric.io/public' }
+            maven { url "https://plugins.gradle.org/m2/" }
+        }
+        dependencies {
+            classpath 'com.android.tools.build:gradle:2.3.3'
+            classpath 'me.tatarka:gradle-retrolambda:3.7.0'
+            classpath 'com.google.gms:google-services:3.0.0'
+            classpath 'io.fabric.tools:gradle:1.22.0'
+            classpath 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
+            classpath 'com.jakewharton.hugo:hugo-plugin:1.2.1'
+        }
+    }
+    
+    allprojects {
+        repositories {
+            jcenter()
+            maven { url "https://maven.google.com" }
+            maven { url "https://www.jitpack.io" }
+        }
+    }
+    
+    task clean(type: Delete) {
+        delete rootProject.buildDir
+    }
+```
+
++ Update module-level`build.gradle`
+
     ```
+    apply plugin: 'me.tatarka.retrolambda'
+    apply plugin: 'io.fabric'
+    
     android {
+        compileSdkVersion rootProject.ext.compileSdkVersion
+        buildToolsVersion rootProject.ext.buildToolsVersion
+        
         defaultConfig {
             [...]
-            minSdkVersion 16
+            minSdkVersion rootProject.ext.minSdkVersion
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            multiDexEnabled true
+        }
+        
+        compileOptions {
+            sourceCompatibility rootProject.ext.sourceCompatibilityVersion
+            targetCompatibility rootProject.ext.targetCompatibilityVersion
+        }
+        
+        dexOptions {
+            maxProcessCount 8
+        }
     }
+    
     dependencies {
         [...]
         compile project(':ykit-release')
+        
+        compile deps.appcompatv7
+        compile deps.recyclerviewv7
+    
+        compile deps.multidex
+    
+        compile deps.firebaseCore
+        compile deps.firebaseMessaging
+        compile deps.firebaseConfig
+    
+        compile deps.playServicesAuth
+    
+        compile deps.billing
+    
+        compile(deps.crashlytics) { transitive = true; }
+        compile(deps.answers) { transitive = true; }
+    
+        compile deps.butterknife
+        annotationProcessor deps.butterknifeCompiler
+    
+        compile deps.dagger
+        annotationProcessor deps.daggerCompiler
+    
+        compile deps.androidannotations
+        annotationProcessor deps.androidannotationsCompiler
+    
+        compile deps.parceler
+        annotationProcessor deps.parcelerCompiler
+    
+        compile deps.retrofit
+        compile deps.retrofitConverterGson
+        compile deps.retrofitAdapterRxjava
+    
+        compile deps.okhttp
+        compile deps.okhttpInterceptor
+    
+        compile deps.gson
+    
+        compile deps.transitionseverywhere
+    
+        compile deps.glide
+        annotationProcessor deps.glideCompiler
+    
+        compile deps.rxjava
+        compile deps.rxandroid
+        compile deps.rxrelay
+        compile deps.rxlifecycle
+        compile deps.rxlifecycleAndroid
+        compile deps.rxlifecycleComponents
+    
+        compile deps.dbflow
+        compile deps.dbflowCore
+        compile deps.dbflowRx2
+    
+        compile deps.utilcode
+    
+        annotationProcessor deps.dbflowCompiler
+        compile deps.timber
+    
+        compile deps.appsflyer
+    
+        compile deps.facebook
+    
+        debugCompile deps.leakcanary
+        releaseCompile deps.leakcanaryNoOp
+        testCompile deps.leakcanaryNoOp
+        
+        compile deps.stetho
+        compile deps.stethoOkhttp3
+        compile deps.stethoUrlconnection
+        
+        compile deps.traceur
+        
+        compile deps.logger
+        
+        compile(deps.loggingInterceptor) {
+            exclude group: 'org.json', module: 'json'
+        }
     }        
     ```
-  
 ## 2 - Config app 
  
 + Open `AndroidManifest.xml`, add the following to `Application` tag
