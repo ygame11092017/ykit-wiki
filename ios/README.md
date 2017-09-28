@@ -1,79 +1,123 @@
-# XlauncherIOS for Native
+# YKitIOS for Native
 
 ## Get Started
 
-Xlauncher SDK for iOS is the most simple way to intergrate user and payment to XCT system.Xlauncher SDK provide solution for payment such as: SMS, card, internet banking và Apple Payment.
+YKit SDK for iOS is the most simple way to intergrate user and payment to YGame system.YKit SDK provide solution for payment such as: SMS, card, internet banking và Apple Payment.
 
 ## Steps to integrate SDK
 
-    1. Setup Xlauncher SDK
+    1. Setup YKit SDK
     2. Config SDK - Payment function
-    3. Xlauncher SDK flow
+    3. YKit SDK flow
 
-### 1. Setup Xlauncher SDK
-#### 1.1. Import Xlauncher.framework into project
+## Note
+Make sure our project's deployment target is 8.0 at least.
 
-   - Drag and drop Xlauncher.framework into your project.
+### 1. Setup YKit SDK 
+#### 1.1. Import YKit.framework into project
+
+   - Drag and drop YKit.framework into your project.
    - Tick on checkbox: “Copy items into destination group's folder (if needed)”.
    - Embedded Binaries with SDK
 
-![alt tag](https://github.com/xctcorporation/XlauncherIOS/blob/master/Images/addEmbled.png)
+![alt tag](./images/addEmbed.png)
 
 #### 1.2. Add url schemes
 
-   - Add the following url schemes for Facebook(“fb” + facebook app id) and Google sign in (Reverse client id) from XlauncherConfig.plist file
+   - Add the following url schemes for Facebook(“fb” + facebook app id) and Google sign in (Reverse client id) from YKitConfig.plist file
     
-![alt tag](https://github.com/xctcorporation/XlauncherIOS/blob/master/Images/addFbSchemes.png)
-
-   - Add facebook app id, facebook display name and application queries scheme as below. Please replace app id and display name with the value in the XlauncherConfig.plist file 
+![alt tag](./images/addUrlScheme.png)
+    
+   - Go to ios's info.plist
+   - Add  facebook app id, facebook display name and application queries scheme as below. Please replace app id and display name with the value in the YKitConfig.plist file 
    
-![alt tag](https://github.com/xctcorporation/XlauncherIOS/blob/master/Images/addFbId.png)
+![alt tag](./images/addFacebookID.png)
 
-   - Add file XlauncherConfig.plist to your root project
+   - Add file YKitConfig.plist to your root project
 
-#### 1.3. Coding
+### 1.3. Config exception domain
 
-- Import SDK : import XLauncher/XLauncher.h into UnityAppController.m
+   - Go to ios's info.plist
+   - Add setting like image below (There is code of the setting below. It can be copied and pasted quickly into info.plist)
+   
+![alt tag](./images/settingDomain.png)
 
-- Add these lines of code in Application didFinishLaunchingWithOptions function in AppDelegate class, after window setup. You can get Google Signin client ID in the XlauncherConfig.plist.
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSExceptionDomains</key>
+	<dict>
+		<key>api.ygame.vn</key>
+		<dict>
+			<key>NSIncludesSubdomains</key>
+			<true/>
+			<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+			<key>NSTemporaryExceptionMinimumTLSVersion</key>
+			<string>TLSv1.1</string>
+		</dict>
+	</dict>
+	<key>NSAllowsArbitraryLoads</key>
+	<true/>
+</dict>
+</plist>
+```
+
+#### 1.4. Majestic code and where to find them
+
+- Import SDK : #import <YKit/YK.h> in Cocos AppController.m
+
+- Add these lines of code in Application didFinishLaunchingWithOptions function in AppController class, after window setup. You can get Google Signin client ID in the YKitConfig.plist.
 
 ```
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	// Project configure
+    // Project configure
 
-	XLauncher *launcher = [XLauncher getInstance];
-	[launcher setupWithWindow:window usingFacebookSDK:YES]; // YES is using facebook 
-	//
-	// if using facebook API, you need to implement 
-	// [launcher setPermissionFacebook:@"public_profile"]; // string is the permission you want to 
-	//
-	// Handle login callback
-	[launcher handleLoginWithCompletion:^(NSDictionary *data) { 
-	
-		NSString *userID = data[kParamUserID];
-		NSString *userName = data[kParamUserName];
-		NSString *accessToken = data[kParamAccessToken]; 
-	
-	}]; 
+    YKit *launcher = [YKit getInstance];
+        
+    launcher.isPotrait = NO;
+    launcher setupWithWindow:window usingFacebookSDK:YES];
+    [launcher handleLoginWithCompletion:^(NSDictionary *data) {
+         [launcher getFacebookInfo];
+         NSString *userID = data[kParamUserID];
+         NSString *userName = data[kParamUserName];
+         NSString *accessToken = data[kParamAccessToken];
+         //  NSLog(@"sample %@" ,[launcher getFacebookInfo]);
+         [launcher showButtonLauncherWithAnimation:YES];
+    }];
+        
+    [launcher setPermissionFacebook:@"public_profile"];
+    [launcher handleLogoutWithCompletion:^{
+            
+    }];
+    
+    [launcher handlePaymentWithCompletion:^(NSString *data){
+         NSLog(@"Payment success! %@", data);
+    }];
+        
+    //    NSLog(@"sample %@" ,[launcher getFacebookInfo]);
+    [launcher setDomainDebug:YES];
+    if ([launcher silentLogin]) {
+            
+    }
+        
+    [launcher handleShowSDKCompletion:^{
+        NSLog(@"kign");
+    }];
+    NSString* appID = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
+    [launcher handleCloseSDKCompletion:^{
+        NSLog(@"queee");
+    }];
+        
+    NSDictionary *dict = @{kParamApplication: ATNonNilObject(application),
+                           kParamOptions: ATNonNilObject(launchOptions)};
+    ATDispatchEvent(Event_AppDidFinishLaunching, dict);    
 
-	// Handle logout callback
-	[launcher handleLogoutWithCompletion:^{ 
-		//do something
-	}];
-
-	// handle payment callback
-	[launcher handlePaymentWithCompletion:^(NSString *data){
-        	//NSLog(@"Payment success! %@", data);
-    	}];	
-	[launcher setDomainDebug:NO]; // if you want to build in the TEST mode, pass it to TRUE
-
-        NSDictionary *dict = @{kParamApplication: ATNonNilObject(application), kParamOptions: ATNonNilObject(launchOptions)}; 
-
-        ATDispatchEvent(Event_AppDidFinishLaunching, dict);    
-
-        return YES;
-	
-	}
+    return YES;
+}
 
 ```
 [Read here for more detail about how to setup the TEST enviroment](https://github.com/xctcorporation/ServerIntegration/blob/master/SetupTheEnviroment.md)
@@ -97,7 +141,7 @@ Xlauncher SDK for iOS is the most simple way to intergrate user and payment to X
 
 - This example code is apply for landscape mode.You can set it through "didFinishLaunchingWithOptions"
 
-		[Xlauncher getInstance].isPotrait = YES (Potrait only);
+		[YKit getInstance].isPotrait = YES (Potrait only);
 		// else landscape is NO;			
 Base on your game orientation, if your game support both portrait and landscape then you must replace UIInterfaceOrientationMaskLandscape with UIInterfaceOrientationMaskAll, if you game is only support portrait mode, then you don’t need to add this function.
 	
@@ -105,7 +149,7 @@ Base on your game orientation, if your game support both portrait and landscape 
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
             { 
 
-            if ([[XLauncher getInstance] isScreenRotateToPortrait]) { 
+            if ([[YKit getInstance] isScreenRotateToPortrait]) { 
 
             return UIInterfaceOrientationMaskPortrait; 
 
@@ -117,7 +161,7 @@ Base on your game orientation, if your game support both portrait and landscape 
 ```
 
 #### 1.4. Public functions
-- Here is the list of public functions you can call to customize the Xlauncher in your game: 
+- Here is the list of public functions you can call to customize the YKit in your game: 
 
 * setLauncherStickySide: You can specific the side that launcher can stick to via the or bitwise. 
 Ex: ATButtonStickySideTop | ATButtonStickySideBottom 
@@ -125,11 +169,11 @@ Ex: ATButtonStickySideTop | ATButtonStickySideBottom
 * silentLogin: When open the app, maybe user is already logged in. Call this function to check if user is logged in or not, if not, you must call showLoginScreen function to show the login screen. 
 
 ```
-if([[Xlauncher getInstance] silentLogin])
+if([[YKit getInstance] silentLogin])
 	// Move direct to game
 else {
 	// Show login screen
-	[[Xlauncher getInstance] showLoginScreen];
+	[[YKit getInstance] showLoginScreen];
 }
 ```
         
@@ -157,7 +201,7 @@ To implement PED, you create a class that implement PaymentExtraDataProtocol wit
 	return @“server12-id1001”; // ex: server 12, userid = 1001
 }
 ```
-Then you create an PaymentExtraDataImp object and set it to XLauncher
+Then you create an PaymentExtraDataImp object and set it to YKit
 
 ```
 [launcher setPaymentExtraDataObject:[PaymentExtraDataImp new]];
@@ -166,10 +210,10 @@ Then you create an PaymentExtraDataImp object and set it to XLauncher
 ### 4. Flow
 
 #### 4.1. Login flow: 
-![alt tag](https://github.com/xctcorporation/XlauncherIOS/blob/master/Images/loginFlow.png)
+![alt tag](https://github.com/xctcorporation/YKitIOS/blob/master/Images/loginFlow.png)
 
 #### 4.2. Payment flow:
-![alt tag](https://github.com/xctcorporation/XlauncherIOS/blob/master/Images/PaymentFlow.png)
+![alt tag](https://github.com/xctcorporation/YKitIOS/blob/master/Images/PaymentFlow.png)
 
 ### 5. Build note
 Please input full information in Xcode before build the product
@@ -177,4 +221,4 @@ Please input full information in Xcode before build the product
 - Bundle identifier: bundle id of your game which provided by XCT
 - Version: string, for example: 1.0.0
 - Build: number, for example: 100
-![alt tag](https://github.com/xctcorporation/XlauncherIOS/blob/master/Images/ios_build.png)
+![alt tag](https://github.com/xctcorporation/YKitIOS/blob/master/Images/ios_build.png)
