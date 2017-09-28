@@ -1,39 +1,19 @@
-# Xlauncher for Android
-
-## Get Started
-
-Xlauncher SDK for Android is the most simple way to intergrate user and payment to XCT system.
+# YKit for Android
 
 ## 1 - Add library: xlauncher.aar
-  + Open Module Setting project
 
-![alt tag](http://i.imgur.com/khHcur1.png)
++ Click **File > New > New Module**.
+![](img/android_new_module.png)
 
-  + Click Button (+) to add library
-  
-![alt tag](https://github.com/xctcorporation/XlauncherAndroid/blob/master/addlib.png)
-  
-  + Choose import (*.aar)
-  
-![alt tag](http://i.imgur.com/KkpcPlr.png)  
-  
-  + Browse to the "xlauncher-release.aar" file and click Finish
-  
-![alt tag](https://github.com/xctcorporation/XlauncherAndroid/blob/master/browse_file.png)  
-  
-  + Choose app , and Tab Dependencies , click button (+) , choose module dependence
-  
-![alt tag](https://github.com/xctcorporation/XlauncherAndroid/blob/master/add_module.png)    
-  
-  + Choose xlauncher and ok
-  
++ Click **Import .JAR/.AAR Package** then click **Next**.
+![](img/android_import_aar.png)
+
++ Enter the location of **ykit-release.aar"** file then click **Finish**. 
   
 ## 2 - Add Config App
 
-  + Add some libraries in build.gradle in your app.
-  
-   
-   ```
++ Add some libraries in build.gradle in your app.  
+```
     compile 'com.google.android.gms:play-services-analytics:9.0.0'
     compile 'com.google.android.gms:play-services-auth:9.0.0'
     compile 'com.facebook.android:facebook-android-sdk:4.+'
@@ -41,7 +21,6 @@ Xlauncher SDK for Android is the most simple way to intergrate user and payment 
     compile 'com.github.bumptech.glide:glide:3.7.0'    
     compile 'org.greenrobot:eventbus:3.0.0'    
     compile 'com.appsflyer:af-android-sdk:4+@aar'
-
 ``` 
 
 ![alt tag](https://github.com/xctcorporation/XlauncherAndroid/blob/master/config_gradle.png)  `
@@ -208,4 +187,3 @@ Xlauncher SDK for Android is the most simple way to intergrate user and payment 
 ## 5 - Video Guide
 
 [![How To Integrate Xlauncher To Android](http://img.youtube.com/vi/n7R_ZLYWV_A/0.jpg)](http://www.youtube.com/watch?v=n7R_ZLYWV_A "How to integrate xlauncher to android")
-            
