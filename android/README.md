@@ -196,7 +196,7 @@ You can get config files in [files folder](files/)
            
  ![](images/manifest.png)      
    
- + Define value `facebook_app_id` in `app/res/values/strings.xml`
+ + Add `facebook_app_id` value to `app/res/values/strings.xml`
  
  ![](images/strings.png) 
    
@@ -215,55 +215,39 @@ You can get config files in [files folder](files/)
         protected void onCreate(Bundle savedInstanceState) {
             [...]
     
-            YKit.init(
-                this,
-                new YKit.GetPaymentInfo() {
-                    @Override
-                    public String getServerId() {
-                        return "MyServerId";
-                    }
-
-                    @Override
-                    public String getCharId() {
-                        return "MyCharId";
-                    }
-
-                    @Override
-                    public String getPaymentId() {
-                        return "MyPaymentId";
-                    }
-                },
-                new YKit.LauncherListener() {
-                    @Override
-                    public void onLogin(int userId, String accessToken) {
-
-                    }
-
-                    @Override
-                    public void onLoginAuto(int userId, String accessToken) {
-
-                    }
-
-                    @Override
-                    public void onLogout() {
-
-                    }
-
-                    @Override
-                    public void onInAppPurchase(InAppDto inAppDto) {
-
-                    }
-
-                    @Override
-                    public void onPause() {
-
-                    }
-
-                    @Override
-                    public void onResume() {
-
-                    }
-                });
+            YKit.init(this);
+            YKit.setPaymentInfo("myServerId", "myCharId", "myPaymentId");
+            YKit.setLauncherListener(new YKit.LauncherListener() {
+                @Override
+                public void onLogin(int userId, String accessToken) {
+    
+                }
+    
+                @Override
+                public void onLoginAuto(int userId, String accessToken) {
+    
+                }
+    
+                @Override
+                public void onLogout() {
+    
+                }
+    
+                @Override
+                public void onInAppPurchase(InAppDto inAppDto) {
+    
+                }
+    
+                @Override
+                public void onPause() {
+    
+                }
+    
+                @Override
+                public void onResume() {
+    
+                }
+            });
             
             LoginActivity_.intent(context).start();
         }
@@ -294,4 +278,4 @@ You can get config files in [files folder](files/)
   + `onPause`: call when game pause
   + `onResume`: call when game resume
   
-  You will give us payment info through `getServerId()`, `getCharId()`, `getPaymentId()`
+  You will give us payment info using`setPaymentInfo()` method with 3 parameter `serverId`, `charId`, `paymentId` 
