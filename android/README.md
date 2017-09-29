@@ -1,6 +1,6 @@
 # YKit for Android
 
-You can get config files in [files](files/) folder 
+You can get config files in [files folder](files/) 
 
 ## 1 - Add YKit library
 
@@ -53,6 +53,8 @@ You can get config files in [files](files/) folder
         delete rootProject.buildDir
     }
 ```
+
+![](images/diff_top_build_gradle.png)
 
 + Update module-level`build.gradle` (`YKitDemo/proj.android-studio/app/build.gradle`)
 
@@ -164,6 +166,13 @@ You can get config files in [files](files/) folder
         }
     }        
     ```
+    
+![](images/diff_module_build_gradle.png)
+
+![](images/diff_module_build_gradle2.png)
+
+![](images/diff_module_build_gradle3.png)
+
 ## 2 - Config app 
  
 + Open `AndroidManifest.xml`, add the following to `Application` tag
@@ -285,4 +294,4 @@ You can get config files in [files](files/) folder
   + `onPause`: call when game pause
   + `onResume`: call when game resume
   
-  You give us payment info through `getServerId()`, `getCharId()`, `getPaymentId()`
+  You will give us payment info through `getServerId()`, `getCharId()`, `getPaymentId()`
