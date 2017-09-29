@@ -1,5 +1,7 @@
 # YKit for Android
 
+You can get config files in [files](files/) folder 
+
 ## 1 - Add YKit library
 
 + Click **File > New > New Module**
@@ -10,7 +12,7 @@
 
     ![](images/import_aar.png)
 
-+ Enter the location of **ykit-release.aar"** file then click **Finish**
++ Enter the location of **ykit-release.aar** file then click **Finish**
 
     ![](images/finish_new_module.png)
 
