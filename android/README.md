@@ -254,12 +254,7 @@
                     }
                 });
             
-            Intent intent = new Intent();
-            if (!Session.getInstance().isLogin())
-                intent.setAction(ACTION_OPEN_LOGIN);
-            else {
-                intent.setAction(ACTION_OPEN_ACCOUNT);
-            }
+            LoginActivity_.intent(context).start();
         }
     
         @Override
@@ -279,7 +274,7 @@
             YKit.onActivityResult(requestCode, resultCode, data, this);
         }
     }
-  ```
+  ```   
   
   In the previous code, we provide some callback functions: 
   + `onLogin`, `onLoginAuto`: notify when user login to YKit system successfully. Handle this function and call login with your server
@@ -287,3 +282,5 @@
   + `onInAppPurchase`: notify purchase success
   + `onPause`: call when game pause
   + `onResume`: call when game resume
+  
+  You give us payment info through `getServerId()`, `getCharId()`, `getPaymentId()`

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>AppID</key>
+        <value>95286bdc853206f68a638b38e97b73b7</value>
+    </entry>
+    <entry>
+        <key>AppSecret</key>
+        <value>3a3d561e41d59a50883225e05a9c0000</value>
+    </entry>
+    <entry>
+        <key>AppsFlyer_DevKey</key>
+        <value>dwKpEhbeTk3kauZ4z8C5B7</value>
+    </entry>
+    <entry>
+        <key>GoogleSignIn_ClientID</key>
+        <value>696292490749-351tq382oml6je4jdj9ls5bi0e2stm1d.apps.googleusercontent.com</value>
+    </entry>
+    <entry>
+        <key>GoogleSignIn_ReverseClientID</key>
+        <value>com.googleusercontent.apps.696292490749-351tq382oml6je4jdj9ls5bi0e2stm1d</value>
+    </entry>
+    <entry>
+        <key>GoogleAnalyticsID</key>
+        <value>UA-83192934-1</value>
+    </entry>
+    <entry>
+        <key>FacebookAppID</key>
+        <value>232566390603887</value>
+    </entry>
+</defaultsMap>
