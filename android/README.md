@@ -91,6 +91,12 @@ You can get config files in [files folder](files/)
         }
     }
     
+    repositories {
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url 'https://maven.fabric.io/public' }
+    }
+    
     dependencies {
         [...]
         compile project(':ykit-release')
