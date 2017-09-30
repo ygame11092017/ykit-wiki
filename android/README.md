@@ -20,6 +20,14 @@ You can get config files in [files folder](files/)
 
     ![](images/libraries.png)
 
++ Add this line end of file `settings.gradle`
+
+    ```
+    org.gradle.jvmargs=-Xmx2048m
+    ```
+
+    ![](images/gradle_properties.png)
+
 + Update top-level `build.gradle` (`YKitDemo/proj.android-studio/build.gradle`)
 
 ```
