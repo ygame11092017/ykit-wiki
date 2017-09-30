@@ -87,6 +87,7 @@ You can get config files in [files folder](files/)
         [...]
         compile project(':ykit-release')
         
+        compile deps.supportDesign
         compile deps.appcompatv7
         compile deps.recyclerviewv7
     
@@ -125,6 +126,7 @@ You can get config files in [files folder](files/)
         compile deps.gson
     
         compile deps.transitionseverywhere
+        compile deps.calligraphy
     
         compile deps.glide
         annotationProcessor deps.glideCompiler
@@ -152,19 +154,21 @@ You can get config files in [files folder](files/)
         debugCompile deps.leakcanary
         releaseCompile deps.leakcanaryNoOp
         testCompile deps.leakcanaryNoOp
-        
+    
         compile deps.stetho
         compile deps.stethoOkhttp3
         compile deps.stethoUrlconnection
-        
+    
         compile deps.traceur
-        
+    
         compile deps.logger
-        
+    
         compile(deps.loggingInterceptor) {
             exclude group: 'org.json', module: 'json'
         }
-    }        
+    }
+        
+    apply plugin: 'com.google.gms.google-services'        
     ```
     
 ![](images/diff_module_build_gradle.png)
@@ -215,41 +219,39 @@ You can get config files in [files folder](files/)
         protected void onCreate(Bundle savedInstanceState) {
             [...]
     
-            YKit.init(this);
+            YKit.getInstance().init(this);
             YKit.setPaymentInfo("myServerId", "myCharId", "myPaymentId");
-            YKit.setLauncherListener(new YKit.LauncherListener() {
+            YKit.setLauncherListener(new LauncherListener() {
                 @Override
                 public void onLogin(int userId, String accessToken) {
-    
+                    
                 }
     
                 @Override
                 public void onLoginAuto(int userId, String accessToken) {
-    
+                    
                 }
     
                 @Override
                 public void onLogout() {
-    
+                    
                 }
     
                 @Override
                 public void onInAppPurchase(InAppDto inAppDto) {
-    
+                    
                 }
     
                 @Override
                 public void onPause() {
-    
+                
                 }
     
                 @Override
                 public void onResume() {
-    
+                
                 }
             });
-            
-            LoginActivity_.intent(context).start();
         }
     
         @Override
@@ -262,6 +264,12 @@ You can get config files in [files folder](files/)
         protected void onPause() {
             super.onPause();
             YKit.onPause(this);
+        }
+        
+        @Override
+            protected void onDestroy() {
+            super.onDestroy();
+            YKit.onDestroy(this);
         }
     
         @Override
