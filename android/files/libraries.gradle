@@ -31,6 +31,7 @@ ext {
     rxlifecycleVersion = "2.1.0"
     rxbindingVersion = "2.0.0"
     rxRelayVersion = "2.0.0"
+    nybusVersion = "1.0.0"
 
     dbflowVersion = "4.1.1"
     eventbusVersion = "3.0.0"
@@ -118,6 +119,7 @@ ext.deps = [
         rxbindingDesign      : "com.jakewharton.rxbinding2:rxbinding-design:${rxbindingVersion}",
         rxbindingRecyclerview: "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:${rxbindingVersion}",
         rxrelay              : "com.jakewharton.rxrelay2:rxrelay:${rxRelayVersion}",
+        nybus                : "com.mindorks.nybus:nybus-android:${nybusVersion}",
 
         dbflow               : "com.github.Raizlabs.DBFlow:dbflow:${dbflowVersion}",
         dbflowCore           : "com.github.Raizlabs.DBFlow:dbflow-core:${dbflowVersion}",
@@ -141,13 +143,14 @@ ext.deps = [
 
         appsflyer            : "com.appsflyer:af-android-sdk:${appsflyerVersion}",
         facebook             : "com.facebook.android:facebook-android-sdk:${facebookVersion}",
+        facebook_account_kit : "com.facebook.android:account-kit-sdk:${facebookVersion}",
 
         timber               : "com.jakewharton.timber:timber:${timberVersion}",
         leakcanary           : "com.squareup.leakcanary:leakcanary-android:${leakcanaryVersion}",
         leakcanaryNoOp       : "com.squareup.leakcanary:leakcanary-android-no-op:${leakcanaryVersion}",
         blockcanary          : "com.github.markzhai:blockcanary-android:${blockcanaryVersion}",
-        blockcanaryNoOp           : "com.github.markzhai:blockcanary-no-op:${blockcanaryVersion}",
-        stetho                    : "com.facebook.stetho:stetho:${stethoVersion}",
+        blockcanaryNoOp      : "com.github.markzhai:blockcanary-no-op:${blockcanaryVersion}",
+        stetho               : "com.facebook.stetho:stetho:${stethoVersion}",
         stethoOkhttp3             : "com.facebook.stetho:stetho-okhttp3:${stethoVersion}",
         stethoUrlconnection       : "com.facebook.stetho:stetho-urlconnection:${stethoVersion}",
         tinydancer                : "com.github.brianPlummer:tinydancer:${tinydancerVersion}",

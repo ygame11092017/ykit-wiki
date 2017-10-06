@@ -69,6 +69,7 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
 + Update module-level`build.gradle` (`YKitDemo/proj.android-studio/app/build.gradle`)
 
     ```
+    [...]
     apply plugin: 'me.tatarka.retrolambda'
     apply plugin: 'io.fabric'
     
@@ -149,10 +150,10 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
     
         compile deps.rxjava
         compile deps.rxandroid
-        compile deps.rxrelay
         compile deps.rxlifecycle
         compile deps.rxlifecycleAndroid
         compile deps.rxlifecycleComponents
+        compile deps.nybus
     
         compile deps.dbflow
         compile deps.dbflowCore
@@ -166,6 +167,7 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
         compile deps.appsflyer
     
         compile deps.facebook
+        compile deps.facebook_account_kit
     
         debugCompile deps.leakcanary
         releaseCompile deps.leakcanaryNoOp
@@ -197,19 +199,28 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
  
 + Open `AndroidManifest.xml`, add the following to `Application` tag
  
-    ```
-    <activity android:name="com.facebook.FacebookActivity"
-                android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-                android:label="@string/app_name" />
-    
+    ```    
+    <activity
+        android:name="com.facebook.accountkit.ui.AccountKitActivity"
+        android:theme="@style/AppLoginTheme"
+        tools:replace="android:theme" />
+
     <provider
         android:name="com.facebook.FacebookContentProvider"
         android:authorities="com.facebook.app.FacebookContentProviderXXXXXXXXXX"
         android:exported="true" />
-    
+
     <meta-data
         android:name="com.facebook.sdk.ApplicationId"
         android:value="@string/facebook_app_id" />
+
+    <meta-data
+        android:name="com.facebook.accountkit.ApplicationName"
+        android:value="@string/app_name" />
+
+    <meta-data
+        android:name="com.facebook.accountkit.ClientToken"
+        android:value="@string/account_kit_client_token" />
     ```
   
  Replace `XXXXXXXXXX` string in `com.facebook.app.FacebookContentProviderXXXXXXXXXX` with your `facebook id` (you can get the `facebook id` in file `config.xml`)
@@ -235,9 +246,7 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
         protected void onCreate(Bundle savedInstanceState) {
             [...]
     
-            YKit.getInstance().init(this);
-            YKit.setPaymentInfo("myServerId", "myCharId", "myPaymentId");
-            YKit.setLauncherListener(new LauncherListener() {
+            YKit.get().init(this, new YKitListener() {
                 @Override
                 public void onLogin(int userId, String accessToken) {
                     
@@ -254,43 +263,41 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
                 }
     
                 @Override
-                public void onInAppPurchase(InAppDto inAppDto) {
-                    
+                public void onInAppPurchase(BillDto billDto) {
                 }
     
                 @Override
                 public void onPause() {
-                
                 }
     
                 @Override
                 public void onResume() {
-                
                 }
             });
+            YKit.get().setPaymentInfo("myServerId", "myCharId", "myPaymentId");
         }
     
         @Override
         protected void onResume() {
             super.onResume();
-            YKit.onResume(this);
+            YKit.get().onResume(this);
         }
     
         @Override
         protected void onPause() {
             super.onPause();
-            YKit.onPause(this);
+            YKit.get().onPause(this);
         }
-        
+    
         @Override
-            protected void onDestroy() {
+        protected void onDestroy() {
             super.onDestroy();
-            YKit.onDestroy(this);
+            YKit.get().onDestroy(this);
         }
     
         @Override
         protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-            YKit.onActivityResult(requestCode, resultCode, data, this);
+            YKit.get().onActivityResult(requestCode, resultCode, data, this);
         }
     }
   ```   
