@@ -20,18 +20,18 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
    - Tick on checkbox: “Copy items into destination group's folder (if needed)”.
    - Embedded Binaries with SDK
 
-![alt tag](https://github.com/shintegu/wiki-ios/blob/master/Images/addEmbed.png)
+![alt tag](https://gitlab.com/ygame11092017/ykit-wiki/tree/master/ios/Images/addEmbed.png)
 
 #### 1.2. Add url schemes
 
    - Add the following url schemes for Facebook(“fb” + facebook app id) and Google sign in (Reverse client id) from YKitConfig.plist file
     
-![alt tag](https://github.com/shintegu/wiki-ios/blob/master/Images/AddUrlScheme.png)
+![alt tag](https://gitlab.com/ygame11092017/ykit-wiki/tree/master/ios/Images/AddUrlScheme.png)
 
    - Go to ios info.plist
    - Add  facebook app id, facebook display name and application queries scheme as below. Please replace app id and display name with the value in the YKitConfig.plist file
    
-![alt tag](https://github.com/shintegu/wiki-ios/blob/master/Images/addFacebookID.png)
+![alt tag](https://gitlab.com/ygame11092017/ykit-wiki/tree/master/ios/Images/addFacebookID.png)
 
    - Add file YKitConfig.plist to your root project
 
@@ -205,10 +205,10 @@ Example usage
 ### 3. Flow
 
 #### 3.1. Login flow: 
-![alt tag](https://github.com/shintegu/wiki-ios/blob/master/Images/loginFlow.png)
+![alt tag](https://gitlab.com/ygame11092017/ykit-wiki/tree/master/ios/Images/loginFlow.png)
 
 #### 3.2. Payment flow:
-![alt tag](https://github.com/shintegu/wiki-ios/blob/master/Images/PaymentFlow.png)
+![alt tag](https://gitlab.com/ygame11092017/ykit-wiki/tree/master/ios/Images/PaymentFlow.png)
 
 ### 4. Build note
 Please input full information in Xcode before build the product
@@ -217,4 +217,4 @@ Please input full information in Xcode before build the product
 - Version: string, for example: 1.0.0
 - Build: number, for example: 100
 
-![alt tag](https://github.com/shintegu/wiki-ios/blob/master/Images/identity.png)
+![alt tag](https://gitlab.com/ygame11092017/ykit-wiki/tree/master/ios/Images/identity.png)
