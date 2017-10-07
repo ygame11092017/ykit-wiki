@@ -159,13 +159,21 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 ##### 1.4.1 Setup Firebase framework
 
 - Drap & drop firebase frameworks into your game. (Remember to target your project)
-![](Images/firebase-framework.png)
+- 
+![]
+
 - Drap & drop GoogleService-Info.plist into your game (Remember to target your project)
+- 
 ![](Images/Google-Service-info-plist.png)
+
 - Add the -ObjC linker flag in your Other Linker Settings in your target's build settings.
+- 
 ![](Images/other-linker-flag.png)
+
 - Add firebase.h next to your appcontroller (Remember to target your project)
+- 
 ![](Images/firebase-h.png)
+
 - In Linked Frameworkds and Libraries. Click the + Icon down below and add there 3 frameworks: 
     - libsqlite3.0.tbd
     - GameController.framework
