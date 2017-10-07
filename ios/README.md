@@ -190,6 +190,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 - In your appcontroller.h, #import "Firebase.h" and add FIRMessagingDelegate to the interface like picture below
 
 - Add these pre-defined macros for firebase above Implementation
+
 ```
 // Implement UNUserNotificationCenterDelegate to receive display notification via APNS for devices
 // running iOS 10 and above.
@@ -206,7 +207,9 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 ```
+
 - Start firebase: Add these code to didFinishLaunchingWithOptions in your appcontroller.m after ykit setup
+
 ```
     // [START configure_firebase]
     [FIRApp configure];
@@ -216,7 +219,9 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
     [FIRMessaging messaging].delegate = self;
     // [END set_messaging_delegate]
 ```
+
 - Setup to receive push notifications: Add these code to didFinishLaunchingWithOptions in your appcontroller.m after firebase configure
+
 ```
 if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
         // iOS 7.1 or earlier. Disable the deprecation warnings.
@@ -255,9 +260,10 @@ if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
         // [END register_for_notifications]
     }
 ```
-- Setup handling message: Add these functions to your appcontroller.m
-```
 
+- Setup handling message: Add these functions to your appcontroller.m
+
+```
 // [START receive_message]
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [[YKit getInstance] appDidReceiveMessage:userInfo];
