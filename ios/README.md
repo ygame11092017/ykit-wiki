@@ -368,15 +368,15 @@ Example usage
 //[ykit buyItemWithGameOrder];
 ```
     
-### 3. Flow
+### 2. Flow
 
-#### 3.1. Login flow: 
+#### 2.1. Login flow: 
 ![](Images/loginFlow.png)
 
-#### 3.2. Payment flow:
+#### 2.2. Payment flow:
 ![](Images/PaymentFlow.png)
 
-### 4. Build note
+### 3. Build note
 Please input full information in Xcode before build the product
 - Display Name: name appear on the device
 - Bundle identifier: bundle id of your game which provided by YGame
