@@ -55,8 +55,8 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
     // if using facebook API, you need to implement 
     // [launcher setPermissionFacebook:@"public_profile"]; // string is the permission you want to 
     //
-    launcher setupWithWindow:window usingFacebookSDK:YES];
-    [launcher setPermissionFacebook:@"public_profile"]
+    [launcher setupWithWindow:window usingFacebookSDK:YES];
+    [launcher setPermissionFacebook:@"public_profile"];
     
     // Handle login callback
     [launcher handleLoginWithCompletion:^(NSDictionary *data) {
@@ -155,8 +155,160 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
             
             } 
 ```
+#### 1.4. Setup Firebase Push-Notifications
+##### 1.4.1 Setup Firebase framework
 
-#### 1.4. Public functions
+- Drap & drop firebase frameworks into your game. (Remember to target your project)
+![](Images/firebase-framework.png)
+- Drap & drop GoogleService-Info.plist into your game (Remember to target your project)
+![](Images/Google-Service-info-plist.png)
+- Add the -ObjC linker flag in your Other Linker Settings in your target's build settings.
+![](Images/other-linker-flag.png)
+- Add firebase.h next to your appcontroller (Remember to target your project)
+![](Images/firebase-h.png)
+- In Linked Frameworkds and Libraries. Click the + Icon down below and add there 3 frameworks: 
+    - libsqlite3.0.tbd
+    - GameController.framework
+    - UserNotifications.framework
+
+![](Images/linked-frameworks-libraries.png) 
+
+![](Images/new-framework-add.png) 
+
+![](Images/3-framework.png)
+
+##### 1.4.2 Setup firebase code
+
+- In your appcontroller.h, #import "Firebase.h" and add FIRMessagingDelegate to the interface like picture below
+
+- Add these pre-defined macros for firebase above Implementation
+```
+// Implement UNUserNotificationCenterDelegate to receive display notification via APNS for devices
+// running iOS 10 and above.
+#if defined(__IPHONE_10_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+#import <UserNotifications/UserNotifications.h>
+@interface AppController () <UNUserNotificationCenterDelegate>
+@end
+#endif
+
+// Copied from Apple's header in case it is missing in some cases (e.g. pre-Xcode 8 builds).
+#ifndef NSFoundationVersionNumber_iOS_9_x_Max
+#define NSFoundationVersionNumber_iOS_9_x_Max 1299
+#endif
+
+#define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+```
+- Start firebase: Add these code to didFinishLaunchingWithOptions in your appcontroller.m after ykit setup
+```
+    // [START configure_firebase]
+    [FIRApp configure];
+    // [END configure_firebase]
+    
+    // [START set_messaging_delegate]
+    [FIRMessaging messaging].delegate = self;
+    // [END set_messaging_delegate]
+```
+- Setup to receive push notifications: Add these code to didFinishLaunchingWithOptions in your appcontroller.m after firebase configure
+```
+if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
+        // iOS 7.1 or earlier. Disable the deprecation warnings.
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        UIRemoteNotificationType allNotificationTypes =
+        (UIRemoteNotificationTypeSound |
+         UIRemoteNotificationTypeAlert |
+         UIRemoteNotificationTypeBadge);
+        [application registerForRemoteNotificationTypes:allNotificationTypes];
+#pragma clang diagnostic pop
+    } else {
+        // iOS 8 or later
+        // [START register_for_notifications]
+        if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_9_x_Max) {
+            UIUserNotificationType allNotificationTypes =
+            (UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge);
+            UIUserNotificationSettings *settings =
+            [UIUserNotificationSettings settingsForTypes:allNotificationTypes categories:nil];
+            [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        } else {
+            // iOS 10 or later
+#if defined(__IPHONE_10_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+            // For iOS 10 display notification (sent via APNS)
+            [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+            UNAuthorizationOptions authOptions =
+            UNAuthorizationOptionAlert
+            | UNAuthorizationOptionSound
+            | UNAuthorizationOptionBadge;
+            [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:authOptions completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            }];
+#endif
+        }
+        
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+        // [END register_for_notifications]
+    }
+```
+- Setup handling message: Add these functions to your appcontroller.m
+```
+
+// [START receive_message]
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [[YKit getInstance] appDidReceiveMessage:userInfo];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    [[YKit getInstance] appDidReceiveMessage:userInfo];
+    completionHandler(UIBackgroundFetchResultNewData);
+}
+// [END receive_message]
+
+// [START ios_10_message_handling]
+// Receive displayed notifications for iOS 10 devices.
+#if defined(__IPHONE_10_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+// Handle incoming notification messages while app is in the foreground.
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center
+       willPresentNotification:(UNNotification *)notification
+         withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+    NSDictionary *userInfo = notification.request.content.userInfo;
+    [[YKit getInstance] appDidReceiveMessage:userInfo];
+    // Change this to your preferred presentation option
+    completionHandler(UNNotificationPresentationOptionNone);
+}
+
+// Handle notification messages after display notification is tapped by the user.
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center
+didReceiveNotificationResponse:(UNNotificationResponse *)response
+         withCompletionHandler:(void(^)())completionHandler {
+    NSDictionary *userInfo = response.notification.request.content.userInfo;
+    [[YKit getInstance] appDidReceiveMessage:userInfo];
+    completionHandler();
+}
+#endif
+// [END ios_10_message_handling]
+
+// [START refresh_token]
+- (void)messaging:(nonnull FIRMessaging *)messaging didRefreshRegistrationToken:(nonnull NSString *)fcmToken {
+    [[YKit getInstance] setFCMToken:fcmToken];
+}
+// [END refresh_token]
+
+// [START ios_10_data_message]
+
+- (void)messaging:(FIRMessaging *)messaging didReceiveMessage:(FIRMessagingRemoteMessage *)remoteMessage {
+    [[YKit getInstance] appDidReceiveMessage:remoteMessage.appData];
+}
+// [END ios_10_data_message]
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"Unable to register for remote notifications: %@", error);
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    NSString *fcmToken = [FIRMessaging messaging].FCMToken;
+    [[YKit getInstance] setFCMToken:fcmToken];
+}
+```
+#### 1.5. Public functions
 - Here is the list of public functions you can call to customize the YKit in your game: 
 
 * setLauncherStickySide: You can specific the side that launcher can stick to via the or bitwise. 

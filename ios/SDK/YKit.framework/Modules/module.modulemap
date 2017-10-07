@@ -1,0 +1,6 @@
+framework module YKit {
+  umbrella header "YKit.h"
+
+  export *
+  module * { export * }
+}

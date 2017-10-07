@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>FacebookAppID</key>
+    <string>232566390603887</string>
+    <key>AppID</key>
+    <string>01570b2b4730a1e60d257ebd80db7027</string>
+    <key>GoogleSignIn_ClientID</key>
+    <string>696292490749-m34mtr5n51uqibck9ci7lc6pcpmfd20s.apps.googleusercontent.com</string>
+    <key>AppStoreID</key>
+    <string>1144804514</string>
+    <key>GoogleSignIn_ReverseClientID</key>
+    <string>com.googleusercontent.apps.696292490749-m34mtr5n51uqibck9ci7lc6pcpmfd20s</string>
+    <key>AppSecret</key>
+    <string>34bf3d41b69094a395bfbf7491ca4814</string>
+    <key>FacebookUrlSchemes</key>
+    <string>fb232566390603887</string>
+    <key>FacebookDisplayName</key>
+    <string>Tháo Ơi Đừng Chạy</string>
+  </dict>
+</plist>
