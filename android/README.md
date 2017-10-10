@@ -309,4 +309,12 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
   + `onPause`: call when game pause
   + `onResume`: call when game resume
   
-  You will give us payment info using`setPaymentInfo()` method with 3 parameter `serverId`, `charId`, `paymentId` 
+  You will give us payment info using`setPaymentInfo()` method with 3 parameter `serverId`, `charId`, `paymentId`
+  
+## 4 - Interface
+
+  + `YKit.get().openLogin()`: open login windows 
+  + `YKit.get().openInApp()`: open inapp purchase windows 
+  + `YKit.get().openAccount()`: open account info windows 
+  + `YKit.get().openNotification()`: open notification windows 
+  + `YKit.get().logout()`: logout of ykit 
