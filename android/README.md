@@ -4,7 +4,9 @@ You can get config files in [files folder](files/)
 
 Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
 
-## 1 - Add YKit library
+## A. Integrate SDK
+
+### 1 - Add YKit library
 
 + Click **File > New > New Module**
 
@@ -195,7 +197,7 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
 
 ![](images/diff_module_build_gradle3.png)
 
-## 2 - Config app 
+### 2 - Config app 
  
 + Open `AndroidManifest.xml`, add the following to `Application` tag
  
@@ -235,7 +237,7 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
  
  ![](images/google-services.png)  
  
-## 3 - Implement code
+### 3 - Implement code
 
   + In your main activity class, init the YKit by add the following to `AppActivity.java`
   
@@ -310,13 +312,13 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
   + `onResume`: call when game resume
   
   You will give us payment info using`setPaymentInfo()` method with 3 parameter `serverId`, `charId`, `paymentId`
-  
-## 4 - Interface
+
+## B. Public function
 
   + `YKit.get().openLogin()`: open login windows 
   + `YKit.get().openInApp()`: open inapp purchase windows 
   + `YKit.get().openAccount()`: open account info windows 
   + `YKit.get().openNotification()`: open notification windows 
-  + `YKit.get().logout()`: logout of ykit 
+  + `YKit.get().logout()`: logout of YKit 
   + `YKit.get().showLauncher()`: show floating widget 
   + `YKit.get().hideLauncher()`: hide floating widget
