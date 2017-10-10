@@ -318,3 +318,5 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
   + `YKit.get().openAccount()`: open account info windows 
   + `YKit.get().openNotification()`: open notification windows 
   + `YKit.get().logout()`: logout of ykit 
+  + `YKit.get().showLauncher()`: show floating widget 
+  + `YKit.get().hideLauncher()`: hide floating widget
