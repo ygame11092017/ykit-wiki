@@ -37,7 +37,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 
 #### 1.3. Setup Code
 
-- Import SDK : #import <YKit/YK.h> in Cocos AppController.m
+- Import SDK : ```#import <YKit/YKit.h>``` in Cocos AppController.m
 
 - Add these lines of code in Application didFinishLaunchingWithOptions function in AppController class, after window setup. You can get Google Signin client ID in the YKitConfig.plist.
 
@@ -187,7 +187,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 
 ##### 1.4.2 Setup firebase code
 
-- In your appcontroller.h, #import "Firebase.h" and add FIRMessagingDelegate to the interface like picture below
+- In your appcontroller.h, ```#import "Firebase.h"``` and add FIRMessagingDelegate to the interface like picture below
 
 - Add these pre-defined macros for firebase above Implementation
 
