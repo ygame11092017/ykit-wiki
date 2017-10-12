@@ -7,34 +7,36 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>696292490749-m34mtr5n51uqibck9ci7lc6pcpmfd20s.apps.googleusercontent.com</string>
+	<string>638390575257-uspjr14a9fk2m7btn3ma7gvuvfmk0vlk.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.696292490749-m34mtr5n51uqibck9ci7lc6pcpmfd20s</string>
+	<string>com.googleusercontent.apps.638390575257-uspjr14a9fk2m7btn3ma7gvuvfmk0vlk</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>638390575257-k9tee2a605puib0t1qpnfqhjogf9t411.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCYtHO7BSXi7dwDPnkC_CpJtUdmcNwjP3E</string>
+	<string>AIzaSyBuOPABmDbTpiy18EwrM8448leCD7AIipk</string>
 	<key>GCM_SENDER_ID</key>
-	<string>696292490749</string>
+	<string>638390575257</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.ygame.test</string>
+	<string>com.ygame.atao</string>
 	<key>PROJECT_ID</key>
-	<string>test-b6843</string>
+	<string>ygame-corp-3e79e</string>
 	<key>STORAGE_BUCKET</key>
-	<string>test-b6843.appspot.com</string>
+	<string>ygame-corp-3e79e.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:696292490749:ios:cb82be8eb9345775</string>
+	<string>1:638390575257:ios:a64bca3438473eb5</string>
 	<key>DATABASE_URL</key>
-	<string>https://test-b6843.firebaseio.com</string>
+	<string>https://ygame-corp-3e79e.firebaseio.com</string>
 </dict>
 </plist>
