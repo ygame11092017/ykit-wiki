@@ -6,8 +6,7 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
 
 ## A. Prerequisites
 
-+ Android Studio 2.3.3
-https://developer.android.com/studio/index.html
++ [Android Studio 2.3.3](https://developer.android.com/studio/index.html)
 
 + Open Android Studio, click **File > Settings...**, choose **Appearance and Behavior > System Settings > Android SDK > SDK Tools**, install all packages in it
 ![](images/sdk_tools.png)
