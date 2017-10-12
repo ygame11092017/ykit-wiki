@@ -4,7 +4,20 @@ You can get config files in [files folder](files/)
 
 Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
 
-## A. Integrate SDK
+## A. Prerequisites
+
++ Android Studio 2.3.3
+https://developer.android.com/studio/index.html
+
++ Open Android Studio, click **File > Settings...**, choose **Appearance and Behavior > System Settings > Android SDK > SDK Tools**, install all packages in it
+![](images/sdk_tools.png)
+
++ Open Android Studio, click **File > Project Structure**, set **JDK locations** and **Android SDK location**
+![](images/project_structure.png)
+
+
+
+## B. Integrate SDK
 
 ### 1 - Add YKit library
 
@@ -313,7 +326,7 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
   
   You will give us payment info using`setPaymentInfo()` method with 3 parameter `serverId`, `charId`, `paymentId`
 
-## B. Public function
+## C. Public function
 
   + `YKit.get().openLogin()`: open login windows 
   + `YKit.get().openInApp()`: open inapp purchase windows 
