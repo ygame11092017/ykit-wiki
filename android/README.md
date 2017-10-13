@@ -4,6 +4,14 @@ You can get config files in [files folder](files/)
 
 Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
 
+## Index
++ [A. Prerequisites](#a-prerequisites)
++ [B. Integrate SDK](#b-integrate-sdk)
+    - [1. Add YKit library](#1-add-ykit-library)
+    - [2. Config app](#2-config-app) 
+    - [3. Implement code](#3-implement-code)
++ [C. Public function](#c-public-function)
+
 ## A. Prerequisites
 
 + [Android Studio 2.3.3](https://developer.android.com/studio/index.html)
@@ -18,7 +26,7 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
 
 ## B. Integrate SDK
 
-### 1 - Add YKit library
+### 1. Add YKit library
 
 + Click **File > New > New Module**
 
@@ -209,7 +217,7 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
 
 ![](images/diff_module_build_gradle3.png)
 
-### 2 - Config app 
+### 2. Config app 
  
 + Open `AndroidManifest.xml`, add the following to `Application` tag
  
