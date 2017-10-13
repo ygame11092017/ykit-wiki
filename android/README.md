@@ -44,7 +44,7 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
 
     ![](images/libraries.png)
 
-+ Add this line end of file `settings.gradle`
++ Add this line end of file `settings.gradle` (Optional)
 
     ```
     org.gradle.jvmargs=-Xmx2048m
@@ -257,7 +257,7 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
  
  ![](images/google-services.png)  
  
-### 3 - Implement code
+### 3. Implement code
 
   + In your main activity class, init the YKit by add the following to `AppActivity.java`
   
