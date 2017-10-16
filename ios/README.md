@@ -345,6 +345,11 @@ else {
 * showPaymentScreen: You may want to show payment screen from your game
 * handleShowSDKCompletion: You can get the event show SDK here
 * handleCloseSDKCompletion: You can get the event show SDK here
+#### 1.6. Turn on Application necessary Capabilities.
+- Turn on Push Notification
+- Turn on Background Mode for Push Notification
+- Turn on InApp-Purchase
+
 ### 2. Implement Payment Info
 
 Payment Info is the data you send to game server when user make payment. 
