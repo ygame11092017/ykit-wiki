@@ -63,7 +63,7 @@ If your request is not valid, you will be received the failure response
 
 ### 2.2 Description
 ```
-1. Game Client calls a YKit function, then SDK show up the Payment UI.
+1. Game Client calls a YKit function setPaymentInfo to pass three paramerter: char_id, server_id, payment_id. These params will be post back to Server Game
 2. YKit Client sends a payment request to YKit server.
 3.  After processing the payment, YKit Server will send the notification to your Game Server via your callback url. Game Server will transfer game coin to user. 
 4. Game Server return the payment response to YKit Server.
@@ -86,9 +86,9 @@ NOTE: Step 6.1 and 6.2 just use for the game can’t send a message from server 
 | transaction_type | Type of purchase: CARD, BANK|
 | currency | VN or USD |
 | user_id | id of user, who make the request|
-| char_id | id of character - get from API get list server game|
-| server_id | id of server game - get from API get list server game|
-| payment_id | id of payment package - get from API get list payment|
+| char_id | id of character - get from function setPaymentInfo in YKit client|
+| server_id | id of server game - get from function setPaymentInfo in YKit client|
+| payment_id | id of payment package - get from function setPaymentInfo in YKit client|
 | order_id | order id|
 | card_code | * if transaction_type = CARD, card_code = code|
 | card_serial | * if transaction_type = CARD, card_serial = serial|
