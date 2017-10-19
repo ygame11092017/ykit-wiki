@@ -249,7 +249,7 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
            
  ![](images/manifest.png)      
    
- + Add `facebook_app_id` value to `app/res/values/strings.xml`
+ + Add `facebook_app_id` and `account_kit_client_token` to `app/res/values/strings.xml`
  
  ![](images/strings.png) 
    
