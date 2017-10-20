@@ -4,6 +4,10 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>.DS_Store</key>
+		<data>
+		wfuk7KTpf+XGOY2i+8SdCsKoT4I=
+		</data>
 		<key>AccountKitStrings.bundle/Resources/af.lproj/AccountKit.strings</key>
 		<dict>
 			<key>hash</key>
@@ -870,11 +874,11 @@
 		</dict>
 		<key>Assets.car</key>
 		<data>
-		z/dGT4XLCEDcv28BqSHVDqcJwlw=
+		2LbuYzl24zmHer4dThr2BhLA44Q=
 		</data>
 		<key>CellRegisterVertical.nib</key>
 		<data>
-		TcQgpAvrDNCSZC7I2v2U3LGOT+0=
+		Wbe3D8mTXAIZg0EdA29xPAJT4ds=
 		</data>
 		<key>GoogleSignIn.bundle/Info.plist</key>
 		<data>
@@ -1274,131 +1278,131 @@
 		</data>
 		<key>Screen.storyboardc/1sb-jW-cQ5-view-AGu-6e-IsQ.nib</key>
 		<data>
-		pUqkYZ4len3mTRdw25M4eSMTqxk=
+		7PlFII/QVXv0dQuQHsybcAFrWqg=
 		</data>
 		<key>Screen.storyboardc/ATMainController.nib</key>
 		<data>
-		lOApP9SqlMfc06JP+u/1ruxv5/s=
+		QSWF6NYw85uO4Y2Ue7F5eO+mBOM=
 		</data>
 		<key>Screen.storyboardc/AlertVC.nib</key>
 		<data>
-		mPQgMYaJmHweCJ0Gcaf5ZFvASU0=
+		6UrbfPjE79YZD1jMx4OLH9wtjjw=
 		</data>
 		<key>Screen.storyboardc/ChangeForgetPasswordViewController.nib</key>
 		<data>
-		ATmQBH5z6cHdTVBYWOQfsPVG7lw=
+		TV85k0ivyWwlwx9mF5Qk2NnUVww=
 		</data>
 		<key>Screen.storyboardc/DI2-hz-fuF-view-UJX-Fa-5wD.nib</key>
 		<data>
-		QhoC0pZ/DCL9RRITTWVFnDtGCck=
+		KTF56ryUGdCxaEsRHN6tdPCGTLI=
 		</data>
 		<key>Screen.storyboardc/FacebookLoginViewController.nib</key>
 		<data>
-		XiU0caTOf0fQ2dEo29EkZ58osP0=
+		yX/7vBRpRV7abCyJvDp+OJpciXM=
 		</data>
 		<key>Screen.storyboardc/GlU-hj-fY4-view-kvz-Hv-P5M.nib</key>
 		<data>
-		HFoYu6Kp9ueNcbjr7rlOSny5Z9E=
+		bM6gPjGVpgVbsI+9+ZYPVu9yJEE=
 		</data>
 		<key>Screen.storyboardc/Info.plist</key>
 		<data>
-		1qlAW+yWihKFsHf5vep7L5gy0xY=
+		ard3H4FTMRZKn3dL2aGZUS5LYlo=
 		</data>
 		<key>Screen.storyboardc/K0k-nU-2Qq-view-taY-Wo-UI7.nib</key>
 		<data>
-		KrWngSzsThl6bPXbwbQNkmUTIZc=
+		MecA6CGG3G1R15STEwX6wxdAfWw=
 		</data>
 		<key>Screen.storyboardc/KKk-Rf-oDP-view-H6X-bh-QzI.nib</key>
 		<data>
-		QGfk/a5YHoVpSRzpm6lJnl2V8sk=
+		07aW4XaRL/256fSF+3GiJvHt6dc=
 		</data>
 		<key>Screen.storyboardc/MainViewController.nib</key>
 		<data>
-		wE6sGmHZHUSTPlR9dAm+rbh+7MY=
+		XofXAd/Q/6ZiGpX/9UxRk9u6P5o=
 		</data>
 		<key>Screen.storyboardc/OEE-A8-8QN-view-EYC-YP-Cdy.nib</key>
 		<data>
-		bTdEf0j5fELo0Z5qMD68qyLEZ0U=
+		0nByWSrYjuydzW8ENnZclxjouwo=
 		</data>
 		<key>Screen.storyboardc/PPO-u8-r3G-view-r8T-jk-rih.nib</key>
 		<data>
-		Nx9NPMXPBoAQj8g99eoRPhtBEcw=
+		gHcvdv2THxQwLUdG9gRzGzX2sFs=
 		</data>
 		<key>Screen.storyboardc/PopUpPasswordViewController.nib</key>
 		<data>
-		rugvd5sLC9VpS1AaFpRkjCkS+KQ=
+		pTfRPcYKiG+1oEY04bzPszAAZY4=
 		</data>
 		<key>Screen.storyboardc/Qkq-kR-bgJ-view-mix-pK-By5.nib</key>
 		<data>
-		9dP/JdjYrJi1b9+bZWM7WN6GxP8=
+		/6I4pczSgOObcabRDh4CYBd66Kw=
 		</data>
 		<key>Screen.storyboardc/RuleViewController.nib</key>
 		<data>
-		h+70mnemOawP0279vOWG1OP4BSc=
+		xecWbHhqCG74kI6AeAME9MUZiYo=
 		</data>
 		<key>Screen.storyboardc/S2i-Od-CMN-view-GFn-cB-Um2.nib</key>
 		<data>
-		//aiwJ0Tmih78h0lXUpJW42cbao=
+		6yLx9LNE0c3tZ+u8addmtFv6xSY=
 		</data>
 		<key>Screen.storyboardc/VCAssistance.nib</key>
 		<data>
-		R3FK3q/uo0fDohYdwCoHN2BhVF4=
+		ugB71NMAaTWvoIwoYoS/R+/1rPc=
 		</data>
 		<key>Screen.storyboardc/VCConfirmPass.nib</key>
 		<data>
-		YxWHRqHyRmbuDJ9qzXgGEcKyzgA=
+		WLggwROQj1KckPpbhi/Mc+4GTDg=
 		</data>
 		<key>Screen.storyboardc/VCForgotPassword.nib</key>
 		<data>
-		gjR5gvJNXrSnYOnplUlS+MegYl0=
+		Y+dpLcclQhpTYcOaEqZAkHkFNAk=
 		</data>
 		<key>Screen.storyboardc/VCHistoryTrade.nib</key>
 		<data>
-		cGNpw0tJDrbw8X+Gi/Wve9+fios=
+		bK4pPh5tzTa1nLE9YgzlBiIkKPc=
 		</data>
 		<key>Screen.storyboardc/VCLogin1.nib</key>
 		<data>
-		xLWIqZJ+VDV6xPOG8S/aE/3HZyE=
+		Af+U98/7cBgU3wwUT1vizkGtyAs=
 		</data>
 		<key>Screen.storyboardc/VCPaymentInApp.nib</key>
 		<data>
-		Srep7kzDoEVMy61Tlq+EvLot7ys=
+		mytSn3ymcUFP53IE2LTMeZgE4zI=
 		</data>
 		<key>Screen.storyboardc/VCRegister.nib</key>
 		<data>
-		A/uaozCzhrv6H5qNXeEWLyyvN5k=
+		uwzn0IjEDuDoRxGCmx1rzDaLn74=
 		</data>
 		<key>Screen.storyboardc/VCUpdateInfo.nib</key>
 		<data>
-		tc54Ptj03mSioMKK3TwOdrVyF7Q=
+		vMKfA+GHyO081jpPRia365cyuqY=
 		</data>
 		<key>Screen.storyboardc/VCUpdateProfile.nib</key>
 		<data>
-		sCcs4bligcu9yqiY08RlirLN3dk=
+		epoOddwCNqERr0BiJTBE02Ikr0w=
 		</data>
 		<key>Screen.storyboardc/Zzc-xE-ba6-view-MCG-Rm-JQu.nib</key>
 		<data>
-		AenJxD4jeYNyW3OIx67d1wxinic=
+		RyyCNf3AXYzvfWes7dbqPlxEgwI=
 		</data>
 		<key>Screen.storyboardc/cLH-eW-Kve-view-NX8-TK-ewu.nib</key>
 		<data>
-		8FfP+q9CejVrfzE0ICBl8dhyWWM=
+		wTEO6zjV10i0TcDZPLxuVR3W7KQ=
 		</data>
 		<key>Screen.storyboardc/g2P-wc-UWW-view-3Bi-1E-JQJ.nib</key>
 		<data>
-		prirjgUg2M8AgD6wSAW/R9fxm+w=
+		78QRH8cK5cxUxVYGi94snGMuLVk=
 		</data>
 		<key>Screen.storyboardc/gDx-2D-w9m-view-sWr-hJ-8G2.nib</key>
 		<data>
-		EL10f5fKSrZ+9lHEQRoV50iZAOY=
+		hOBP8lBLBn6wZ6Lrsp0UPS8H6xw=
 		</data>
 		<key>Screen.storyboardc/iSO-09-yJb-view-5kt-1Z-bTl.nib</key>
 		<data>
-		veTc30t6gp0nR4pEwjXrXszhV3I=
+		DfFozuauy6EOmGtyMNPacpWHTrE=
 		</data>
 		<key>Screen.storyboardc/pE3-5w-7n8-view-80P-gE-Eg8.nib</key>
 		<data>
-		p8F3SByhYQ0wOdBv1MytMKtTMNc=
+		kqZzPfDR0XM/OVeMVgfqpVcPCgc=
 		</data>
 		<key>TopHeaderCollectionViewCell.nib</key>
 		<data>
@@ -2667,22 +2671,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			z/dGT4XLCEDcv28BqSHVDqcJwlw=
+			2LbuYzl24zmHer4dThr2BhLA44Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			crRfCub2aUaOyss9Bbst2JpwjmBkCCgO+K+3Hds5fKk=
+			RwZsN1ZC3ELVdwsjWFk/OA9sOJJomIU6BCia6Jb1KMo=
 			</data>
 		</dict>
 		<key>CellRegisterVertical.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TcQgpAvrDNCSZC7I2v2U3LGOT+0=
+			Wbe3D8mTXAIZg0EdA29xPAJT4ds=
 			</data>
 			<key>hash2</key>
 			<data>
-			EOi46/xq4CvoIu9jMgOI7Vph50rPgJnCkxEHaSmTn4s=
+			csNywdwr2A0ZSgaAzKRBw/XoGgRaQwjrwrVX69oq038=
 			</data>
 		</dict>
 		<key>GoogleSignIn.bundle/Info.plist</key>
@@ -3344,352 +3348,352 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pUqkYZ4len3mTRdw25M4eSMTqxk=
+			7PlFII/QVXv0dQuQHsybcAFrWqg=
 			</data>
 			<key>hash2</key>
 			<data>
-			WQVGacFpZJxNU3VwrUcb4zL7s+Zf4ccYA8Ux/vNS4nI=
+			bc62fvFs7PYSqAYjq9Wr7hXYHk60qO/FEjJrNyRXxDU=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/ATMainController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lOApP9SqlMfc06JP+u/1ruxv5/s=
+			QSWF6NYw85uO4Y2Ue7F5eO+mBOM=
 			</data>
 			<key>hash2</key>
 			<data>
-			p+u+3gzyxDTeuyBT/1gJUd39o3/OWv0F4tOEAXuFWwY=
+			zidfup56OIBCUZUYm3kkkGqNuP0fZcAlmcivZdfBMdk=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/AlertVC.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			mPQgMYaJmHweCJ0Gcaf5ZFvASU0=
+			6UrbfPjE79YZD1jMx4OLH9wtjjw=
 			</data>
 			<key>hash2</key>
 			<data>
-			/qDtpS0lEjKFJdVauJ7Kqbzo90QZeUjLL7Gify70J34=
+			SjZm50hHPhAQN0WRCZFpGNxBeK/fjdwgB1R0GwrrHy4=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/ChangeForgetPasswordViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ATmQBH5z6cHdTVBYWOQfsPVG7lw=
+			TV85k0ivyWwlwx9mF5Qk2NnUVww=
 			</data>
 			<key>hash2</key>
 			<data>
-			/oW3b66fxnCJhBSzwVfBm5OgrbQXe+aAC3befhWC49k=
+			ieRa+kePKfEGyO8nFfNNAIEPanYu8aGlKdZUahZEDP0=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/DI2-hz-fuF-view-UJX-Fa-5wD.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QhoC0pZ/DCL9RRITTWVFnDtGCck=
+			KTF56ryUGdCxaEsRHN6tdPCGTLI=
 			</data>
 			<key>hash2</key>
 			<data>
-			v1XHXoHdIC4ExoiikWonehqjY9l3Q/C06U8bInzlU4o=
+			R4atfRjeLb2ZYHNYOJ3AEmic1G2o+cSTyfr9X/Mhdao=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/FacebookLoginViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XiU0caTOf0fQ2dEo29EkZ58osP0=
+			yX/7vBRpRV7abCyJvDp+OJpciXM=
 			</data>
 			<key>hash2</key>
 			<data>
-			vyDLR23jgQwf6rlj/ZR1zWCIf8cmSej85bZ7T7+YOhE=
+			IxGZbj5drvVujZSjgnL3Bne1fVhAopasB4nB8C07vJg=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/GlU-hj-fY4-view-kvz-Hv-P5M.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			HFoYu6Kp9ueNcbjr7rlOSny5Z9E=
+			bM6gPjGVpgVbsI+9+ZYPVu9yJEE=
 			</data>
 			<key>hash2</key>
 			<data>
-			iT+qmAYDhkr7BeJOVWZtbAZ9L4zKBT+SN+20DdjPuUw=
+			0q/Z0NY1Eg0zYsiS8OgR6WC7ra7jelUMmJyvwXv36gw=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			1qlAW+yWihKFsHf5vep7L5gy0xY=
+			ard3H4FTMRZKn3dL2aGZUS5LYlo=
 			</data>
 			<key>hash2</key>
 			<data>
-			RVpuhFrw3tWvhTKfme3NxfXS2AEZdaw84dPKLGbF9e0=
+			96EsTP3nYcEMRUip5Xb5pBUx1wU0xNMuchzB4yG4O4g=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/K0k-nU-2Qq-view-taY-Wo-UI7.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KrWngSzsThl6bPXbwbQNkmUTIZc=
+			MecA6CGG3G1R15STEwX6wxdAfWw=
 			</data>
 			<key>hash2</key>
 			<data>
-			pqNTzxWUmfMZNLSYUoTlr3kaqLw6ax5iGVBmGuHLbCs=
+			Pc6DX0WoBzVmA2zjM/h01qnUMQZByYRzli90q6YQaJE=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/KKk-Rf-oDP-view-H6X-bh-QzI.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QGfk/a5YHoVpSRzpm6lJnl2V8sk=
+			07aW4XaRL/256fSF+3GiJvHt6dc=
 			</data>
 			<key>hash2</key>
 			<data>
-			EhFaIdL+3H+NL6hqEz7exjhQOeuVPbm+aMcj34nAyhg=
+			cH/tGKITD7Yao6uLah72iTx0c+cwnITM6kCMrPWo2es=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/MainViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wE6sGmHZHUSTPlR9dAm+rbh+7MY=
+			XofXAd/Q/6ZiGpX/9UxRk9u6P5o=
 			</data>
 			<key>hash2</key>
 			<data>
-			YjQ32+mIFn/PX+490VQJpTQa8KwRkqYwlZWJUs8w9iQ=
+			j4PxZ2nPbNvtNZY7qP0wfSFlSKG9eWYmZqJAmCXMacM=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/OEE-A8-8QN-view-EYC-YP-Cdy.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			bTdEf0j5fELo0Z5qMD68qyLEZ0U=
+			0nByWSrYjuydzW8ENnZclxjouwo=
 			</data>
 			<key>hash2</key>
 			<data>
-			QVSnQzw3UX3A9gUU2kg45Tf1ljkIsdOVEdp5641DuzA=
+			yiGLX61BjOWwpOw0Qw4k10b6kmIAwjb/V270nh8rnKc=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/PPO-u8-r3G-view-r8T-jk-rih.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Nx9NPMXPBoAQj8g99eoRPhtBEcw=
+			gHcvdv2THxQwLUdG9gRzGzX2sFs=
 			</data>
 			<key>hash2</key>
 			<data>
-			WtuaMcMmpoAE8PE7P2Xpk4prGzlvvM3SD861MsdSOWU=
+			bmepBGs4TFpbAFJw5CgCeiAiGds4lXZFcz8psnsV0+8=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/PopUpPasswordViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			rugvd5sLC9VpS1AaFpRkjCkS+KQ=
+			pTfRPcYKiG+1oEY04bzPszAAZY4=
 			</data>
 			<key>hash2</key>
 			<data>
-			Q05DW/WEqteYqqhT9+BmCwwO/1/wo75TIUg6WWEa/fs=
+			MCzcgOj2egQXr/VjrnBAESIruKIj5XPRvyVUOaDFF4s=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/Qkq-kR-bgJ-view-mix-pK-By5.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9dP/JdjYrJi1b9+bZWM7WN6GxP8=
+			/6I4pczSgOObcabRDh4CYBd66Kw=
 			</data>
 			<key>hash2</key>
 			<data>
-			/KjpqysB9wzVawBttL9kRNpWSDktcUjhuIqGzfvJqaU=
+			tdvWKJ6kxvTO4z7fi8uOwUFfmzZp4O1R/5XjSTLMNdU=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/RuleViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			h+70mnemOawP0279vOWG1OP4BSc=
+			xecWbHhqCG74kI6AeAME9MUZiYo=
 			</data>
 			<key>hash2</key>
 			<data>
-			pih5M+DMPpQLit9vjq4bUv/3sPTqCvXez5UtqCTQMK0=
+			6KQiyJB8+1VVLEtr5t+pGg95B/AxmAdsklmP1ftm15s=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/S2i-Od-CMN-view-GFn-cB-Um2.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			//aiwJ0Tmih78h0lXUpJW42cbao=
+			6yLx9LNE0c3tZ+u8addmtFv6xSY=
 			</data>
 			<key>hash2</key>
 			<data>
-			p2vCiKe8/V3CyYs46FCjC5yPiDCs+8Zv/FCB43BSzhQ=
+			czT4sCjP4Rz7rCXcASJuE3JMUIqVxceb6iiokZm7UHU=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/VCAssistance.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			R3FK3q/uo0fDohYdwCoHN2BhVF4=
+			ugB71NMAaTWvoIwoYoS/R+/1rPc=
 			</data>
 			<key>hash2</key>
 			<data>
-			Bmag0OpHyp2kO/NkEfskB9b/kMlAHZAGRJQo4nDiB3M=
+			FiiSRyg/hNLilE4j1pFQ9dlYmHojvTVqXcx5I3mtqfs=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/VCConfirmPass.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YxWHRqHyRmbuDJ9qzXgGEcKyzgA=
+			WLggwROQj1KckPpbhi/Mc+4GTDg=
 			</data>
 			<key>hash2</key>
 			<data>
-			/pvLwUGroOgelXLYt3+CybGYMecjzAoOGvikoJvKe7o=
+			7jXYAb3wtLO1kzLuUoHlrf5hcDpQi3ZB3qV09IJSqwc=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/VCForgotPassword.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gjR5gvJNXrSnYOnplUlS+MegYl0=
+			Y+dpLcclQhpTYcOaEqZAkHkFNAk=
 			</data>
 			<key>hash2</key>
 			<data>
-			yTD1pAx9w7jLeqaS++DlKUwZPscLNj00Sde/l2CSnrk=
+			wjnClXDHEB9thV9HdwBGCeEei8UdKMIVl5Vu56Nyfww=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/VCHistoryTrade.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cGNpw0tJDrbw8X+Gi/Wve9+fios=
+			bK4pPh5tzTa1nLE9YgzlBiIkKPc=
 			</data>
 			<key>hash2</key>
 			<data>
-			Y1dPGvxWBCFtswo1XoBMmD6WJRgu7VERog9C/jfGi1o=
+			J7dh433odC26uTF2J+t6C1Dq96Mb6moW1H1ng9HDDl4=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/VCLogin1.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xLWIqZJ+VDV6xPOG8S/aE/3HZyE=
+			Af+U98/7cBgU3wwUT1vizkGtyAs=
 			</data>
 			<key>hash2</key>
 			<data>
-			NdBiijBTn6V6ZVAXZcs9KULHsD4aXEHGTfDgi4n2pX4=
+			2gdUa7UiCXpJLsrrRRer0hJwdT+A5cP6Qjqone63u1A=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/VCPaymentInApp.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Srep7kzDoEVMy61Tlq+EvLot7ys=
+			mytSn3ymcUFP53IE2LTMeZgE4zI=
 			</data>
 			<key>hash2</key>
 			<data>
-			GP/nfxrbdJ6cn4AAtqTeS+7BoiHOA1HGF3PL9fOUs+A=
+			kKHprAk5bDms3t/xQ2ki8z+t0qXRzOoeL5ky70M+WSE=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/VCRegister.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			A/uaozCzhrv6H5qNXeEWLyyvN5k=
+			uwzn0IjEDuDoRxGCmx1rzDaLn74=
 			</data>
 			<key>hash2</key>
 			<data>
-			5pg741yaVr+v0shI1qkOVrwsKEKnid1jeRKri5KVyVA=
+			jOgj1OeBhBp0aJBnfAjwpZoIpGSaZ3IXrRNxfI1vWZo=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/VCUpdateInfo.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tc54Ptj03mSioMKK3TwOdrVyF7Q=
+			vMKfA+GHyO081jpPRia365cyuqY=
 			</data>
 			<key>hash2</key>
 			<data>
-			xxxo3NVsuAxDyW4xQA1fF6q2RzY3YL1dVDyaHCy0fiw=
+			BUiu1alVFlADbt3mG3iQDNefH1pnkkKYIsdZDinyy0I=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/VCUpdateProfile.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			sCcs4bligcu9yqiY08RlirLN3dk=
+			epoOddwCNqERr0BiJTBE02Ikr0w=
 			</data>
 			<key>hash2</key>
 			<data>
-			/aA4KYAdWxgl8+jdSUaSSMrXtVuWPWoCXyk6wN0Pzdc=
+			MMX9Cwhhqpyjxr+/m9DoC75Dh1/LJgJx0qzsT6euIjI=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/Zzc-xE-ba6-view-MCG-Rm-JQu.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			AenJxD4jeYNyW3OIx67d1wxinic=
+			RyyCNf3AXYzvfWes7dbqPlxEgwI=
 			</data>
 			<key>hash2</key>
 			<data>
-			ySErLofuqT16sHDQbrcINGSs01tOfOiJ3BBj2znUz10=
+			l+BSuU/Ixck1NFvWdYuetFJ/5oSoPnQVz4nsTu3mAqA=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/cLH-eW-Kve-view-NX8-TK-ewu.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8FfP+q9CejVrfzE0ICBl8dhyWWM=
+			wTEO6zjV10i0TcDZPLxuVR3W7KQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			9Lso/TEFXmLuqG5Hhhdd1JcWpBwYcIRdxMnBhArZLnU=
+			WT5XeCd4ZLmNpG00vqqNr3ix1mmPfimi4slXjdhX8Kw=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/g2P-wc-UWW-view-3Bi-1E-JQJ.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			prirjgUg2M8AgD6wSAW/R9fxm+w=
+			78QRH8cK5cxUxVYGi94snGMuLVk=
 			</data>
 			<key>hash2</key>
 			<data>
-			sB55OFrhtC+nizbYnh6TczGJISRNuupzmK7eA9yZ96k=
+			bNmQ0rEGhcMbXwKZzcQtvR7aXh3J6vyflNoMiMayA9A=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/gDx-2D-w9m-view-sWr-hJ-8G2.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			EL10f5fKSrZ+9lHEQRoV50iZAOY=
+			hOBP8lBLBn6wZ6Lrsp0UPS8H6xw=
 			</data>
 			<key>hash2</key>
 			<data>
-			pq1bU/SISt+OqUmK3RW9r4iZpUFlJybIrfIiGM/261s=
+			eJbPrLZWTkbxmwRBP7KNG79EtTitDA7FqnCs+338fns=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/iSO-09-yJb-view-5kt-1Z-bTl.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			veTc30t6gp0nR4pEwjXrXszhV3I=
+			DfFozuauy6EOmGtyMNPacpWHTrE=
 			</data>
 			<key>hash2</key>
 			<data>
-			YRu5Q0GsG9qNwywoaHKw7GuCKwu77SjWQivuZ9rFFOs=
+			sADjUHwwEKfusKvrJ+/jSk65uab77aweyZ7js+C3MZY=
 			</data>
 		</dict>
 		<key>Screen.storyboardc/pE3-5w-7n8-view-80P-gE-Eg8.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			p8F3SByhYQ0wOdBv1MytMKtTMNc=
+			kqZzPfDR0XM/OVeMVgfqpVcPCgc=
 			</data>
 			<key>hash2</key>
 			<data>
-			eswXAHVFLbF3nvrTcuR76CRTha3GuRgJ0Hri6aAvz3U=
+			4rQ5854qYQKFMUk/0mF5OekpT+HcJZfdSWfc6Tuw4n0=
 			</data>
 		</dict>
 		<key>TopHeaderCollectionViewCell.nib</key>
