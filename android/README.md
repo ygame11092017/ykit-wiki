@@ -296,7 +296,6 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
                 public void onResume() {
                 }
             });
-            YKit.get().setPaymentInfo("myServerId", "myCharId", "myPaymentId");
         }
     
         @Override
@@ -330,10 +329,12 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
   + `onInAppPurchase`: notify purchase success
   + `onPause`: call when game pause
   + `onResume`: call when game resume
-  
-  You will give us payment info using`setPaymentInfo()` method with 3 parameter `serverId`, `charId`, `paymentId`
 
-## C. Public function
+## C. setPaymentInfo function (important)
+    You will give us payment info using`setPaymentInfo()` method with 3 parameter `serverId`, `charId`, `paymentId`
+    You need to call setPaymentInfo() when start game (after user login and choose server)
+
+## D. Public function
 
   + `YKit.get().openLogin()`: open login windows 
   + `YKit.get().openInApp()`: open inapp purchase windows 
