@@ -330,8 +330,8 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
   + `onPause`: call when game pause
   + `onResume`: call when game resume
 
-## C. setPaymentInfo function (important)
-    You will give us payment info using`setPaymentInfo()` method with 3 parameter `serverId`, `charId`, `paymentId`
+## C. setPaymentInfo function
+    You will give us payment info using`setPaymentInfo()` method with 3 parameter `serverId`, `charId`, `paymentId`. Sdk will use info of setPaymentInfo() to send to game server 
     You need to call setPaymentInfo() when start game (after user login and choose server)
 
 ## D. Public function
