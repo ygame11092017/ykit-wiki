@@ -338,13 +338,14 @@ else {
 	[[YKit getInstance] showLoginScreen];
 }
 ```
-        
-* showButtonLauncherWithAnimation 
-* hideButtonLauncherWithAnimation
+
+* showButtonLauncherWithAnimation: Show SDK hovering button. (set YES to enable fading animation and NO to instantly show or hide)
+* hideButtonLauncherWithAnimation: Hide SDK hovering button. (set YES to enable fading animation and NO to instantly show or hide)
 * showLoginScreen: Show the login screen, if user not logged in yet
 * showPaymentScreen: You may want to show payment screen from your game
 * handleShowSDKCompletion: You can get the event show SDK here
 * handleCloseSDKCompletion: You can get the event show SDK here
+
 #### 1.6. Turn on Application necessary Capabilities.
 - Turn on Push Notification
 - Turn on Background Mode for Push Notification
