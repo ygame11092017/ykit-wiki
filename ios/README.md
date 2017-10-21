@@ -341,6 +341,12 @@ else {
 
 * showButtonLauncherWithAnimation: Show SDK hovering button. (set YES to enable fading animation and NO to instantly show or hide)
 * hideButtonLauncherWithAnimation: Hide SDK hovering button. (set YES to enable fading animation and NO to instantly show or hide)
+
+```
+[launcher showButtonLauncherWithAnimation:YES];
+[launcher showButtonLauncherWithAnimation:NO];
+```
+
 * showLoginScreen: Show the login screen, if user not logged in yet
 * showPaymentScreen: You may want to show payment screen from your game
 * handleShowSDKCompletion: You can get the event show SDK here
