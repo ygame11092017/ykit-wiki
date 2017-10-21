@@ -339,12 +339,12 @@ else {
 }
 ```
 
-* showButtonLauncherWithAnimation: Show SDK hovering button. (set YES to enable fading animation and NO to instantly show or hide)
-* hideButtonLauncherWithAnimation: Hide SDK hovering button. (set YES to enable fading animation and NO to instantly show or hide)
+* showButtonLauncherWithAnimation: Show SDK hovering button. (set YES to enable fading animation and NO to instantly show)
+* hideButtonLauncherWithAnimation: Hide SDK hovering button. (set YES to enable fading animation and NO to instantly hide)
 
 ```
-[launcher showButtonLauncherWithAnimation:YES];
-[launcher showButtonLauncherWithAnimation:NO];
+[launcher showButtonLauncherWithAnimation:YES];YES
+[launcher hideButtonLauncherWithAnimation:];
 ```
 
 * showLoginScreen: Show the login screen, if user not logged in yet
