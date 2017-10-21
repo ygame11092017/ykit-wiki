@@ -323,7 +323,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 }
 ```
 #### 1.5. Public functions
-- Here is the list of public functions you can call to customize the YKit in your game: 
+Here is the list of public functions you can call to customize the YKit in your game: 
 
 * setLauncherStickySide: You can specific the side that launcher can stick to via the or bitwise. 
 Ex: ATButtonStickySideTop | ATButtonStickySideBottom 
