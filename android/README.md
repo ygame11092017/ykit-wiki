@@ -176,6 +176,7 @@ Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
         compile deps.rxlifecycleAndroid
         compile deps.rxlifecycleComponents
         compile deps.nybus
+        compile deps.localeChanger
     
         compile deps.dbflow
         compile deps.dbflowCore
