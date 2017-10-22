@@ -49,6 +49,7 @@ ext {
     materialColorsVersion = "3.0.0"
     transitionseverywhereVersion = "1.7.6"
     calligraphyVersion = "2.3.0"
+    localeChangerVersion = "0.9.1"
 
     appsflyerVersion = "4.8.3"
     facebookVersion = "4.26.0"
@@ -120,6 +121,7 @@ ext.deps = [
         rxbindingRecyclerview: "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:${rxbindingVersion}",
         rxrelay              : "com.jakewharton.rxrelay2:rxrelay:${rxRelayVersion}",
         nybus                : "com.mindorks.nybus:nybus-android:${nybusVersion}",
+        localeChanger        : "com.github.franmontiel:LocaleChanger:${localeChangerVersion}",
 
         dbflow               : "com.github.Raizlabs.DBFlow:dbflow:${dbflowVersion}",
         dbflowCore           : "com.github.Raizlabs.DBFlow:dbflow-core:${dbflowVersion}",
