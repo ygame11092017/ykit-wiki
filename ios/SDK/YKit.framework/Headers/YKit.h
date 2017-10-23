@@ -56,7 +56,7 @@ FOUNDATION_EXPORT const unsigned char YKitVersionString[];
 - (void)setPaymentExtraDataObject:(NSObject<PaymentExtraDataProtocol> *)object;
 - (void)handleLoginWithCompletion:(void (^) (NSDictionary *data))completion;
 - (void)handleLogoutWithCompletion:(void (^) ())completion;
-- (void)handlePaymentWithCompletion:(void (^) (NSString *data))completion;
+- (void)handlePaymentWithCompletion:(void (^) (NSDictionary *data))completion;
 - (void)handleShowSDKCompletion:(void (^)())completion;
 - (void)handleCloseSDKCompletion:(void (^)())completion;
 // for orientation
