@@ -74,7 +74,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
     }];
     
     // handle payment callback
-    [launcher handlePaymentWithCompletion:^(NSString *data){
+    [launcher handlePaymentWithCompletion:^(NSDictionary *data){
          NSLog(@"Payment success! %@", data);
     }];
         
