@@ -100,4 +100,12 @@ NOTE: Step 6.1 and 6.2 just use for the game can’t send a message from server 
 | Response        |JSON Format            |
 | ------------- |:-------------:|
 | success response      | {"status": "1", "msg":""} |
-| Failure response      | {"status": "0", "msg":"reason"} |
+| Failure response      | {"status": "error_code", "msg":"reason"} |
+
+| Error code        |Reason            |
+| ------------- |:-------------:|
+| -1      | system error |
+| -2      | invalid character id|
+| -3      | invalid server id|
+| -4      | invalid payment id |
+| -5      | unknow error |
