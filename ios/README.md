@@ -60,7 +60,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
     
     // Handle login callback
     [launcher handleLoginWithCompletion:^(NSDictionary *data) {
-         [launcher getFacebookInfo];git
+         [launcher getFacebookInfo];gitgit push github
          NSString *userID = data[kParamUserID];
          NSString *userName = data[kParamUserName];
          NSString *accessToken = data[kParamAccessToken];
