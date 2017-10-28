@@ -32,7 +32,7 @@ FOUNDATION_EXPORT const unsigned char YKitVersionString[];
 - (void)setDomainDebug:(BOOL)debug;
 - (AppsFlyerTracker*)getAppflyer;
 // for push notification
-- (void) appDidReceiveNotification:(NSDictionary *)userInfo;
+- (void) appDidReceiveMessage:(NSDictionary *)userInfo;
 // for launcher
 - (void)setPermissionFacebook:(NSString *)permission;
 - (NSDictionary *)checkFacebookAccessToken;
