@@ -266,12 +266,12 @@ if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
 ```
 // [START receive_message]
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [[YKit getInstance] appDidReceiveMessage:userInfo];
+    
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-    [[YKit getInstance] appDidReceiveMessage:userInfo];
+   
     completionHandler(UIBackgroundFetchResultNewData);
 }
 // [END receive_message]
@@ -294,7 +294,7 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
 didReceiveNotificationResponse:(UNNotificationResponse *)response
          withCompletionHandler:(void(^)())completionHandler {
     NSDictionary *userInfo = response.notification.request.content.userInfo;
-    [[YKit getInstance] appDidReceiveMessage:userInfo];
+    
     completionHandler();
 }
 #endif
