@@ -286,7 +286,7 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     NSDictionary *userInfo = notification.request.content.userInfo;
     //[[YKit getInstance] appDidReceiveMessage:userInfo];
     // Change this to your preferred presentation option
-    completionHandler(UNNotificationPresentationOptionAlert);
+    completionHandler(UNNotificationPresentationOptionAlert); 
 }
 
 // Handle notification messages after display notification is tapped by the user.
