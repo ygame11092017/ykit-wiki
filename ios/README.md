@@ -79,7 +79,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
     }];
         
     //    NSLog(@"sample %@" ,[launcher getFacebookInfo]);
-    [launcher setDomainDebug:YES];
+    [launcher setServerTest:NO];
    
     if ([launcher silentLogin]) {
             
@@ -284,9 +284,9 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
        willPresentNotification:(UNNotification *)notification
          withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
     NSDictionary *userInfo = notification.request.content.userInfo;
-    [[YKit getInstance] appDidReceiveMessage:userInfo];
+    //[[YKit getInstance] appDidReceiveMessage:userInfo];
     // Change this to your preferred presentation option
-    completionHandler(UNNotificationPresentationOptionNone);
+    completionHandler(UNNotificationPresentationOptionAlert);
 }
 
 // Handle notification messages after display notification is tapped by the user.
@@ -322,12 +322,64 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     [[YKit getInstance] setFCMToken:fcmToken];
 }
 ```
-#### 1.5. Public functions
+#### 1.5. Setup 3 Days reminder to play the game
+- Add these code after the setup of push notification (It's also in didFinishLaunchingWithOptions)
+```
+//SETUP 3 DAY LATER NOTIFICATION IF USER HAVEN'T PLAYED
+    // CLEAR ALL REMAIN LOCAL NOTIFICATION
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    // iOS 8 or later
+    // [START register_for_notifications]
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_9_x_Max) {
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        
+        UILocalNotification *notification = [[UILocalNotification alloc] init];
+        notification.fireDate = [[NSDate date] dateByAddingTimeInterval:(3*24*60*60)];
+        notification.alertBody = @"Chúa Công đã lâu không màng giang sơn triều chính, chúng thần khẩn cầu Chúa Công về chủ trì đại cục.";
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+        
+    } else {
+        // iOS 10 or later
+#if defined(__IPHONE_10_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+        UNMutableNotificationContent *objNotificationContent = [[UNMutableNotificationContent alloc] init];
+        
+        objNotificationContent.body = @"Chúa Công đã lâu không màng giang sơn triều chính, chúng thần khẩn cầu Chúa Công về chủ trì đại cục.";
+        
+        objNotificationContent.sound = [UNNotificationSound defaultSound];
+        
+        /// 4. update application icon badge number
+        objNotificationContent.badge = @([[UIApplication sharedApplication] applicationIconBadgeNumber] + 1);
+        
+        // Deliver the notification in five seconds.
+        UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger
+                                                      triggerWithTimeInterval:(3*24*60*60) repeats:NO];
+        
+        UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@"three"
+                                                                              content:objNotificationContent trigger:trigger];
+        
+        /// 3. schedule localNotification
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+            if (!error) {
+                NSLog(@"Local Notification succeeded");
+            }
+            else {
+                NSLog(@"Local Notification failed");
+            }
+        }];
+        
+        
+        
+#endif
+    }
+
+```
+#### 1.6. Public functions
 Here is the list of public functions you can call to customize the YKit in your game: 
 
 * setLauncherStickySide: You can specific the side that launcher can stick to via the or bitwise. 
 Ex: ATButtonStickySideTop | ATButtonStickySideBottom 
-
+* setServerTest: Use ygame server test
 * silentLogin: When open the app, maybe user is already logged in. Call this function to check if user is logged in or not, if not, you must call showLoginScreen function to show the login screen. 
 
 ```
@@ -352,7 +404,7 @@ else {
 * handleShowSDKCompletion: You can get the event show SDK here
 * handleCloseSDKCompletion: You can get the event show SDK here
 
-#### 1.6. Turn on Application necessary Capabilities.
+#### 1.7. Turn on Application necessary Capabilities.
 - Turn on Push Notification
 - Turn on Background Mode for Push Notification
 - Turn on InApp-Purchase

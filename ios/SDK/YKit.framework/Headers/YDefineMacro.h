@@ -33,4 +33,6 @@ static NSString* Response_##__name__##_Fail = @"res_"#__name__"_fail"
 
 #define UniValue(__value1__, __value2__) (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ? __value1__ : __value2__)
 
+
+
 #endif /* YDefineMacro_h */

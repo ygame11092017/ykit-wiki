@@ -29,7 +29,7 @@ FOUNDATION_EXPORT const unsigned char YKitVersionString[];
 
 // setup
 - (void)setupWithWindow:(UIWindow *)window usingFacebookSDK:(BOOL)usingFaceookSDK;
-- (void)setDomainDebug:(BOOL)debug;
+- (void)setServerTest:(BOOL)isTest;
 - (AppsFlyerTracker*)getAppflyer;
 // for push notification
 - (void) appDidReceiveMessage:(NSDictionary *)userInfo;
