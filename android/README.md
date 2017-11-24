@@ -345,3 +345,4 @@ You need to call setPaymentInfo() when start game (after user login and choose s
   + `YKit.get().logout()`: logout of YKit 
   + `YKit.get().showLauncher()`: show floating widget 
   + `YKit.get().hideLauncher()`: hide floating widget
+  + `YKit.get().setServerTest(boolean isTest);`: Use server test or not
