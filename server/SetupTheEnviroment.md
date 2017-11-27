@@ -2,18 +2,18 @@
 
 ## 1. Build Live
 
-* Step 1: In the client side of Xlauncher (android and ios), use the function setDomainDebug(false)
+* Step 1: In the client side of YKit (android and ios), use the function setServerTest(false)
 
-* Step 2: In your server game, call to the live domain of Xlauncher server at https://api.nivi.vn
+* Step 2: In your server game, call to the live domain of YKit server at https://api.ygame.vn
 
 
 
 
 ## 2. Build Test
 
-* Step 1: In the client side of Xlauncher (android and ios), use the function setDomainDebug(true)
+* Step 1: In the client side of YKit (android and ios), use the function setServerTest(true)
 
-* Step 2: In your server game, call to the live domain of Xlauncher server at https://devsdk.nivi.vn
+* Step 2: In your server game, call to the test domain of YKit server at https://dev.ygame.vn
 
 
 
