@@ -4,6 +4,8 @@ You can get config files in [files folder](files/)
 
 Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
 
+Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://github.com/ygame11092017/ykit-demo-android)
+
 ## Index
 + [A. Prerequisites](#a-prerequisites)
 + [B. Integrate SDK](#b-integrate-sdk)
