@@ -367,13 +367,10 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
                 NSLog(@"Local Notification failed");
             }
         }];
-        
-        
-        
 #endif
     }
+```    
 
-```
 #### 1.6. Public functions
 Here is the list of public functions you can call to customize the YKit in your game: 
 
