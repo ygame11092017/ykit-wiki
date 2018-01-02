@@ -2,7 +2,7 @@
 
 You can get config files in [files folder](files/)
 
-Video Tutorials: [https://youtu.be/BQYVgPVMoV4](https://youtu.be/BQYVgPVMoV4)
+Video Tutorials: [file](files/How%20to%20integrate%20YKit%20to%20android.mp4) or [youtube](https://youtu.be/BQYVgPVMoV4)
 
 Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://github.com/ygame11092017/ykit-demo-android)
 
