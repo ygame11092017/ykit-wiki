@@ -135,26 +135,6 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 }
 ```
 
-- This example code is apply for landscape mode.You can set it through "didFinishLaunchingWithOptions"
-
-		[YKit getInstance].isPotrait = YES (Potrait only);
-		// else landscape is NO;			
-- Base on your game orientation, if your game support both portrait and landscape then you must replace UIInterfaceOrientationMaskLandscape with UIInterfaceOrientationMaskAll, if you game is only support portrait mode, then you don’t need to add this function.
-	
-```
-- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
-            { 
-
-            if ([[YKit getInstance] isScreenRotateToPortrait]) { 
-
-            return UIInterfaceOrientationMaskPortrait; 
-
-            } else 	
-            
-            return UIInterfaceOrientationMaskLandscape; 
-            
-            } 
-```
 #### 1.4. Setup Firebase Push-Notifications
 ##### 1.4.1 Setup Firebase framework
 
@@ -407,10 +387,13 @@ else {
 - Turn on InApp-Purchase
 
 ### 2. Implement Payment Info
+### 2.1 Set user Payment Info
+Payment Info is the data you send to game server when user make payment. (This help user buy Inapp purchase gold)
 
-Payment Info is the data you send to game server when user make payment. 
 For example: if your game have multiple servers or multiple characters, you may want to send this data to game server, so its will know which character get the gold. The format is defined on your demand. 
-    
+
+***Important: After user login with selected server and character, you must set the payment info with this function (You can set payment to null).
+
 Note*: 
 * It must be unique string
 * Maximum is 50 characters
@@ -425,19 +408,41 @@ Example usage
 ```
 [ykit setPaymentInfo:@"Server ID" andCharId:@"Character ID" andPayment:@"Payment package"];
 
-//This is the command to sending the payment info to game server.
-//[ykit buyItemWithGameOrder];
 ```
-    
-### 2. Flow
+### 2.2 Setup YCoin Support
+If your game support YCOIN
 
-#### 2.1. Login flow: 
+We provide a buy function, which used to buy the item from your game.
+
+---buy with parameters:
+
++serverId: User current server id
+
++char_id: User current character id
+
++payment_id: The package user want to buy
+
++isConfirm: If this is true, there will be a confirm diablog before user can buy. If false, user will instantly buy the item.
+
+```
+(BOOL)buy:(NSString*)serverId char_id:(NSString*)charId payment_id:(NSString*)payment isConfirm:(bool)is_confirm;
+```
+Example usage
+
+```
+[ykit buy:@"Server ID" char_id:@"Character ID" payment_id:@"Payment package" isConfirm:YES];
+
+```
+
+### 3. Flow
+
+#### 3.1. Login flow: 
 ![](Images/loginFlow.png)
 
-#### 2.2. Payment flow:
+#### 3.2. Payment flow:
 ![](Images/PaymentFlow.png)
 
-### 3. Build note
+### 4. Build note
 Please input full information in Xcode before build the product
 - Display Name: name appear on the device
 - Bundle identifier: bundle id of your game which provided by YGame
