@@ -334,11 +334,46 @@ Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://githu
   + `onResume`: call when game resume
 
 ## C. setPaymentInfo function
-You will give us payment info using`setPaymentInfo()` method with 3 parameter `serverId`, `charId`, `paymentId`. Sdk will use info of setPaymentInfo() to send to game server
+Payment Info is the data you send to game server when user make payment. (This help user buy Inapp purchase gold)
+
+You will give us payment info using`setPaymentInfo()` method with 3 parameter `serverId`, `charId`, `paymentId` (you can set paymentId to null). Sdk will use info of setPaymentInfo() to send to game server
  
 You need to call setPaymentInfo() when start game (after user login and choose server)
 
-## D. Public function
+```
+public void setPaymentInfo(String serverId, String charId, String paymentId)
+```
+
+Example usage
+```
+YKit.get().setPaymentInfo("myServerId", "myCharId", "myPaymentId")
+```
+
+## D. Setup YCoin Support
+
+If your game support YCOIN, we provide a buy function, which used to buy the item from your game.
+
+Buy function has 4 parameters:
+
++ serverId: User current server id
+
++ charId: User current character id
+
++ paymentId: The package user want to buy
+
++ isConfirm: If this is true, there will be a confirm diablog before user can buy. If false, user will instantly buy the item.
+
+
+```
+public void buy(String serverId, String charId, String paymentId, boolean isConfirm)
+```
+
+Example usage
+```
+YKit.get().buy("myServerId", "myCharId", "myPaymentId",false);
+```
+
+## E. Public function
 
   + `YKit.get().openLogin()`: open login windows 
   + `YKit.get().openInApp()`: open inapp purchase windows 
