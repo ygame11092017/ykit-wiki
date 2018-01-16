@@ -20,7 +20,7 @@ FOUNDATION_EXPORT const unsigned char YKitVersionString[];
 
 #import "YDefine.h"
 
-@interface YKit : NSObject <AppsFlyerTrackerDelegate>
+@interface YKit : NSObject <AppsFlyerTrackerDelegate, UIAlertViewDelegate>
 @property (nonatomic, assign) BOOL isPotrait;
 @property (nonatomic, readonly) BOOL isSetup;
 @property (nonatomic, strong) UIWindow *atWindow;
@@ -46,7 +46,7 @@ FOUNDATION_EXPORT const unsigned char YKitVersionString[];
 - (void)showPaymentScreen;
 - (void)showUserInfoScreen;
 - (BOOL)silentLogin;
-- (int)getExtraCoin;
+- (int)getCoin;
 //- (void)setGameOrder:(NSString *)gameOrder;
 - (BOOL)setPaymentInfo:(NSString*)serverId andCharId:(NSString*)charId andPayment:(NSString*)payment;
 - (void)buyItemWithGameOrder;
@@ -58,7 +58,7 @@ FOUNDATION_EXPORT const unsigned char YKitVersionString[];
 - (void)handleLogoutWithCompletion:(void (^) ())completion;
 - (void)handlePaymentWithCompletion:(void (^) (NSDictionary *data))completion;
 - (void)handleShowSDKCompletion:(void (^)())completion;
-- (void)handleCloseSDKCompletion:(void (^)())completion;
+- (void)handleCloseSDKCompletioyn:(void (^)())completion;
 // for orientation
 -(void)potraitOnly:(BOOL)value;
 -(BOOL)isScreenRotateToPortrait;
@@ -71,4 +71,7 @@ FOUNDATION_EXPORT const unsigned char YKitVersionString[];
 - (void)setACTConversionID:(NSString *)conversionID andLabel:(NSString *)label andValue:(NSString *)value;
 - (void)setGoogleAnalyticsID:(NSString *)analyticsID;
 - (void) setFCMToken:(NSString*) fcm_Token;
+- (void)setPaymentID:(NSString *)paymentID;
+
+- (BOOL)buy:(NSString*)serverId char_id:(NSString*)charId payment_id:(NSString*)payment isConfirm:(bool)is_confirm;
 @end
