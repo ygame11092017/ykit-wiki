@@ -1,22 +1,22 @@
 # Web Payment
-This is the XCT Payment System on Web. User can purchase the game content by using the XCT Web Payment
+This is the YGame Payment System on Web. User can purchase the game content by using the YGame Web Payment
 ## 1. Flow
 ![alt text](https://github.com/xctcorporation/ServerIntegration/blob/master/webpayment_flow.jpg)
 
-- 1: User login to XCT System by using the nivi account
+- 1: User login to YGame System
 - 2: API get list server game. This is the HTTP GET provided by Server Game to return the list of server game 
 - 3: API get list character. This is the HTTP GET provided by Server Game to return the list of characters base on the selected server game 
 - 4: API get list payment. This is the HTTP GET provided by Server Game to return all purchase packages which offer in the game
-- 5: Pay with XCT System. XCT provide some payment method such as Card, Banking ...
+- 5: Pay with YGame System via Card, Banking ...
 - 6: API payment success. Called when user make the payment successfully
 
 ## 1. API get list server game
-This is your own API to return the list of server game to XCT payment system.
+This is your own API to return the list of your server game.
 - Method: HTTP GET
 - Params: 
-  + app_id: The id of your application is issued by XCT, use this parameter to classify android and ios
-  + xct_id: id of xct account
-  + sign: Used to verify the request. [Click here to know how to verify the signature](https://github.com/xctcorporation/ServerIntegration/blob/master/HowToCreateSignature.md#21-api-get-list-server-game)
+  + app_id: The id of your application, use this parameter to classify android and ios
+  + user_id: id of xct account
+  + sign: Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#21-api-get-list-server-game)
   
 - Response: return the result in json format. For example: your game has four server games. The response will be returned as below
 ```
@@ -36,10 +36,10 @@ This is your own API to return the list of server game to XCT payment system.
 This is your own API to return the list of characters in game
 - Method: HTTP GET
 - Params: 
-  + app_id: The id of your application is issued by XCT, use this parameter to classify android and ios
-  + xct_id: id of xct account
+  + app_id: The id of your application, use this parameter to classify android and ios
+  + user_id: id of xct account
   + server_id: id of server game. Get from the previous step
-  + sign: Used to verify the request. [Click here to know how to verify the signature](https://github.com/xctcorporation/ServerIntegration/blob/master/HowToCreateSignature.md#22-api-get-list-characters)
+  + sign: Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#22-api-get-list-characters)
   
 - Response: return the result in json format. For example: A user have three characters in the server S2. Their names are herror, warrior, king. The result will be returned as below
 ```
@@ -60,11 +60,11 @@ This is your own API to return the list payment packages of your game
 
 - Method: HTTP GET
 - Params: 
-  + app_id: The id of your application is issued by XCT, use this parameter to classify android and ios
-  + xct_id: id of xct account
+  + app_id: The id of your application, use this parameter to classify android and ios
+  + user_id: id of xct account
   + char_id: id of character in game. Get from the previous step
   + server_id: id of server game
-  + sign: Used to verify the request. [Click here to know how to verify the signature](https://github.com/xctcorporation/ServerIntegration/blob/master/HowToCreateSignature.md#23-api-get-list-payment)
+  + sign: Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#23-api-get-list-payment)
   
 - Response: return the result in json format. For example: the response is corresponding to the screenshot above
 ```
@@ -89,30 +89,3 @@ This is your own API to return the list payment packages of your game
   + normal: normal package, for example, purchare for gold, coin
   + special: some special packages, for example: weekly, daily
 
-## 3. API payment success
-- This is your own API to received the payment success request from Xlauncher Server. Please build your API in GET method. When users finish the payment transaction in Xlauncher system, Xlauncher server will send the notification to your application server-side via your callback url with the following parameters.
-
-| Name        | Description           |
-| ------------- |:-------------:|
-| amount      | Value of the purchase |
-| app_id      | The id of your application is issued by XCT, use this parameter to classify android and ios       |
-| response_time | Purchase time|
-| transaction_id | id of the transaction|
-| transaction_type | Type of purchase: CARD, BANK|
-| currency | VN or USD |
-| user_id | id of user, who make the request|
-| char_id | id of character - get from API get list server game|
-| server_id | id of server game - get from API get list server game|
-| payment_id | id of payment package - get from API get list payment|
-| order_id | order id|
-| card_code | * if transaction_type = CARD, card_code = code|
-| card_serial | * if transaction_type = CARD, card_serial = serial|
-| card_vendor | * if transaction_type = CARD, card_vendor = name|
-| sign | Used to verify the request. [Click here to know how to verify the signature](https://github.com/xctcorporation/ServerIntegration/blob/master/HowToCreateSignature.md#24-api-web-payment-callback) |
-
-- Your API must be response the result in the JSON format as description in the table below
-
-| Response        |JSON Format            |
-| ------------- |:-------------:|
-| success response      | {"status": "1", "msg":""} |
-| Failure response      | {"status": "0", "msg":"reason"} |
