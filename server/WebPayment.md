@@ -72,19 +72,18 @@ This is your own API to return the list payment packages of your game
   "status":1,
   "msg":"",
   "data":[
-    {"name":"80 Nguyen Bao","id":"80_nb","image_url":"http://xxx", "price":20000, "type":"normal"},
-    {"name":"200 Nguyen Bao","id":"200_nb","image_url":"http://xxx", "price":50000, "type":"normal"},
-    {"name":"400 Nguyen Bao","id":"400_nb","image_url":"http://xxx", "price":100000, "type":"normal"},
-    {"name":"2000 Nguyen Bao","id":"2000_nb","image_url":"http://xxx", "price":500000, "type":"normal"},
-    {"name":"4000 Nguyen Bao","id":"4000_nb","image_url":"http://xxx", "price":1000000, "type":"normal"},
-    {"name":"6000 Nguyen Bao","id":"6000_nb","image_url":"http://xxx", "price":1500000, "type":"normal"},
-    {"name":"20000 Nguyen Bao","id":"20000_nb","image_url":"http://xxx", "price":5000000, "type":"normal"},
-    {"name":"350kc /ngay","id":"350kc","image_url":"http://xxx", "price":10000000, "type":"special"},
-    {"name":"450kc /ngay","id":"450kc","image_url":"http://xxx", "price":10000000, "type":"special"}
+    {"name":"80 Nguyen Bao","id":"80_nb", "type":"normal"},
+    {"name":"200 Nguyen Bao","id":"200_nb", "type":"normal"},
+    {"name":"400 Nguyen Bao","id":"400_nb", "type":"normal"},
+    {"name":"2000 Nguyen Bao","id":"2000_nb", "type":"normal"},
+    {"name":"4000 Nguyen Bao","id":"4000_nb", "type":"normal"},
+    {"name":"6000 Nguyen Bao","id":"6000_nb", "type":"normal"},
+    {"name":"20000 Nguyen Bao","id":"20000_nb", "type":"normal"},
+    {"name":"350kc /ngay","id":"350kc", "type":"special"},
+    {"name":"450kc /ngay","id":"450kc", "type":"special"}
   ]
 }
 ```
-- Icon size: 210 x 130
 - Type:
   + normal: normal package, for example, purchare for gold, coin
   + special: some special packages, for example: weekly, daily
