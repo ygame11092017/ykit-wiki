@@ -21,7 +21,7 @@ https://yourdomain.com/sdk_callback_payment?amount=0.99&app_id=ea2d5a18ebbd43871
 
 ```
 sign = md5( values + appSecret )
-* appSecret: the secret key of your application is issued by XCT
+* appSecret: the secret key of your application is issued by YGame
 
 For example:
 var appSecret = "ff9af584ad6c9328930f3925f2c973f0"
@@ -31,7 +31,7 @@ sign = md5 ( values + appSecret ) = 16f97f19fe1ded03bb3e175b19a0709e
 ### 2.1. API get list server game
 Method: HTTP GET
 Params:
-app_id: The id of your application is issued by XCT, use this parameter to classify android and ios
+app_id: The id of your application is issued by YGame, use this parameter to classify android and ios
 xct_id: id of xct account  
 sign: Used to verify the request.
 
@@ -55,7 +55,7 @@ https://yourdomain.com/get_list_server?app_id=ea2d5a18ebbd43871103b502f804db79&x
 
 ```
 sign = md5( values + appSecret )
-* appSecret: the secret key of your application is issued by XCT
+* appSecret: the secret key of your application
 
 For example:
 var appSecret = "ff9af584ad6c9328930f3925f2c973f0"
@@ -64,7 +64,7 @@ sign = md5 ( values + appSecret ) = ae5403d7469d07a11089593b5c4cc082
 ### 2.2. API get list characters
 Method: HTTP GET
 Params:
-app_id: The id of your application is issued by XCT, use this parameter to classify android and ios
+app_id: The id of your application is issued by YGame, use this parameter to classify android and ios
 xct_id: id of xct account  
 server_id: id of server game. Get from the previous step  
 sign: Used to verify the request.
@@ -89,7 +89,7 @@ https://yourdomain.com/get_list_character?app_id=ea2d5a18ebbd43871103b502f804db7
 
 ```
 sign = md5( values + appSecret )
-* appSecret: the secret key of your application is issued by XCT
+* appSecret: the secret key of your application
 
 For example:
 var appSecret = "ff9af584ad6c9328930f3925f2c973f0"
@@ -99,7 +99,7 @@ sign = md5 ( values + appSecret ) = db53b60570662098176fc6e955af4af0
 ### 2.3. API get list payment
 Method: HTTP GET
 Params:
-app_id: The id of your application is issued by XCT, use this parameter to classify android and ios
+app_id: The id of your application, use this parameter to classify android and ios
 xct_id: id of xct account
 char_id: id of character in game. Get from the previous step
 server_id: id of server game
@@ -125,7 +125,7 @@ https://yourdomain.com/get_list_payment?app_id=ea2d5a18ebbd43871103b502f804db79&
 
 ```
 sign = md5( values + appSecret )
-* appSecret: the secret key of your application is issued by XCT
+* appSecret: the secret key of your application
 
 For example:
 var appSecret = "ff9af584ad6c9328930f3925f2c973f0"
@@ -135,7 +135,7 @@ sign = md5 ( values + appSecret ) = c16372fb2336553338416671a008e13a
 Method: HTTP GET
 Params:
 amount:	Value of the purchase
-app_id:	The id of your application is issued by XCT, use this parameter to classify android and ios     
+app_id:	The id of your application, use this parameter to classify android and ios     
 response_time: Purchase time
 transaction_id:	id of the transaction
 transaction_type: Type of purchase: CARD, BANK
@@ -171,7 +171,7 @@ https://yourdomain.com/web_callback_payment?amount=0.99&app_id=ea2d5a18ebbd43871
 
 ```
 sign = md5( values + appSecret )
-* appSecret: the secret key of your application is issued by XCT
+* appSecret: the secret key of your application
 
 For example:
 var appSecret = "ff9af584ad6c9328930f3925f2c973f0"
