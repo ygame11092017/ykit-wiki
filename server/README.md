@@ -83,16 +83,11 @@ NOTE: Step 6.1 and 6.2 just use for the game can’t send a message from server 
 | app_id      | The id of your application is issued by YGame, use this parameter to classify android and ios       |
 | response_time | Purchase time|
 | transaction_id | id of the transaction|
-| transaction_type | Type of purchase: CARD, BANK|
-| currency | VN or USD |
+| transaction_type | Type of purchase: COIN|
 | user_id | id of user, who make the request|
 | char_id | id of character - get from function setPaymentInfo in YKit client|
 | server_id | id of server game - get from function setPaymentInfo in YKit client|
 | payment_id | id of payment package - get from function setPaymentInfo in YKit client|
-| order_id | order id|
-| card_code | * if transaction_type = CARD, card_code = code|
-| card_serial | * if transaction_type = CARD, card_serial = serial|
-| card_vendor | * if transaction_type = CARD, card_vendor = name|
 | sign | Used to verify the request.
 
 - Your API must be response the result in the JSON format as description in the table below
