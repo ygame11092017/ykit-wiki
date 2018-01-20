@@ -15,7 +15,7 @@ This is your own API to return the list of your server game.
 - Method: HTTP GET
 - Params: 
   + app_id: The id of your application, use this parameter to classify android and ios
-  + user_id: id of xct account
+  + user_id: id of YKit account
   + sign: Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#21-api-get-list-server-game)
   
 - Response: return the result in json format. For example: your game has four server games. The response will be returned as below
@@ -37,7 +37,7 @@ This is your own API to return the list of characters in game
 - Method: HTTP GET
 - Params: 
   + app_id: The id of your application, use this parameter to classify android and ios
-  + user_id: id of xct account
+  + user_id: id of YKit account
   + server_id: id of server game. Get from the previous step
   + sign: Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#22-api-get-list-characters)
   
@@ -61,7 +61,7 @@ This is your own API to return the list payment packages of your game
 - Method: HTTP GET
 - Params: 
   + app_id: The id of your application, use this parameter to classify android and ios
-  + user_id: id of xct account
+  + user_id: id of YKit account
   + char_id: id of character in game. Get from the previous step
   + server_id: id of server game
   + sign: Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#23-api-get-list-payment)
