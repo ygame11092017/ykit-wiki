@@ -59,7 +59,7 @@ If your request is not valid, you will be received the failure response
 ## 2. Web Payment
 This is the YGame Payment System on Web. User can purchase the game content by using the YGame Web Payment
 ### 2.1. Flow
-![alt text](https://github.com/ygame11092017/ykit-wiki/blob/master/server/webpayment_flow.jpg)
+![alt text](https://github.com/ygame11092017/ykit-wiki/blob/master/server/web_flow.jpg)
 
 - 1: User login to YGame System
 - 2: API get list server game. This is the HTTP GET provided by Server Game to return the list of server game 
