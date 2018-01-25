@@ -74,7 +74,7 @@ This is your own API to return the list of your server game.
 - Params: 
   + app_id: The id of your application, use this parameter to classify android and ios
   + user_id: id of YKit account
-  + sign: Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#21-api-get-list-server-game)
+  + sign: Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#11-api-get-list-server-game)
   
 - Response: return the result in json format. For example: your game has four server games. The response will be returned as below
 ```
@@ -97,7 +97,7 @@ This is your own API to return the list of characters in game
   + app_id: The id of your application, use this parameter to classify android and ios
   + user_id: id of YKit account
   + server_id: id of server game. Get from the previous step
-  + sign: Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#22-api-get-list-characters)
+  + sign: Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#12-api-get-list-characters)
   
 - Response: return the result in json format. For example: A user have three characters in the server S2. Their names are herror, warrior, king. The result will be returned as below
 ```
@@ -122,7 +122,7 @@ This is your own API to return the list payment packages of your game
   + user_id: id of YKit account
   + char_id: id of character in game. Get from the previous step
   + server_id: id of server game
-  + sign: Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#23-api-get-list-payment)
+  + sign: Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#13-api-get-list-payment)
   
 - Response: return the result in json format. For example: the response is corresponding to the screenshot above
 ```
@@ -181,7 +181,7 @@ NOTE: Step 6.1 and 6.2 just use for the game can’t send a message from server 
 | server_id | id of server game - get from function setPaymentInfo in YKit client|
 | payment_id | id of payment package - get from function setPaymentInfo in YKit client|
 | order_id | order id|
-| sign | Used to verify the request.
+| sign | Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#14-api-payment-callback)
 
 - Your API must be response the result in the JSON format as description in the table below
 
