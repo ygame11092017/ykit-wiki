@@ -180,6 +180,7 @@ NOTE: Step 6.1 and 6.2 just use for the game can’t send a message from server 
 | char_id | id of character - get from function setPaymentInfo in YKit client|
 | server_id | id of server game - get from function setPaymentInfo in YKit client|
 | payment_id | id of payment package - get from function setPaymentInfo in YKit client|
+| order_id | order id|
 | sign | Used to verify the request.
 
 - Your API must be response the result in the JSON format as description in the table below
