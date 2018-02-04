@@ -278,11 +278,6 @@ Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://githu
                 }
     
                 @Override
-                public void onLoginAuto(int userId, String accessToken) {
-                    
-                }
-    
-                @Override
                 public void onLogout() {
                     
                 }
@@ -327,7 +322,7 @@ Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://githu
   ```   
   
   In the previous code, we provide some callback functions: 
-  + `onLogin`, `onLoginAuto`: notify when user login to YKit system successfully. Handle this function and call login with your server
+  + `onLogin`: notify when user login to YKit system successfully. Handle this function and call login with your server
   + `onLogout`: the event will be fired when user sign out of YKit system. In this case, you must kick the user out of your server as well
   + `onInAppPurchase`: notify purchase success
   + `onPause`: call when game pause
