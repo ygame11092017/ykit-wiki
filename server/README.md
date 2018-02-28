@@ -202,7 +202,9 @@ NOTE: Step 6.1 and 6.2 just use for the game can’t send a message from server 
 - When you want to push notification to user. Use the API below
 
 URL: https://api.ygame.vn/v1/user/push_notify
+
 Params:
+
 | Name        | Description           |
 | ------------- |:-------------:|
 | appId      | The id of your application is issued by YGame, use this parameter to classify android and ios       |
