@@ -80,6 +80,8 @@ Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://githu
             jcenter()
             maven { url "https://maven.google.com" }
             maven { url "https://www.jitpack.io" }
+            maven {url "http://kochava.bintray.com/maven"}
+            maven { url 'http://maven.gameanalytics.com/release' }
         }
     }
     
@@ -139,6 +141,11 @@ Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://githu
         compile deps.firebaseConfig
     
         compile deps.playServicesAuth
+        
+        compile deps.playServicesBase
+        compile deps.installReferrer
+        compile deps.kochavaTracker
+        compile deps.gameanalytics
     
         compile deps.billing
     
@@ -252,7 +259,7 @@ Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://githu
            
  ![](images/manifest.png)      
    
- + Add `facebook_app_id` and `account_kit_client_token` to `app/res/values/strings.xml`
+ + Add `facebook_app_id`, `account_kit_client_token`, `kochava_app_guid`, `gameanalytics_game_key`, `gameanalytics_secret_key` to `app/res/values/strings.xml`
  
  ![](images/strings.png) 
    
