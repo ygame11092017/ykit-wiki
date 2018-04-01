@@ -211,3 +211,6 @@ Params:
 | accessToken      | Get from YKit system |
 | msgid | YGame system will provide this parameter
 
+- Flow
+![alt text](https://github.com/ygame11092017/ykit-wiki/blob/master/server/guide_push.jpg)
+
