@@ -58,7 +58,7 @@ FOUNDATION_EXPORT const unsigned char YKitVersionString[];
 - (void)handleLogoutWithCompletion:(void (^) ())completion;
 - (void)handlePaymentWithCompletion:(void (^) (NSDictionary *data))completion;
 - (void)handleShowSDKCompletion:(void (^)())completion;
-- (void)handleCloseSDKCompletioyn:(void (^)())completion;
+- (void)handleCloseSDKCompletion:(void (^)())completion;
 // for orientation
 -(void)potraitOnly:(BOOL)value;
 -(BOOL)isScreenRotateToPortrait;
