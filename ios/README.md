@@ -23,6 +23,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 ![](Images/addEmbed.png)
 
 #### 1.2. Add url schemes
+#### 1.2.1. Add url schemes for facebook login
 
    - Add the following url schemes for Facebook(“fb” + facebook app id) and Google sign in (Reverse client id) from YKitConfig.plist file
     
@@ -34,6 +35,10 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 ![](Images/addFacebookID.png)
 
    - Add file YKitConfig.plist to your root project (The current YKitConfig.plist in SDK folder is an example file. Remember to use the YKitConfig.plist which is sent by YGame Corp)
+   
+#### 1.2.2. Add url schemes for applink
+   - Add the following url schemes for applink (We will give you the name of scheme)
+![](Images/AddUrlScheme.png)
 
 #### 1.3. Setup Code
 
@@ -343,32 +348,7 @@ else {
 - Turn on Background Mode for Push Notification
 - Turn on InApp-Purchase
 
-### 2. Implement Payment Info
-### 2.1 Set user Payment Info
-Payment Info is the data you send to game server when user make payment. (This help user buy Inapp purchase gold)
-
-For example: if your game have multiple servers or multiple characters, you may want to send this data to game server, so its will know which character get the gold. The format is defined on your demand. 
-
-***Important: After user login with selected server and character, you must set the payment info with this function (You can set payment to null).
-
-Note*: 
-* It must be unique string
-* Maximum is 50 characters
-* There's no special character in string
-
-To use it, we call from ykit.
-```
-setPaymentInfo:(NSString*)serverId andCharId:(NSString*)charId andPayment:(NSString*)payment;
-```
-Example usage
-
-```
-[ykit setPaymentInfo:@"Server ID" andCharId:@"Character ID" andPayment:@"Payment package"];
-
-```
-### 2.2 Setup YCoin Support
-If your game support YCOIN
-
+### 2. Buy item in game by using YCoin
 We provide a buy function, which used to buy the item from your game.
 
 ---buy with parameters:
