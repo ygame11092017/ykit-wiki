@@ -302,53 +302,10 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     [[YKit getInstance] setFCMToken:fcmToken];
 }
 ```
-#### 1.5. Setup 3 Days reminder to play the game
-- Add these code after the setup of push notification (It's also in didFinishLaunchingWithOptions)
+#### 1.5. Setup local push reminder to play the game
 ```
 //SETUP 3 DAY LATER NOTIFICATION IF USER HAVEN'T PLAYED
-    // CLEAR ALL REMAIN LOCAL NOTIFICATION
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    // iOS 8 or later
-    // [START register_for_notifications]
-    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_9_x_Max) {
-        [[UIApplication sharedApplication] cancelAllLocalNotifications];
-        
-        UILocalNotification *notification = [[UILocalNotification alloc] init];
-        notification.fireDate = [[NSDate date] dateByAddingTimeInterval:(3*24*60*60)];
-        notification.alertBody = @"Chúa Công đã lâu không màng giang sơn triều chính, chúng thần khẩn cầu Chúa Công về chủ trì đại cục.";
-        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-        
-    } else {
-        // iOS 10 or later
-#if defined(__IPHONE_10_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
-        UNMutableNotificationContent *objNotificationContent = [[UNMutableNotificationContent alloc] init];
-        
-        objNotificationContent.body = @"Chúa Công đã lâu không màng giang sơn triều chính, chúng thần khẩn cầu Chúa Công về chủ trì đại cục.";
-        
-        objNotificationContent.sound = [UNNotificationSound defaultSound];
-        
-        /// 4. update application icon badge number
-        objNotificationContent.badge = @([[UIApplication sharedApplication] applicationIconBadgeNumber] + 1);
-        
-        // Deliver the notification in five seconds.
-        UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger
-                                                      triggerWithTimeInterval:(3*24*60*60) repeats:NO];
-        
-        UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@"three"
-                                                                              content:objNotificationContent trigger:trigger];
-        
-        /// 3. schedule localNotification
-        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-        [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
-            if (!error) {
-                NSLog(@"Local Notification succeeded");
-            }
-            else {
-                NSLog(@"Local Notification failed");
-            }
-        }];
-#endif
-    }
+    [launcher setReminderLogin:@"reminder text" after:3];
 ```    
 
 #### 1.6. Public functions
