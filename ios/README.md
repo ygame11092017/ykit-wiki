@@ -38,7 +38,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
    
 #### 1.2.2. Add url schemes for applink
    - Add the following url schemes for applink (We will give you the name of scheme)
-![](Images/AddUrlScheme.png)
+![](Images/urlscheme_applink.png)
 
 #### 1.3. Setup Code
 
