@@ -48,10 +48,10 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 
 ```
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Project configure
+    // Project config
     
     
-    // Start YKIT CONFIGURING
+    // Start YKIT CONFIG
     YKit *launcher = [YKit getInstance];
         
     launcher.isPotrait = NO;
@@ -98,26 +98,19 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
     //    [launcher showLoginScreen];
     //}
     
-                                                                                
-    // Example usage of setting up payment and then buy it. For more information, check section 2. Implementation payment info
-    //[launcher setPaymentInfo:@"Server ID" andCharId:@"Character ID" andPayment:@"Payment package ID"];
-    //[launcher buyItemWithGameOrder];
-
-    
     [launcher handleShowSDKCompletion:^{
-        NSLog(@"I'm in xD");
+        NSLog(@"I'm in YKit");
     }];
-    
     
     NSString* appID = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
     [launcher handleCloseSDKCompletion:^{
-        NSLog(@"queee");
+        NSLog(@"Closed");
     }];
         
     NSDictionary *dict = @{kParamApplication: ATNonNilObject(application),
                            kParamOptions: ATNonNilObject(launchOptions)};
     ATDispatchEvent(Event_AppDidFinishLaunching, dict);    
-    // END YKIT CONFIGURING
+    // END YKIT CONFIG
     
     return YES;
 }
