@@ -80,8 +80,6 @@ Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://githu
             jcenter()
             maven { url "https://maven.google.com" }
             maven { url "https://www.jitpack.io" }
-            maven {url "http://kochava.bintray.com/maven"}
-            maven { url 'http://maven.gameanalytics.com/release' }
         }
     }
     
@@ -144,8 +142,6 @@ Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://githu
         
         compile deps.playServicesBase
         compile deps.installReferrer
-        compile deps.kochavaTracker
-        compile deps.gameanalytics
     
         compile deps.billing
     
@@ -259,7 +255,7 @@ Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://githu
            
  ![](images/manifest.png)      
    
- + Add `facebook_app_id`, `account_kit_client_token`, `kochava_app_guid`, `gameanalytics_game_key`, `gameanalytics_secret_key` to `app/res/values/strings.xml`
+ + Add `facebook_app_id`, `account_kit_client_token` to `app/res/values/strings.xml`
  
  ![](images/strings.png) 
    
@@ -335,25 +331,9 @@ Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://githu
   + `onPause`: call when game pause
   + `onResume`: call when game resume
 
-## C. setPaymentInfo function
-Payment Info is the data you send to game server when user make payment. (This help user buy Inapp purchase gold)
+## C. Setup YCoin Support
 
-You will give us payment info using`setPaymentInfo()` method with 3 parameter `serverId`, `charId`, `paymentId` (you can set paymentId to null). Sdk will use info of setPaymentInfo() to send to game server
- 
-You need to call setPaymentInfo() when start game (after user login and choose server)
-
-```
-public void setPaymentInfo(String serverId, String charId, String paymentId)
-```
-
-Example usage
-```
-YKit.get().setPaymentInfo("myServerId", "myCharId", "myPaymentId")
-```
-
-## D. Setup YCoin Support
-
-If your game support YCOIN, we provide a buy function, which used to buy the item from your game.
+We provide a buy function, which used to buy the item from your game.
 
 Buy function has 4 parameters:
 
