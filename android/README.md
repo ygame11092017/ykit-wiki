@@ -355,7 +355,7 @@ Example usage
 YKit.get().buy("myServerId", "myCharId", "myPaymentId",false);
 ```
 
-## E. Public function
+## D. Public function
 
   + `YKit.get().openLogin()`: open login windows 
   + `YKit.get().openInApp()`: open inapp purchase windows 
