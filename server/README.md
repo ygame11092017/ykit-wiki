@@ -228,7 +228,8 @@ Params:
 | reason | reason bonus. use to log|
 | sign | Used to verify the request. sign = (md5(appId + char_id + product_id + reason + server_id + secretKey))
 
-Example about the product_id
+Example about the product_id.
+
 | product_id        | Description           |
 | ------------- |:-------------:|
 | extra1      | add 50 money in game|
