@@ -224,8 +224,30 @@ Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://githu
 ![](images/diff_module_build_gradle3.png)
 
 ### 2. Config app 
++ Edit `AndroidManifest.xml`
++ First, insert two intent filters after main intent filter. Notice: replace xxxxx by the value which YGame will give it to you
+```
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "http://test.ygame.vn/test” -->
+                <data android:scheme="http"
+                    android:host="xxxxxx"
+                    android:pathPrefix="xxxxxx" />
+                <!-- note that the leading "/" is required for pathPrefix-->
+            </intent-filter>
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "example://gizmos” -->
+                <data android:scheme="xxxxxx"
+                    android:host="xxxxxx" />
+            </intent-filter>
+```
  
-+ Open `AndroidManifest.xml`, add the following to `Application` tag
++ Second, add the following to `Application` tag
  
     ```    
     <activity
