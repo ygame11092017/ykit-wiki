@@ -53,6 +53,10 @@ Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://githu
     ```
 
     ![](images/gradle_properties.png)
++ Check the file settings.gradle. Please insert line below if it is not exist in the file
+    ```
+    include ':ykit-release'
+    ```
 
 + Update top-level `build.gradle` (`YKitDemo/proj.android-studio/build.gradle`)
 
