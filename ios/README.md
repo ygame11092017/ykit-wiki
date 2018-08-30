@@ -238,6 +238,9 @@ if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
         // [END register_for_notifications]
     }
 ```
+ * Turn on push notification in project
+
+![](Images/push_notification_turnon.png)
 
 - Setup handling message: Add these functions to your appcontroller.m
 
