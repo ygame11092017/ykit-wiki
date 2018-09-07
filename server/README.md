@@ -222,18 +222,12 @@ Params:
 
 | Name        | Type           | Description           |
 | ------------- |:-------------:|:-------------:|
-| accessToken      | Get from YKit system ||
-| appId      | The id of your application is issued by YGame      ||
-| sign | Md5 (accessToken + appId + appKey) |appKey: the secret key of your application is issued by YGame|
-
-| Name	|Type| Description           |
-| ------------- |:-----------:||:-------------:|
-| appId	| String |The id of your application is issued by YGame, use this parameter to classify android and ios|
-| char_id | String | id of character|
-| server_id | Integer | id of server game|
-| gold | Integer | extra bonus value|
-| reason | String | reason bonus. use to log|
-| sign | String | Used to verify the request. sign = (md5(appId + char_id + gold + reason + server_id + secretKey))
+| appId      | String |The id of your application is issued by YGame, use this parameter to classify android and ios|
+| char_id      | String |id of character|
+| server_id      | Integer |id of server game|
+| gold      | Integer | extra bonus value|
+| reason      | String      | reason bonus. use to log|
+| sign | String | Used to verify the request. sign = (md5(appId + char_id + gold + reason + server_id + secretKey))|
 
 - Your API must be response the result in the JSON format as description in the table below
 
