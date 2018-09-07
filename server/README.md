@@ -219,9 +219,16 @@ Params:
 ### 5.2. API bonus gold in game
 - This is your own API to received the request from YKit Server. Please build your API in GET method. When users by the special package, if this package has the "bonus" attribute. YKit Server will send the request to your service in order to add the bonus gold in game to user.
 
-| Name        |Type| Description           |
-| ------------- | ----------- ||:-------------:|
-| appId     | String | The id of your application is issued by YGame, use this parameter to classify android and ios|
+
+| Name        | Type           | Description           |
+| ------------- |:-------------:|:-------------:|
+| accessToken      | Get from YKit system ||
+| appId      | The id of your application is issued by YGame      ||
+| sign | Md5 (accessToken + appId + appKey) |appKey: the secret key of your application is issued by YGame|
+
+| Name	|Type| Description           |
+| ------------- |:-----------:||:-------------:|
+| appId	| String |The id of your application is issued by YGame, use this parameter to classify android and ios|
 | char_id | String | id of character|
 | server_id | Integer | id of server game|
 | gold | Integer | extra bonus value|
