@@ -131,6 +131,17 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 
             return YES; 
 }
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
+{
+    
+    NSDictionary *dict = @{kParamApplication: ATNonNilObject(app),
+                           kParamUrl: ATNonNilObject(url),
+                           kParamOptions: ATNonNilObject(options)};
+    ATDispatchEvent(Event_AppOpenUrlEx, dict);
+    
+    
+    return YES;
+}
 ```
 
 #### 1.4. Setup Firebase Push-Notifications
