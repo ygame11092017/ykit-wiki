@@ -191,7 +191,7 @@ Params:
 | ------------- |:-------------:|
 | appId      | The id of your application is issued by YGame, use this parameter to classify android and ios       |
 | accessToken      | Get from YKit system |
-| msgid | YGame system will provide this parameter
+| msgid | equals to payment_id
 
 - Flow
 ![alt text](https://github.com/ygame11092017/ykit-wiki/blob/master/server/guide_push.jpg)
