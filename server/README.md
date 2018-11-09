@@ -191,7 +191,8 @@ Params:
 | ------------- |:-------------:|
 | appId      | The id of your application is issued by YGame, use this parameter to classify android and ios       |
 | accessToken      | Get from YKit system |
-| msgid | equals to payment_id
+| msgid | equals to payment_id |
+| sign | Used to verify the request. sign = (md5(accessToken + appId + msgid + secretKey)) |
 
 - Flow
 ![alt text](https://github.com/ygame11092017/ykit-wiki/blob/master/server/guide_push.jpg)
