@@ -147,4 +147,44 @@ var appSecret = "34bf3d41b69094a395bfbf7491ca4814"
 sign = md5 ( values + appSecret ) = 1072316ca7e6e1c0cc2bea9ce8570c0a
 ```
 
+### 1.4. API Push notification
+
+appId     	The id of your application is issued by YGame, use this parameter to classify android and ios     
+accessToken	Get from YKit system
+msgid
+
+Method: HTTP GET
+Params:
+appId:	The id of your application, use this parameter to classify android and ios     
+accessToken:	Get from YKit system
+msgid: equals to payment_id
+sign: Used to verify the request
+
+- For example, we have the request URL below:
+```
+https://api.ygame.vn/v1/user/push_notify?appId=01570b2b4730a1e60d257ebd80db7027&accessToken=1516441388&msgid=1516441388&sign=897243c07f2896917803bac11e4eb5db
+
+```
+- Have a look at the parameters. We will compute the sign by follow some steps below
+
+		appId=01570b2b4730a1e60d257ebd80db7027&accessToken=xxxxxxx&msgid=vip15
+
+- Step 1: sort the name of parameters by A → Z
+
+		accessToken > appId > msgid
+
+- Step 2: get the values from ordered parameters. We have the final String
+
+		values = xxxxxxx01570b2b4730a1e60d257ebd80db7027vip15
+
+- Step 3: create the signature
+
+```
+sign = md5( values + appSecret )
+* appSecret: the secret key of your application
+
+For example:
+var appSecret = "34bf3d41b69094a395bfbf7491ca4814"
+sign = md5 ( values + appSecret ) = 897243c07f2896917803bac11e4eb5db
+```
 
