@@ -38,7 +38,8 @@ A successful response will contain your user information in JSON format:
 "msg":"",
 "data":{
 "userId":123
-"username":"mario",
+"username": "mario",
+"coinBalance": 1000,
 "dateCreate":"2017-09-20 14:59:28",
 "dateUpdate":"2017-09-21 14:59:28",
 "accessToken":"a0a6e4e4caebb1d799b7b49ed45ff71c",
