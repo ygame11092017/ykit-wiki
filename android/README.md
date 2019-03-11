@@ -391,3 +391,4 @@ YKit.get().buy("myServerId", "myCharId", "myPaymentId",false);
   + `YKit.get().showLauncher()`: show floating widget 
   + `YKit.get().hideLauncher()`: hide floating widget
   + `YKit.get().setServerTest(boolean isTest);`: Use server test or not
+  + `YKit.get().setRemindContent(String reminderText);`: Reminder text if user don't play game for a long time
