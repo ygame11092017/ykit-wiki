@@ -5,10 +5,10 @@
 	1. When user login successful in YKit system, user will be redirected to your game link to play game 
 	with 2 params
 	
-	| Name        | Description           | Note           |
-	| ------------- |:-------------:|:-------------:|
-	| accessToken      | token for verify, encoded by base64 ||
-	| sign | Md5 (accessToken + appId + appKey) |Used to verify the request. appId,appKey are provided by YGame|
+	| Name        | Description                        | Note        |
+	| ----------- |------------------------------------|-------------|
+	| accessToken | token for verify, encoded by base64|             |
+	| sign        | Md5 (accessToken + appId + appKey) |Used to verify the request. appId,appKey are provided by YGame|
    
    	Example : https://example.com/index.html?accessToken=...&sign=...
 
