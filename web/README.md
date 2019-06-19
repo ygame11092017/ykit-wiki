@@ -8,11 +8,13 @@
 	| Name        | Description                        | Note        |
 	| ----------- |------------------------------------|-------------|
 	| accessToken | token for verify, encoded by base64|             |
-	| sign        | Md5 (accessToken + appId + appKey) |Used to verify the request. appId,appKey are provided by YGame|
+	| sign        | Md5 (accessToken + appId + appKey) |Used to verify the request. appId,appKey are provided
+														by YGame|
    
    	Example : https://example.com/index.html?accessToken=...&sign=...
 
-    2. After verify request successful, your server will decode accessToken and verify this accessToken with YKit system
+    2. After verify request successful, your server will decode accessToken and verify this accessToken
+     with YKit system
 
 ### 2 Verify acccessToken.
 
