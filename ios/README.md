@@ -425,13 +425,17 @@ We provide a buy function, which used to buy the item from your game.
 
 +isConfirm: If this is true, there will be a confirm diablog before user can buy. If false, user will instantly buy the item.
 
++serverName: current server name
+
++charName: current character name
+
 ```
-(BOOL)buy:(NSString*)serverId char_id:(NSString*)charId payment_id:(NSString*)payment isConfirm:(bool)is_confirm;
+(BOOL)buy:(NSString*)serverId char_id:(NSString*)charId payment_id:(NSString*)payment isConfirm:(bool)is_confirm server_name:(NSString*)serverName char_name:(NSString*)charName;
 ```
 Example usage
 
 ```
-[ykit buy:@"Server ID" char_id:@"Character ID" payment_id:@"Payment package" isConfirm:YES];
+[ykit buy:@"Server ID" char_id:@"Character ID" payment_id:@"Payment package" isConfirm:YES server_name:@"Server Name" char_name:@"Char Name"];
 
 ```
 
