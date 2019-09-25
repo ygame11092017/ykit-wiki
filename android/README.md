@@ -363,22 +363,25 @@ We provide a buy function, which used to buy the item from your game.
 
 Buy function has 4 parameters:
 
-+ serverId: User current server id
++ serverId: current server id
 
-+ charId: User current character id
++ charId: current character id
 
 + paymentId: The package user want to buy
 
 + isConfirm: If this is true, there will be a confirm diablog before user can buy. If false, user will instantly buy the item.
 
++ serverName: current server name
+
++ charId: current character name
 
 ```
-public void buy(String serverId, String charId, String paymentId, boolean isConfirm)
+public void buy(String serverId, String charId, String paymentId, boolean isConfirm, String serverName, String charName)
 ```
 
 Example usage
 ```
-YKit.get().buy("myServerId", "myCharId", "myPaymentId",false);
+YKit.get().buy("myServerId", "myCharId", "myPaymentId",false, "Server Name", "Character Name");
 ```
 
 ## D. Public function
