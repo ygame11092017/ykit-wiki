@@ -373,7 +373,7 @@ Buy function has 4 parameters:
 
 + serverName: current server name
 
-+ charId: current character name
++ charName: current character name
 
 ```
 public void buy(String serverId, String charId, String paymentId, boolean isConfirm, String serverName, String charName)
