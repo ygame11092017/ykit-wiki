@@ -252,7 +252,7 @@ Params:
 | char_id      | String |id of character|
 | char_name      | String |name of character|
 | server_id      | Integer |id of server game|
-| server_name      | Integer |name of server game|
+| server_name      | String |name of server game|
 | sign | Used to verify the request. sign = (md5(accessToken + appId + char_id + char_name + server_id + server_name + secretKey)) |
 
 | Response        |JSON Format            |
