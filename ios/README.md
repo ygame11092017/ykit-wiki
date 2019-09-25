@@ -314,6 +314,63 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     [[YKit getInstance] setFCMToken:fcmToken];
 }
 ```
+
+
+##### 1.4.3 Setup firebase for authentication (verify OTP)
+- Before setup firebase for authentication please ensure that you followed steps in 1.4.1 Setup Firebase framework
+Fist of all, you need to config URL type in your target following below instruction image or following this link: https://firebase.google.com/docs/auth/ios/phone-auth
+![](Images/SetupCapcha.png)
+
+
+- In your appcontroller.m, add YKitDelegate to listen request authentication code like code below:
+```
+@interface AppController () <UNUserNotificationCenterDelegate, YKitDelegate>
+```
+- In ```- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions``` method add delegate config to receive events:
+```
+ YKit *launcher = [YKit getInstance];
+ launcher.delegate = self;
+```
+- Add 2 method and call to FIRPhoneAuthProvider to verify
+
+```
+// Firebase FIRPhoneAuthProvider sms verify
+
+-(void)requestSendOTPWithPhone:(NSString *)phoneNumber completion:(void (^)(NSString *, NSError *))callback {
+    [[FIRPhoneAuthProvider provider] verifyPhoneNumber:phoneNumber
+                                            UIDelegate:nil
+                                            completion:^(NSString * _Nullable verificationID, NSError * _Nullable error) {
+                                                if (callback) {
+                                                    callback(verificationID,error);
+                                                }
+                                                return;
+                                            }];
+}
+
+- (void)verifyPhoneNumberWithOTPcode:(NSString *)code andVerificationID:(NSString *)verificationID completion:(void (^)(NSString *phone, NSError *error))callback {
+    FIRAuthCredential *credential = [[FIRPhoneAuthProvider provider]
+                                     credentialWithVerificationID:verificationID
+                                     verificationCode:code];
+    [[FIRAuth auth] signInWithCredential:credential
+                              completion:^(FIRAuthDataResult * _Nullable authResult,
+                                           NSError * _Nullable error) {
+                                  if (error) {
+                                      callback(@"",error);
+                                      return;
+                                  }
+                                  
+                                  if (authResult == nil) {
+                                      callback(@"",nil);
+                                      return;
+                                  }
+                                  
+                                  FIRUser *user = authResult.user;
+                                  callback(user.uid, nil);
+                              }];
+}
+
+```
+
 #### 1.5. Setup local push reminder to play the game
 ```
 //SETUP 3 DAY LATER NOTIFICATION IF USER HAVEN'T PLAYED
