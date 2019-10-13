@@ -254,10 +254,6 @@ Note: the image or video may be out of date
 + Second, add the following to `Application` tag
  
     ```    
-    <activity android:name="com.facebook.FacebookActivity"
-        android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|locale|uiMode"
-        android:label="@string/app_name" />
-
     <provider
         android:name="com.facebook.FacebookContentProvider"
         android:authorities="com.facebook.app.FacebookContentProviderXXXXXXXXXX"
