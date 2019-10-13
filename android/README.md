@@ -261,6 +261,7 @@ Note: the image or video may be out of date
 
     <meta-data
         android:name="com.facebook.sdk.ApplicationId"
+        tools:replace="android:value"
         android:value="@string/facebook_app_id" />
     ```
   
