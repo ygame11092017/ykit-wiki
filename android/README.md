@@ -4,6 +4,8 @@ Video Tutorials: [file](files/How%20to%20integrate%20YKit%20to%20android.mp4) or
 
 Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://github.com/ygame11092017/ykit-demo-android)
 
+Note: the image or video may be out of date
+
 ## Index
 + [A. Prerequisites](#a-prerequisites)
 + [B. Integrate SDK](#b-integrate-sdk)
@@ -44,7 +46,7 @@ Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://githu
 
     ![](images/libraries.png)
 
-+ Add this line end of file `settings.gradle` (Optional)
++ Add this line end of file `settings.gradle`
 
     ```
     org.gradle.jvmargs=-Xmx2048m
@@ -63,24 +65,24 @@ Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://githu
     
     buildscript {
         repositories {
+            google()
             jcenter()
             maven { url 'https://maven.fabric.io/public' }
             maven { url "https://plugins.gradle.org/m2/" }
         }
         dependencies {
-            classpath 'com.android.tools.build:gradle:2.3.3'
-            classpath 'me.tatarka:gradle-retrolambda:3.7.0'
-            classpath 'com.google.gms:google-services:3.0.0'
-            classpath 'io.fabric.tools:gradle:1.22.0'
-            classpath 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
+            classpath 'com.android.tools.build:gradle:3.5.1'
+            classpath 'com.google.gms:google-services:4.3.2'
+            classpath 'io.fabric.tools:gradle:1.+'
+            classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.0'
             classpath 'com.jakewharton.hugo:hugo-plugin:1.2.1'
         }
     }
     
     allprojects {
         repositories {
+            google()
             jcenter()
-            maven { url "https://maven.google.com" }
             maven { url "https://www.jitpack.io" }
         }
     }
@@ -92,11 +94,10 @@ Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://githu
 
 ![](images/diff_top_build_gradle.png)
 
-+ Update module-level`build.gradle` (`YKitDemo/proj.android-studio/app/build.gradle`)
++ Update module-level `build.gradle` (`YKitDemo/proj.android-studio/app/build.gradle`)
 
     ```
     [...]
-    apply plugin: 'me.tatarka.retrolambda'
     apply plugin: 'io.fabric'
     
     android {
@@ -130,88 +131,89 @@ Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://githu
         [...]
         compile project(':ykit-release')
         
-        compile deps.supportDesign
-        compile deps.appcompatv7
-        compile deps.recyclerviewv7
+        implementation deps.supportDesign
+        implementation deps.appcompat
+        implementation deps.recyclerview
     
-        compile deps.multidex
+        implementation deps.multidex
     
-        compile deps.firebaseCore
-        compile deps.firebaseMessaging
-        compile deps.firebaseConfig
+        implementation deps.firebaseMessaging
+        implementation deps.firebaseConfig
+        implementation deps.firebaseAuth
+        implementation deps.firebaseUIAuth
     
-        compile deps.playServicesAuth
+        implementation deps.playServicesAuth
+        implementation deps.playServicesAds
         
-        compile deps.playServicesBase
-        compile deps.installReferrer
+        implementation deps.playServicesBase
+        implementation deps.installReferrer
     
-        compile deps.billing
+        implementation deps.billing
     
-        compile(deps.crashlytics) { transitive = true; }
-        compile(deps.answers) { transitive = true; }
+        implementation(deps.crashlytics) { transitive = true; }
+        implementation(deps.answers) { transitive = true; }
     
-        compile deps.butterknife
+        implementation deps.butterknife
         annotationProcessor deps.butterknifeCompiler
     
-        compile deps.dagger
+        implementation deps.dagger
         annotationProcessor deps.daggerCompiler
     
-        compile deps.androidannotations
+        implementation deps.androidannotations
         annotationProcessor deps.androidannotationsCompiler
     
-        compile deps.parceler
+        implementation deps.parceler
         annotationProcessor deps.parcelerCompiler
     
-        compile deps.retrofit
-        compile deps.retrofitConverterGson
-        compile deps.retrofitAdapterRxjava
+        implementation deps.retrofit
+        implementation deps.retrofitConverterGson
+        implementation deps.retrofitAdapterRxjava
     
-        compile deps.okhttp
-        compile deps.okhttpInterceptor
+        implementation deps.okhttp
+        implementation deps.okhttpInterceptor
     
-        compile deps.gson
+        implementation deps.gson
     
-        compile deps.transitionseverywhere
-        compile deps.calligraphy
+        implementation deps.transitionseverywhere
+        implementation deps.calligraphy
     
-        compile deps.glide
+        implementation deps.glide
         annotationProcessor deps.glideCompiler
     
-        compile deps.rxjava
-        compile deps.rxandroid
-        compile deps.rxlifecycle
-        compile deps.rxlifecycleAndroid
-        compile deps.rxlifecycleComponents
-        compile deps.nybus
-        compile deps.localeChanger
+        implementation deps.rxjava
+        implementation deps.rxandroid
+        implementation deps.rxlifecycle
+        implementation deps.rxlifecycleAndroid
+        implementation deps.rxlifecycleComponents
+        implementation deps.nybus
+        implementation deps.localeChanger
     
-        compile deps.dbflow
-        compile deps.dbflowCore
-        compile deps.dbflowRx2
+        implementation deps.dbflow
+        implementation deps.dbflowCore
+        implementation deps.dbflowRx2
     
-        compile deps.utilcode
+        implementation deps.utilcode
     
         annotationProcessor deps.dbflowCompiler
-        compile deps.timber
+        implementation deps.timber
     
-        compile deps.appsflyer
+        implementation deps.appsflyer
     
-        compile deps.facebook
-        compile deps.facebook_account_kit
+        implementation deps.facebook
     
-        debugCompile deps.leakcanary
-        releaseCompile deps.leakcanaryNoOp
-        testCompile deps.leakcanaryNoOp
+        debugImplementation deps.leakcanary
+        releaseImplementation deps.leakcanaryNoOp
+        testImplementation deps.leakcanaryNoOp
     
-        compile deps.stetho
-        compile deps.stethoOkhttp3
-        compile deps.stethoUrlconnection
+        implementation deps.stetho
+        implementation deps.stethoOkhttp3
+        implementation deps.stethoUrlconnection
     
-        compile deps.traceur
+        implementation deps.traceur
     
-        compile deps.logger
+        implementation deps.logger
     
-        compile(deps.loggingInterceptor) {
+        implementation(deps.loggingInterceptor) {
             exclude group: 'org.json', module: 'json'
         }
     }
