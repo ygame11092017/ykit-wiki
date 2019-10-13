@@ -14,12 +14,12 @@ Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://githu
 
 ## A. Prerequisites
 
-+ [Android Studio 2.3.3](https://developer.android.com/studio/index.html)
++ [Android Studio 3.5.1 or higher](https://developer.android.com/studio/index.html)
 
 + Open Android Studio, click **File > Settings...**, choose **Appearance and Behavior > System Settings > Android SDK > SDK Tools**, install all packages in it
 ![](images/sdk_tools.png)
 
-+ Open Android Studio, click **File > Project Structure**, set **JDK locations** and **Android SDK location**
++ If the game uses NDK, open Android Studio, click **File > Project Structure**, set **JDK locations** and **Android NDK location**
 ![](images/project_structure.png)
 
 
