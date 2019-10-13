@@ -254,10 +254,9 @@ Note: the image or video may be out of date
 + Second, add the following to `Application` tag
  
     ```    
-    <activity
-        android:name="com.facebook.accountkit.ui.AccountKitActivity"
-        android:theme="@style/AppLoginTheme"
-        tools:replace="android:theme" />
+    <activity android:name="com.facebook.FacebookActivity"
+        android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|locale|uiMode"
+        android:label="@string/app_name" />
 
     <provider
         android:name="com.facebook.FacebookContentProvider"
@@ -267,21 +266,13 @@ Note: the image or video may be out of date
     <meta-data
         android:name="com.facebook.sdk.ApplicationId"
         android:value="@string/facebook_app_id" />
-
-    <meta-data
-        android:name="com.facebook.accountkit.ApplicationName"
-        android:value="@string/app_name" />
-
-    <meta-data
-        android:name="com.facebook.accountkit.ClientToken"
-        android:value="@string/account_kit_client_token" />
     ```
   
  Replace `XXXXXXXXXX` string in `com.facebook.app.FacebookContentProviderXXXXXXXXXX` with your `facebook id` (you can get the `facebook id` in file `config.xml`)
            
  ![](images/manifest.png)      
    
- + Add `facebook_app_id`, `account_kit_client_token` to `app/res/values/strings.xml`
+ + Add `facebook_app_id` to `app/res/values/strings.xml`
  
  ![](images/strings.png) 
    
@@ -300,6 +291,7 @@ Note: the image or video may be out of date
         protected void onCreate(Bundle savedInstanceState) {
             [...]
     
+            YKit.get().setServerTest(false); // true if server test, false if server real
             YKit.get().init(this, new YKitListener() {
                 @Override
                 public void onLogin(int userId, String accessToken) {
