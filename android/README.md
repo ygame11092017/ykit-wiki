@@ -12,7 +12,6 @@ Note: the image or video may be out of date
     - [1. Add YKit library](#1-add-ykit-library)
     - [2. Config app](#2-config-app) 
     - [3. Implement code](#3-implement-code)
-    - [4. Implement style](#4-implement-style)
 + [C. Public function](#c-public-function)
 
 ## A. Prerequisites
@@ -346,18 +345,6 @@ Note: the image or video may be out of date
   + `onInAppPurchase`: notify purchase success
   + `onPause`: call when game pause
   + `onResume`: call when game resume
-
-### 4. Implement style
-
-+ Add `styles.xml`  with the following content into `app/res/values-v26/` (create the `values-v26` directory if it's not exist)
-
-```xml
-<resources>
-    <style name="ActivityTheme" parent="ActivityTheme.Base">
-        <item name="android:windowIsTranslucent">false</item>
-    </style>
-</resources>
-```
 
 ## C. Setup YCoin Support
 
