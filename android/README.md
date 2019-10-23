@@ -251,7 +251,7 @@ Note: the image or video may be out of date
             </intent-filter>
 ```
 
-+ Add this line to main activity
++ Add this line to your activities
 
 ```
 android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|locale|uiMode"
