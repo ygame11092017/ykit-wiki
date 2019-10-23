@@ -251,13 +251,14 @@ Note: the image or video may be out of date
             </intent-filter>
 ```
 
-And add this line to main activity
++ Add this line to main activity
 
 ```
 android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|locale|uiMode"
 ```
+
  
-+ Second, add the following to `Application` tag
++ Add the following to `Application` tag
  
     ```    
     <provider
