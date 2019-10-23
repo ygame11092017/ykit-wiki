@@ -46,7 +46,7 @@ Note: the image or video may be out of date
 
     ![](images/libraries.png)
 
-+ Add this line end of file `settings.gradle`
++ Add this line end of file `gradle.properties`
 
     ```
     org.gradle.jvmargs=-Xmx2048m
