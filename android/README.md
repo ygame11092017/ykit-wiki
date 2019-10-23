@@ -250,6 +250,12 @@ Note: the image or video may be out of date
                     android:host="xxxxxx" />
             </intent-filter>
 ```
+
+And add this line to main activity
+
+```
+android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|locale|uiMode"
+```
  
 + Second, add the following to `Application` tag
  
