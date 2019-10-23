@@ -295,7 +295,7 @@ android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientati
         protected void onCreate(Bundle savedInstanceState) {
             [...]
     
-            YKit.get().setServerTest(false); // true if server test, false if server real
+            YKit.get().setServerTest(true); // true if server test, false if server real
             YKit.get().init(this, new YKitListener() {
                 @Override
                 public void onLogin(int userId, String accessToken) {
