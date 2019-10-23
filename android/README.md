@@ -129,7 +129,7 @@ Note: the image or video may be out of date
     
     dependencies {
         [...]
-        compile project(':ykit-release')
+        implementation project(path: ':ykit-release')
         
         implementation deps.supportDesign
         implementation deps.appcompat
