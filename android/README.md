@@ -141,6 +141,9 @@ Note: the image or video may be out of date
         implementation deps.firebaseConfig
         implementation deps.firebaseAuth
         implementation deps.firebaseUIAuth
+        implementation deps.firebaseAnalytics
+          
+        implementation deps.tagmanager
     
         implementation deps.playServicesAuth
         implementation deps.playServicesAds
