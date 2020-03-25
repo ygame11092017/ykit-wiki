@@ -238,7 +238,7 @@ Params:
 | success response      | {"status": "1", "msg":""} |
 | Failure response      | {"status": "error_code", "msg":"reason"} |
 
-## 6. Tracking integration
+## 6. Tracking NRU integration
 When users created their characters successfully, please send the request to YKit Server in order to log NRU (New Register User)
 
 URL: https://api.ygame.vn/v1/user/create_character
@@ -259,3 +259,58 @@ Params:
 | ------------- |:-------------:|
 | success response      | {"status": "1", "msg":""} |
 | Failure response      | {"status": "error_code", "msg":"reason"} |
+
+## 7. Giftcode integration
+- This is your own API to use gift code in game
+
+- Method: GET
+
+Params:
+
+| Name        | Description           |
+| ------------- |:-------------:|
+| app_id      | The id of your application is issued by YGame, use this parameter to classify android and ios       |
+| user_id      | id of user |
+| char_id      | String |id of character|
+| server_id      | Integer |id of server game|
+| sign | Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#14-api-payment-callback) |
+
+| Response        |JSON Format            |
+| ------------- |:-------------:|
+| success response      | {"status": "1", "msg":""} |
+| Failure response      | {"status": "error_code", "msg":"reason"} |
+
+| Error Code        |JSON Format            |
+| ------------- |:-------------:|
+| -1      | system error |
+| -2      | invalid character id |
+| -3      | invalid sever id |
+| -4      | invalid code |
+| -5      | giftcode has been used |
+| -6      | unknow error |
+
+## 8. Tracking DAU integration
+When user select server and character, then playing game successfully, please send the request to YKit Server in order to log DAU (daily active User)
+
+URL: https://tracking.ygame.vn
+
+Params:
+
+| Name        | Description           |
+| ------------- |:-------------:|
+| app_id      | The id of your application is issued by YGame, use this parameter to classify android and ios       |
+| user_id      | id of user |
+| char_id      | String |id of character|
+| char_name      | String |name of character|
+| server_id      | Integer |id of server game|
+| server_name      | String |name of server game|
+| sign | Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#14-api-payment-callback) |
+
+| Response        |JSON Format            |
+| ------------- |:-------------:|
+| success response      | {"status": "1", "msg":""} |
+| Failure response      | {"status": "error_code", "msg":"reason"} |
+
+
+
+
