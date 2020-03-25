@@ -271,8 +271,10 @@ Params:
 | ------------- |:-------------:|
 | app_id      | The id of your application is issued by YGame, use this parameter to classify android and ios       |
 | user_id      | id of user |
+| user_id      | id of user |
 | char_id      | String |id of character|
 | server_id      | Integer |id of server game|
+| gift_code     | giftcode of user |
 | sign | Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#14-api-payment-callback) |
 
 | Response        |JSON Format            |
