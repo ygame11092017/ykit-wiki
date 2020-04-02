@@ -40,8 +40,8 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
    - Add the following url schemes for applink (We will give you the name of scheme)
 ![](Images/urlscheme_applink.png)
 
-#### 1.3. Setup Code
-
+#### 1.3. Use SDK to login
+##### 1.3.1 Config SDK setting
 - Import SDK : ```#import <YKit/YKit.h>``` in Cocos AppController.m
 
 - Add these lines of code in Application didFinishLaunchingWithOptions function in AppController class, after window setup. You can get Google Signin client ID in the YKitConfig.plist.
@@ -55,13 +55,6 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
     YKit *launcher = [YKit getInstance];
         
     launcher.isPotrait = NO;
-    
-    //
-    // if using facebook API, you need to implement 
-    // [launcher setPermissionFacebook:@"public_profile"]; // string is the permission you want to 
-    //
-    [launcher setupWithWindow:window usingFacebookSDK:YES];
-    [launcher setPermissionFacebook:@"public_profile"];
     
     // Handle login callback
     [launcher handleLoginWithCompletion:^(NSDictionary *data) {
@@ -90,13 +83,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
             
     }
     // Example usage of silentLogin. For more information, check the public functions section.
-    //if([launcher silentLogin]){
-    //    // Move direct to game
-    //}
-    //else {
-    //    // Show login screen
-    //    [launcher showLoginScreen];
-    //}
+    
     
     [launcher handleShowSDKCompletion:^{
         NSLog(@"I'm in YKit");
@@ -143,6 +130,29 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
     return YES;
 }
 ```
+##### 1.3.2 Show login view
+
+Step 1: Must register view controller which presenting YKit login view
+ param:
+     -rootViewController: the view controller will show SDK
+     -usingFacebookSDK: use FB to login // default NO
+```
+- (void)viewDidload {
+   [super viewDidload];
+   YKit *launcher = [YKit getInstance];
+   [launcher willShowInRootViewController:self usingFacebookSDK:YES];
+}
+
+```
+Step 2: Show loginView 
+```
+- (IBAction)onLoginButtonAction:(id)sender
+{
+   YKit *launcher = [YKit getInstance];
+   [launcher showLoginScreen];
+}
+```
+
 
 #### 1.4. Setup Firebase Push-Notifications
 ##### 1.4.1 Setup Firebase framework
