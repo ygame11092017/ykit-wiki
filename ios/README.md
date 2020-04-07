@@ -421,6 +421,8 @@ else {
 - Turn on Push Notification
 - Turn on Background Mode for Push Notification
 - Turn on InApp-Purchase
+- Turn on Sign In With Apple
+- Turn on Inapp Purchase
 
 ### 2. Buy item in game by using YCoin
 We provide a buy function, which used to buy the item from your game.
