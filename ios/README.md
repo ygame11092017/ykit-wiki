@@ -259,11 +259,7 @@ if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
         // [END register_for_notifications]
     }
 ```
- * Turn on push notification in project
-
-![](Images/push_notification_turnon.png)
-
-- Setup handling message: Add these functions to your appcontroller.m
+ - Setup handling message: Add these functions to your appcontroller.m
 
 ```
 // [START receive_message]
@@ -384,7 +380,7 @@ Fist of all, you need to config URL type in your target following below instruct
 #### 1.5. Setup local push reminder to play the game
 ```
 //SETUP 3 DAY LATER NOTIFICATION IF USER HAVEN'T PLAYED
-    [launcher setReminderLogin:@"reminder text" after:3];
+    [launcher setReminderLogin:@"Please get content of reminder from YGame" after:3];
 ```    
 
 #### 1.6. Public functions
