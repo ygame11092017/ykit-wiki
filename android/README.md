@@ -57,7 +57,7 @@ Note: the image or video may be out of date
     ```
     include ':ykit-release'
     ```
-
++ Add "implementation deps.viewpump" to build.gradle
 + Update top-level `build.gradle` (`YKitDemo/proj.android-studio/build.gradle`)
 
 ```
