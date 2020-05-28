@@ -328,10 +328,5 @@ Params:
 
 | Response        |JSON Format            |
 | ------------- |:-------------:|
-| Success response      | 
-{
-  "status":1,
-  "msg":"",
-  "data":{"server_id":"...","server_name":"...", "char_id":"...","char_name":"..."}
-}|
-| Failure response      | {"status": "0", "msg":"reason","data":{}|
+| Success response      | {"status":1,"msg":"","data":{"server_id":"...","server_name":"...", "char_id":"...","char_name":"..."}}|
+| Failure response      | {"status": "0", "msg":"reason","data":{}}|
