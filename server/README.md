@@ -314,7 +314,7 @@ Params:
 
 
 ## 9. Check server and character in game
-- This is your own API to provide server and character in game of user. 
+- This is your own API to check server and character which user is playing in game, if user is off in game, please response to fail
 
 - Method: GET
 
