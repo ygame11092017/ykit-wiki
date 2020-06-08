@@ -238,7 +238,7 @@ Params:
 | success response      | {"status": "1", "msg":""} |
 | Failure response      | {"status": "error_code", "msg":"reason"} |
 
-## 6. Tracking NRU integration
+## 6. Tracking NRU (New Register User)
 When users created their characters successfully, please send the request to YKit Server in order to log NRU (New Register User)
 
 URL: https://api.ygame.vn/v1/user/create_character
@@ -260,7 +260,7 @@ Params:
 | success response      | {"status": "1", "msg":""} |
 | Failure response      | {"status": "error_code", "msg":"reason"} |
 
-## 7. Giftcode
+## 7. Using giftcode
 - This is your own API to use gift code into game
 
 - Method: GET
@@ -330,3 +330,24 @@ Params:
 | ------------- |:-------------:|
 | Success response      | {"status":1,"msg":"","data":{"server_id":"...","server_name":"...", "char_id":"...","char_name":"..."}}|
 | Failure response      | {"status": "0", "msg":"reason","data":{}}|
+
+## 10. Add items for user
+- This is your own API to add items for user in game
+
+- Method: GET
+
+Params:
+
+| Name        | Description           |
+| ------------- |:-------------:|
+| app_id      | The id of your application is issued by YGame, use this parameter to classify android and ios       |
+| user_id      | id of user |
+| char_id      | String |id of character|
+| server_id      | Integer |id of server game|
+| items      | json array |list of id of item used to add for user in game|
+| sign | Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#14-api-payment-callback) |
+
+| Response        |JSON Format            |
+| ------------- |:-------------:|
+| Success response      | {"status": "1", "msg":""} |
+| Failure response      | {"status": "error_code", "msg":"reason"} |
