@@ -300,11 +300,11 @@ Params:
 | Name        | Description           |
 | ------------- |:-------------:|
 | app_id      | The id of your application is issued by YGame, use this parameter to classify android and ios       |
-| user_id      | id of user |
-| char_id      | String |id of character|
-| char_name      | String |name of character|
-| server_id      | Integer |id of server game|
-| server_name      | String |name of server game|
+| user_id      | The id of user |
+| char_id      | The id of character|
+| char_name      | The name of character|
+| server_id      | Integer. The id of server game|
+| server_name      | String. The name of server game|
 | sign | Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#14-api-payment-callback) |
 
 | Response        |JSON Format            |
@@ -323,7 +323,7 @@ Params:
 | Name        | Description           |
 | ------------- |:-------------:|
 | app_id      | The id of your application is issued by YGame, use this parameter to classify android and ios       |
-| user_id      | id of user |
+| user_id      | The id of user |
 | sign | Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#14-api-payment-callback) |
 
 | Response        |JSON Format            |
@@ -341,10 +341,10 @@ Params:
 | Name        | Description           |
 | ------------- |:-------------:|
 | app_id      | The id of your application is issued by YGame, use this parameter to classify android and ios       |
-| user_id      | id of user |
-| char_id      | String |id of character|
-| server_id      | Integer |id of server game|
-| items      | json array |list of id of item used to add for user in game. Example|
+| user_id      | The id of user |
+| char_id      | The id of character|
+| server_id      | The id of server game|
+| items      | List of id of item used to add for user in game. Example: ["ITEM001","ITEM002","ITEM003"]|
 | sign | Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#14-api-payment-callback) |
 
 | Response        |JSON Format            |
