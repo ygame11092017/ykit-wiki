@@ -344,7 +344,7 @@ Params:
 | user_id      | id of user |
 | char_id      | String |id of character|
 | server_id      | Integer |id of server game|
-| items      | json array |list of id of item used to add for user in game. Example: ["ITEM001","ITEM002","ITEM003"]|
+| items      | json array |list of id of item used to add for user in game. Example|
 | sign | Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#14-api-payment-callback) |
 
 | Response        |JSON Format            |
