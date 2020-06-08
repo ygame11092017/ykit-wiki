@@ -260,8 +260,8 @@ Params:
 | success response      | {"status": "1", "msg":""} |
 | Failure response      | {"status": "error_code", "msg":"reason"} |
 
-## 7. Giftcode integration
-- This is your own API to use gift code in game
+## 7. Giftcode
+- This is your own API to use gift code into game
 
 - Method: GET
 
@@ -313,8 +313,8 @@ Params:
 | Failure response      | {"status": "error_code", "msg":"reason"} |
 
 
-## 9. Check server and character in game
-- This is your own API to check server and character which user is playing in game, if user is off in game, please response to fail
+## 9. Get server and character in game
+- This is your own API to get server and character which user is playing (online) in game, if user is offline in game, please response to fail
 
 - Method: GET
 
