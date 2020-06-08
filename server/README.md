@@ -313,7 +313,7 @@ Params:
 | Failure response      | {"status": "error_code", "msg":"reason"} |
 
 
-## 9. Get server and character in game
+## 9. Get server and character of user is online in game
 - This is your own API to get server and character which user is playing (online) in game, if user is offline in game, please response to fail
 
 - Method: GET
@@ -344,7 +344,7 @@ Params:
 | user_id      | id of user |
 | char_id      | String |id of character|
 | server_id      | Integer |id of server game|
-| items      | json array |list of id of item used to add for user in game|
+| items      | json array |list of id of item used to add for user in game. Example: ["ITEM001","ITEM002","ITEM003"]|
 | sign | Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#14-api-payment-callback) |
 
 | Response        |JSON Format            |
