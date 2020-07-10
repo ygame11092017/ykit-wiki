@@ -254,7 +254,7 @@ Params:
 | server_id      | Integer |id of server game|
 | server_name      | String |name of server game|
 | ip      | The ip of user |
-| sign | Used to verify the request. sign = (md5(accessToken + appId + char_id + char_name + server_id + server_name + secretKey)) |
+| sign | Used to verify the request. sign = (md5(accessToken + appId + char_id + char_name + server_id + server_name + ip + secretKey)) |
 
 | Response        |JSON Format            |
 | ------------- |:-------------:|
