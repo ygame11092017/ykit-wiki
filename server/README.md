@@ -253,6 +253,7 @@ Params:
 | char_name      | String |name of character|
 | server_id      | Integer |id of server game|
 | server_name      | String |name of server game|
+| ip      | The ip of user |
 | sign | Used to verify the request. sign = (md5(accessToken + appId + char_id + char_name + server_id + server_name + secretKey)) |
 
 | Response        |JSON Format            |
@@ -305,6 +306,7 @@ Params:
 | char_name      | The name of character|
 | server_id      | Integer. The id of server game|
 | server_name      | The name of server game|
+| ip      | The ip of user |
 | sign | Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#14-api-payment-callback) |
 
 | Response        |JSON Format            |
