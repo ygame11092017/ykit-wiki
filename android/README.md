@@ -232,7 +232,7 @@ Note: the image or video may be out of date
 
 ### 2. Config app 
 + Edit `AndroidManifest.xml`
-+ First, insert two intent filters after main intent filter. Notice: replace xxxxx by the value which YGame will give it to you
++ First, insert two intent filters after main intent filter
 ```
             <intent-filter android:label="@string/app_name">
                 <action android:name="android.intent.action.VIEW" />
@@ -240,8 +240,8 @@ Note: the image or video may be out of date
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with "http://test.ygame.vn/test” -->
                 <data android:scheme="http"
-                    android:host="xxxxxx"
-                    android:pathPrefix="xxxxxx" />
+                    android:host="AAAAA"
+                    android:pathPrefix="AAAAA" />
                 <!-- note that the leading "/" is required for pathPrefix-->
             </intent-filter>
             <intent-filter android:label="@string/app_name">
@@ -249,11 +249,11 @@ Note: the image or video may be out of date
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs that begin with "example://gizmos” -->
-                <data android:scheme="xxxxxx"
-                    android:host="xxxxxx" />
+                <data android:scheme="AAAAA"
+                    android:host="AAAAA" />
             </intent-filter>
 ```
-
+Replace `AAAAA` string with `App_Scheme` in file `config.xml`
 + Add this line to your activities
 
 ```
@@ -266,22 +266,26 @@ android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientati
     ```    
     <provider
         android:name="com.facebook.FacebookContentProvider"
-        android:authorities="com.facebook.app.FacebookContentProviderXXXXXXXXXX"
+        android:authorities="com.facebook.app.FacebookContentProviderBBBBB"
         android:exported="true" />
 
     <meta-data
         android:name="com.facebook.sdk.ApplicationId"
         tools:replace="android:value"
         android:value="@string/facebook_app_id" />
+
+    <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="CCCCC"/>
     ```
   
- Replace `XXXXXXXXXX` string in `com.facebook.app.FacebookContentProviderXXXXXXXXXX` with your `facebook id` (you can get the `facebook id` in file `config.xml`)
-           
- ![](images/manifest.png)      
-   
+Replace `BBBBB` string with `FacebookAppID` in file `config.xml`
+
+Replace `CCCCC` string with `Ads_Id` in file `config.xml` 
+  
  + Add `facebook_app_id` to `app/res/values/strings.xml`
  
- ![](images/strings.png) 
+ ![](images/strings.png)
    
  + Add `config.xml` to `app/res/xml/` and `google-services.json` to `app/` (create the `app/res/xml/` directory if it's not exist)
  
