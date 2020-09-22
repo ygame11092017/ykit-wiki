@@ -16,7 +16,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 ### 1. Setup YKit SDK 
 #### 1.1. Import YKit and Facebook frameworks into project
 
-   - Drag and drop YKit.framework into your project
+   - Drag and drop YKit.framework and framewords of Facebook into your project
    - Tick on checkbox: “Copy items into destination group's folder (if needed)”.
    - Add YKit.framework, FBSDKCoreKit.framework, FBSDKLoginKit.framework, FBSDKShareKit.framework to Frameworks, Libraries, and Embedded Content
 ![](Images/ykit_ios_05.png)
@@ -213,7 +213,7 @@ Step 2: Show loginView
 #### 1.4. Setup Firebase Push-Notifications
 ##### 1.4.1 Setup Firebase framework
 
-- Drap & drop firebase frameworks into your game. (Remember to target your project)
+- Drap and drop frameworks of Firebase into your project. (Remember to target your project)
 
 ![](Images/firebase-framework.png)
 
@@ -433,10 +433,26 @@ Fist of all, you need to config URL type in your target following below instruct
 
 ```
 
-#### 1.5. Setup local push reminder to play the game
+#### 1.5. Setup NotificationService
+- Add extension Notification Service Extension  in Target with name NotificationService
+![](Images/ykit_ios_06.png)
+- Replace file NotificationService.m with file NotificationService.m in directory "NotificationService" of YGame
+- Set Version, Build are same as your project
+- Set Target 10.0
+![](Images/ykit_ios_07.png)
+- Add App Groups in Signing & Capabilities for your project and NotificationService
+![](Images/ykit_ios_08.png)
+- Add directory "Download" of YGame to your project
+![](Images/ykit_ios_09.png)
+- Add file DownloadManager.m into Compile Source in Build Phases ( both your project and NotificationService )
+![](Images/ykit_ios_10.png)
+- Set Architectures = Standard in NotificationService
+![](Images/ykit_ios_11.png)
+
+#### 1.6. Setup local push reminder to play the game
 ```
 //SETUP 3 DAY LATER NOTIFICATION IF USER HAVEN'T PLAYED
-    [launcher setReminderLogin:@"Please get content of reminder from YGame" after:3];
+    [launcher setReminderLogin:@"xxxxxxxxxxxxxxxx" after:3];
 ```    
 
 #### 1.6. Public functions
@@ -510,12 +526,3 @@ Example usage
 
 #### 3.2. Payment flow:
 ![](Images/PaymentFlow.png)
-
-### 4. Build note
-Please input full information in Xcode before build the product
-- Display Name: name appear on the device
-- Bundle identifier: bundle id of your game which provided by YGame
-- Version: string, for example: 1.0.0
-- Build: number, for example: 100
-
-![](Images/identity.png)
