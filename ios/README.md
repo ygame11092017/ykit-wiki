@@ -23,24 +23,18 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 ![](Images/ykit_ios_01.png)
 
 #### 1.2. Add url schemes
-#### 1.2.1. Add url schemes for facebook login
-    
+
 ![](Images/ykit_ios_02.png)
   - xxxxx: bundle id of game
   - yyyyy: GoogleSignIn_ReverseClientID in YKitConfig.plist
   - bbbbb: FacebookUrlSchemes in YKitConfig.plist
   - mmmmm: AdsKey in YKitConfig.plist
 
-   - Go to ios info.plist
-   - Add  facebook app id, facebook display name and application queries scheme as below. Please replace app id and display name with the value in the YKitConfig.plist file
+  - In file info.plist of your project, add FacebookAppID, FacebookDisplayName and LSApplicationQueriesSchemes as below. You can get value of FacebookAppID and FacebookDisplayName in the YKitConfig.plist
    
 ![](Images/addFacebookID.png)
 
    - Add file YKitConfig.plist to your root project (The current YKitConfig.plist in SDK folder is an example file. Remember to use the YKitConfig.plist which is sent by YGame Corp)
-   
-#### 1.2.2. Add url schemes for applink
-   - Add the following url schemes for applink (We will give you the name of scheme)
-![](Images/urlscheme_applink.png)
 
 #### 1.3. Use SDK to login
 ##### 1.3.1 Config SDK setting
