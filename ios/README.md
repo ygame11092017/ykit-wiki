@@ -34,18 +34,17 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
    
 ![](Images/ykit_ios_03.png)
 
-   - Add file YKitConfig.plist to your root project (The current YKitConfig.plist in SDK folder is an example file. Remember to use the YKitConfig.plist which is sent by YGame Corp)
+   - Add file YKitConfig.plist to your root project
 
 #### 1.3. Use SDK to login
 ##### 1.3.1 Config SDK setting
-- Import SDK : ```#import <YKit/YKit.h>``` in Cocos AppController.m
+- Import SDK : ```#import <YKit/YKit.h>``` in AppController.m
 
-- Add these lines of code in Application didFinishLaunchingWithOptions function in AppController class, after window setup. You can get Google Signin client ID in the YKitConfig.plist.
+- Add these lines of code in Application didFinishLaunchingWithOptions function in AppController class, after window setup. You can get GoogleSignIn_ClientID in the YKitConfig.plist.
 
 ```
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Project config
-    
     
     // Start YKIT CONFIG
     YKit *launcher = [YKit getInstance];
@@ -93,10 +92,72 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
     NSDictionary *dict = @{kParamApplication: ATNonNilObject(application),
                            kParamOptions: ATNonNilObject(launchOptions)};
     ATDispatchEvent(Event_AppDidFinishLaunching, dict);    
+
+
+    // [START configure_firebase]
+    [FIRApp configure];
+    // [END configure_firebase]
+    
+    // [START set_messaging_delegate]
+    [FIRMessaging messaging].delegate = (id)self;
+    // [END set_messaging_delegate]
+    
+    
+    
+    
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
+        // iOS 7.1 or earlier. Disable the deprecation warnings.
+        #pragma clang diagnostic push
+        #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        UIRemoteNotificationType allNotificationTypes =
+        (UIRemoteNotificationTypeSound |
+         UIRemoteNotificationTypeAlert |
+         UIRemoteNotificationTypeBadge);
+        [application registerForRemoteNotificationTypes:allNotificationTypes];
+        #pragma clang diagnostic pop
+    } 
+    else {
+        // iOS 8 or later
+        // [START register_for_notifications]
+        if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_9_x_Max) {
+            UIUserNotificationType allNotificationTypes =
+            (UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge);
+            UIUserNotificationSettings *settings =
+            [UIUserNotificationSettings settingsForTypes:allNotificationTypes categories:nil];
+            [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        } else {
+            // iOS 10 or later
+            #if defined(__IPHONE_10_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+            // For iOS 10 display notification (sent via APNS)
+            [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+            UNAuthorizationOptions authOptions =
+            UNAuthorizationOptionAlert
+            | UNAuthorizationOptionSound
+            | UNAuthorizationOptionBadge;
+            [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:authOptions completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            }];
+      #endif
+        }
+        
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+        // [END register_for_notifications]
+    }
+    
+    [launcher setReminderLogin:@"xxxxxxxxxxxxxxxxxx" after:3];
+    
+    if (@available(iOS 13.0, *)) {
+       [_window setOverrideUserInterfaceStyle:UIUserInterfaceStyleLight];
+    } else {
+       // Fallback on earlier versions
+    }
+
+
     // END YKIT CONFIG
     
     return YES;
 }
+
+- xxxxxxxxxxxxxxxxxx: notification for user, it is provided by YGame ( please contact with YGame )
 
 ```
 - In the previous code, we provide two callback functions. There are handleLoginWithCompletion and handleLogoutWithCompletion. You may use these functions to call login or logout with your server
