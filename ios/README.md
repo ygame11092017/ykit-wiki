@@ -32,7 +32,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 
   - In file info.plist of your project, add FacebookAppID, FacebookDisplayName and LSApplicationQueriesSchemes as below. You can get value of FacebookAppID and FacebookDisplayName in the YKitConfig.plist
    
-![](Images/addFacebookID.png)
+![](Images/ykit_ios_03.png)
 
    - Add file YKitConfig.plist to your root project (The current YKitConfig.plist in SDK folder is an example file. Remember to use the YKitConfig.plist which is sent by YGame Corp)
 
