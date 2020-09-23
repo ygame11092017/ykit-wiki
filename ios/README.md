@@ -435,11 +435,15 @@ Fist of all, you need to config URL type in your target following below instruct
 
 #### 1.5. Setup NotificationService
 - Add extension Notification Service Extension  in Target with name NotificationService
+
 ![](Images/ykit_ios_06.png)
+
 - Replace file NotificationService.m with file NotificationService.m in directory "NotificationService" of YGame
 - Set Version, Build are same as your project
 - Set Target 10.0
+
 ![](Images/ykit_ios_07.png)
+
 - Add App Groups in Signing & Capabilities for your project and NotificationService
 ![](Images/ykit_ios_08.png)
 - Add directory "Download" of YGame to your project
@@ -486,16 +490,13 @@ else {
 * handleCloseSDKCompletion: You can get the event show SDK here
 
 #### 1.7. Turn on Application necessary Capabilities.
+
 - Turn on Push Notification
-- Turn on Background Mode for Push Notification
 - Turn on InApp-Purchase
 - Turn on Sign In With Apple
-- Turn on Inapp Purchase
 
 ### 2. Buy item in game by using YCoin
-We provide a buy function, which used to buy the item from your game.
-
----buy with parameters:
+We provide a buy function, which used to buy the item from your game. You can buy with parameters:
 
 +serverId: User current server id
 
