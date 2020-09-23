@@ -434,24 +434,33 @@ Fist of all, you need to config URL type in your target following below instruct
 ```
 
 #### 1.5. Setup NotificationService
-- Add extension Notification Service Extension  in Target with name NotificationService
+- Add extension Notification Service Extension in Target with name "NotificationService"
 
-![](Images/ykit_ios_06.png)
+![](Images/ykit_ios_060.png)
 
 - Replace file NotificationService.m with file NotificationService.m in directory "NotificationService" of YGame
-- Set Version, Build are same as your project
+- Set Version, Build are same as your project ( Note: Version, Build of NotificationService are required same with your project )
 - Set Target 10.0
 
-![](Images/ykit_ios_07.png)
+![](Images/ykit_ios_070.png)
+
+![](Images/ykit_ios_071.png)
 
 - Add App Groups in Signing & Capabilities for your project and NotificationService
+
 ![](Images/ykit_ios_08.png)
+
 - Add directory "Download" of YGame to your project
+
 ![](Images/ykit_ios_09.png)
+
 - Add file DownloadManager.m into Compile Source in Build Phases ( both your project and NotificationService )
-![](Images/ykit_ios_10.png)
+
+![](Images/ykit_ios_101.png)
+
 - Set Architectures = Standard in NotificationService
-![](Images/ykit_ios_11.png)
+
+![](Images/ykit_ios_102.png)
 
 #### 1.6. Setup local push reminder to play the game
 ```
