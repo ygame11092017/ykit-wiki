@@ -446,9 +446,9 @@ Fist of all, you need to config URL type in your target following below instruct
 
 ![](Images/ykit_ios_071.png)
 
-- Add App Groups in Signing & Capabilities for your project and NotificationService
+- Add App Groups in Signing & Capabilities for both your project and NotificationService
 
-![](Images/ykit_ios_08.png)
+![](Images/ykit_ios_080.png)
 
 - Add directory "Download" of YGame to your project
 
