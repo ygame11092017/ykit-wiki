@@ -215,6 +215,10 @@ Note: the image or video may be out of date
         implementation deps.traceur
     
         implementation deps.logger
+
+        implementation deps.timeLineView
+        implementation deps.outlineSpan
+        implementation deps.linkBuilder
     
         implementation(deps.loggingInterceptor) {
             exclude group: 'org.json', module: 'json'
