@@ -295,7 +295,7 @@ Replace `CCCCC` string with `Ads_Id` in file `config.xml`
 
  + Update all images "ic_launcher..." in mipmap with icon of YGame ( support for push notification )
  
- ![](images/image-mipmap.png)
+ ![](images/mipmap.png)
  
 ### 3. Implement code
 
