@@ -356,6 +356,8 @@ Replace `CCCCC` string with `Ads_Id` in file `config.xml`
         protected void onActivityResult(int requestCode, int resultCode, Intent data) {
             YKit.get().onActivityResult(requestCode, resultCode, data, this);
         }
+
+        YKit.get().setRemindContent("DDDDD");
     }
   ```   
   
@@ -365,6 +367,7 @@ Replace `CCCCC` string with `Ads_Id` in file `config.xml`
   + `onInAppPurchase`: notify purchase success
   + `onPause`: call when game pause
   + `onResume`: call when game resume
+  + `setRemindContent`: set remnind content for user ( please ask value of `DDDDD` from YGame )
 
 ## C. Setup YCoin Support
 

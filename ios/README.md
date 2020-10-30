@@ -146,7 +146,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
         // [END register_for_notifications]
     }
     
-    [launcher setReminderLogin:@"xxxxxxxxxxxxxxxxxx" after:3];
+    [launcher setReminderLogin:@"DDDDD" after:3];
     
     if (@available(iOS 13.0, *)) {
        [_window setOverrideUserInterfaceStyle:UIUserInterfaceStyleLight];
@@ -160,7 +160,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
     return YES;
 }
 
-- xxxxxxxxxxxxxxxxxx: notification for user, it is provided by YGame ( please contact with YGame )
+- DDDDD: remind content for user ( please ask value of `DDDDD` from YGame )
 
 ```
 - In the previous code, we provide two callback functions. There are handleLoginWithCompletion and handleLogoutWithCompletion. You may use these functions to call login or logout with your server
