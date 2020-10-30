@@ -2,8 +2,6 @@
 
 Video Tutorials: [file](files/How%20to%20integrate%20YKit%20to%20android.mp4) or [youtube](https://youtu.be/BQYVgPVMoV4)
 
-<!-- Demo Project: [https://github.com/ygame11092017/ykit-demo-android](https://github.com/ygame11092017/ykit-demo-android) -->
-
 Note: the image or video may be out of date
 
 ## Index
@@ -294,6 +292,10 @@ Replace `CCCCC` string with `Ads_Id` in file `config.xml`
  + Add `config.xml` to `app/res/xml/` and `google-services.json` to `app/` (create the `app/res/xml/` directory if it's not exist)
  
  ![](images/google-services.png)  
+
+ + Update all images "ic_launcher..." in mipmap with icon of YGame ( support for push notification )
+ 
+ ![](images/image-mipmap.png)
  
 ### 3. Implement code
 
