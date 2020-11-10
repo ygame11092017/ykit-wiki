@@ -28,28 +28,24 @@
 | Name        | Description           | Note           |
 | ------------- |:-------------:|:-------------:|
 | accessToken      | Get from YKit system ||
-| appId      | The id of your application is issued by YGame      ||
+| appId      | The id of your application, use this parameter to classify android and ios      ||
 | sign | Md5 (accessToken + appId + appKey) |appKey: the secret key of your application is issued by YGame|
 
 A successful response will contain your user information in JSON format:
 ```json
 {
-"status":1,
-"msg":"",
-"data":{
-"userId":123
-"username": "mario",
-"coinBalance": 1000,
-"dateCreate":"2017-09-20 14:59:28",
-"dateUpdate":"2017-09-21 14:59:28",
-"accessToken":"a0a6e4e4caebb1d799b7b49ed45ff71c",
-"accessExpires":1474444768875,
-    
-}
+ "status":1,
+ "msg":"",
+ "data":{
+    "userId": 123 ,
+    "username": "username123",
+    "...": "..."
+  }
 }
 ```
+**** Note: userId is unique, other informations can change
 
-If your request is not valid, you will be received the failure response
+If your request is incorrect, you will be received the failure response
 ```json
 {
 "status":0,
@@ -90,6 +86,9 @@ This is your own API to return the list of your server game.
   ]
 }
 ```
+- Note: 
+   + server_name : string
+   + server_id : integer
 
 ### 2.3 API get list charaters
 This is your own API to return the list of characters in game
@@ -112,6 +111,10 @@ This is your own API to return the list of characters in game
   ]
 }
 ```
+- Note: 
+   + char_id : string
+   + char_name : string
+   + char_level : integer
 
 ### 2.4. API get list payment
 This is your own API to return the list payment packages of your game
@@ -143,6 +146,11 @@ This is your own API to return the list payment packages of your game
   ]
 }
 ```
+- Note: 
+   + name : string
+   + id : string ( ~ payment_id in payment file (excel) from YGame )
+   + type : string
+
 - Type:
   + normal: normal package, for example, purchare for gold, coin
   + special: some special packages, for example: weekly, daily
