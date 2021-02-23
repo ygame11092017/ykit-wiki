@@ -1,22 +1,15 @@
 # Web Integration
 
 ### 1. Description.
-
-	1. When user login successful in YKit system, user will be redirected to your game link to play game 
-	with 2 params
+	- Partner will provide a api for get link for playing game in browser
+	- YGame will call that api with below params, partner will verify and return a link, YGame will use this link embed to browser for user playing game
 	
 	| Name        | Description                        | Note        |
 	| ----------- |------------------------------------|-------------|
 	| accessToken | token for verify, encoded by base64|             |
-	| sign        | Md5 (accessToken + appId + appKey) |Used to verify the request. appId,appKey are provided
-														by YGame|
-   
-   	Example : https://example.com/index.html?accessToken=...&sign=...
-
-    2. After verify request successful, your server will decode accessToken and verify this accessToken
-     with YKit system
-
-### 2 Verify acccessToken.
+	| sign        | Md5 (accessToken + appId + appSecret) |Used to verify the request. appId,appSecret are provided by YGame|
+ 
+### 2 Verify acccessToken
 
     https://github.com/ygame11092017/ykit-wiki/blob/master/server/README.md#13-ykit-server-api
 
