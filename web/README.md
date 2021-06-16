@@ -18,7 +18,7 @@
 ### 1. Description.
 	- Partner will provide a api for logout character in game
 	- YGame will call that api with below params, partner will verify and logout user
-	_ Method API: GET
+	_ Method API: POST
 	
 	| Name        | Description                        | Note        |
 	| ----------- |------------------------------------|-------------|
