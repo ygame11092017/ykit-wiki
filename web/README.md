@@ -22,7 +22,7 @@
 	
 	| Name        | Description                        | Note                               |
 	| ----------- |------------------------------------|------------------------------------|
-	| accessToken | token for verify, encoded by base64|This is YGame User Token            |
+	| accessToken | token for verify, encoded by base64| This is YGame User Token            |
 	
 - Response: return the result in json format.
 ```
