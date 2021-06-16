@@ -1,4 +1,4 @@
-# 1.Web Integration
+# 1. Web Integration
 
 ### 1. Description.
 	- Partner will provide a api for get link for playing game in browser
@@ -13,7 +13,7 @@
 
     https://github.com/ygame11092017/ykit-wiki/blob/master/server/README.md#13-ykit-server-api
 
-# 2.Character Logout Ingame
+# 2. Character Logout Ingame
 
 ### 1. Description.
 	- Partner will provide a api for logout character in game
