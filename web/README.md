@@ -31,7 +31,20 @@
   "msg":"",
 }
 ```
- 
+- Your API must be response the result in the JSON format as description in the table below
+
+| Response        |JSON Format            |
+| ------------- |:-------------:|
+| success response      | {"status": "1", "msg":""} |
+| Failure response      | {"status": "error_code", "msg":"reason"} |
+
+| Error code        |Reason            |
+| ------------- |:-------------:|
+| -1      | system error |
+| -2      | invalid character id|
+| -3      | invalid server id|
+| -4      | invalid payment id |
+| -5      | unknow error |
 ### 2 Verify acccessToken
 
     https://github.com/ygame11092017/ykit-wiki/blob/master/server/README.md#13-ykit-server-api
