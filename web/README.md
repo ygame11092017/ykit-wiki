@@ -23,6 +23,18 @@
 	| Name        | Description                        | Note        |
 	| ----------- |------------------------------------|-------------|
 	| accessToken | token for verify, encoded by base64|             |
+	- Response: return the result in json format. For example: A user have three characters in the server S2. Their names are herror, warrior, king. The result will be returned as below
+```
+{
+  "status":1,
+  "msg":"",
+  "data":[
+    {"char_name":"hero","char_id":"123", "char_level":8},
+    {"char_name":"warrior","char_id":"456", "char_level":20},
+    {"char_name":"king","char_id":"999", "char_level":35}
+  ]
+}
+```
  
 ### 2 Verify acccessToken
 
