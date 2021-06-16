@@ -1,4 +1,4 @@
-# Web Integration
+# 1.Web Integration
 
 ### 1. Description.
 	- Partner will provide a api for get link for playing game in browser
@@ -13,3 +13,17 @@
 
     https://github.com/ygame11092017/ykit-wiki/blob/master/server/README.md#13-ykit-server-api
 
+# 2.Character Logout Ingame
+
+### 1. Description.
+	- Partner will provide a api for logout character in game
+	- YGame will call that api with below params, partner will verify and logout user
+	_ Method API: GET
+	
+	| Name        | Description                        | Note        |
+	| ----------- |------------------------------------|-------------|
+	| accessToken | token for verify, encoded by base64|             |
+ 
+### 2 Verify acccessToken
+
+    https://github.com/ygame11092017/ykit-wiki/blob/master/server/README.md#13-ykit-server-api
