@@ -20,9 +20,9 @@
 	- YGame will call that api with below params, partner will verify and logout user
 	_ Method API: POST
 	
-	| Name        | Description                        | Note        |
-	| ----------- |------------------------------------|-------------|
-	| accessToken | token for verify, encoded by base64|             |
+	| Name        | Description                        | Note                               |
+	| ----------- |------------------------------------|------------------------------------|
+	| accessToken | token for verify, encoded by base64|This is YGame User Token            |
 	
 - Response: return the result in json format.
 ```
