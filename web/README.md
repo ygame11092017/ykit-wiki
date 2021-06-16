@@ -24,7 +24,7 @@
 	| ----------- |------------------------------------|-------------|
 	| accessToken | token for verify, encoded by base64|             |
 	
-	- Response: return the result in json format. For example: A user have three characters in the server S2. Their names are herror, warrior, king. The result will be returned as below
+- Response: return the result in json format. For example: A user have three characters in the server S2. Their names are herror, warrior, king. The result will be returned as below
 ```
 {
   "status":1,
