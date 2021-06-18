@@ -356,7 +356,7 @@ Params:
 | server_id      | The id of server game|
 | mail_title      | The title of mail|
 | mail_content      | The content of mail|
-| items      | List of id and number of item used to add for user in game. Example: [{"id":"ID001","number":1},{"id":"ID002","number":2}]|
+| items      | List of id and number of item used to add for user in game. Example: [{"id":"ID001","type":"type1","number":1},{"id":"ID002",,"type":"type2""number":2}]|
 | sign | Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#14-api-payment-callback) |
 
 | Response        |JSON Format            |
