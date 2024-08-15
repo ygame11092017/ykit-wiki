@@ -151,7 +151,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
         // [END register_for_notifications]
     }
 
-    [launcher setReminderLogin:@"DDDDD" after:3];
+    [launcher setReminderLogin:@"Đã 3 ngày rồi bạn không đăng nhập vào game, bạn bè đang đợi." after:3];
 
     if (@available(iOS 13.0, *)) {
        [_window setOverrideUserInterfaceStyle:UIUserInterfaceStyleLight];
@@ -164,8 +164,6 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 
     return YES;
 }
-
-- DDDDD: remind content for user ( please ask value of `DDDDD` from YGame )
 
 ```
 
