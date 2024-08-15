@@ -11,49 +11,54 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
     3. YKit SDK flow
 
 ## Note
-   - Make sure our project's deployment target is 8.0 at least.
 
-### 1. Setup YKit SDK 
+- Make sure our project's deployment target is 8.0 at least.
+
+### 1. Setup YKit SDK
+
 #### 1.1. Import YKit and Facebook frameworks into project
 
-   - Drag and drop YKit.framework and framewords of Facebook into your project
-   - Tick on checkbox: “Copy items into destination group's folder (if needed)”.
-   - Add YKit.framework, FBSDKCoreKit.framework, FBSDKLoginKit.framework, FBSDKShareKit.framework into Frameworks, Libraries, and Embedded Content
-    ![](Images/ykit_ios_05.png)
-   - Add FacebookSDKStrings.bundle into Copy Bundle Resources in Build Phases
-    ![](Images/ykit_ios_051.png)
-   - Add Run Script into Build Phases ( You can get content of script in file script1.txt )
-    ![](Images/ykit_ios_052.png)
+- Drag and drop YKit.framework and framewords of Facebook into your project
+- Tick on checkbox: “Copy items into destination group's folder (if needed)”.
+- Add YKit.framework,FBAEMKit.framework,FBSDKCoreKit_Basics.framework,FBSDKCoreKit.framework,FBSDKLoginKit.framework,FBSDKShareKit.framework into Frameworks, Libraries, and Embedded Content
+  ![](Images/ykit_ios_103.png)
+- Add FacebookSDKStrings.bundle into Copy Bundle Resources in Build Phases
+  ![](Images/ykit_ios_051.png)
+- Add Run Script into Build Phases ( You can get content of script in file script1.txt )
+  ![](Images/ykit_ios_052.png)
 
 #### 1.2. Add url schemes
 
 ![](Images/ykit_ios_02.png)
-  - xxxxx: bundle id of game
-  - yyyyy: GoogleSignIn_ReverseClientID in YKitConfig.plist
-  - bbbbb: FacebookUrlSchemes in YKitConfig.plist
-  - mmmmm: AdsKey in YKitConfig.plist
 
-  - In file info.plist of your project, add FacebookAppID, FacebookDisplayName and LSApplicationQueriesSchemes as below. You can get value of FacebookAppID and FacebookDisplayName in the YKitConfig.plist
-   
+- xxxxx: bundle id of game
+- yyyyy: GoogleSignIn_ReverseClientID in YKitConfig.plist
+- bbbbb: FacebookUrlSchemes in YKitConfig.plist
+- mmmmm: AdsKey in YKitConfig.plist
+
+- In file info.plist of your project, add FacebookAppID, FacebookDisplayName and LSApplicationQueriesSchemes as below. You can get value of FacebookAppID and FacebookDisplayName in the YKitConfig.plist
+
 ![](Images/ykit_ios_03.png)
 
-   - Add file YKitConfig.plist to your root project
+- Add file YKitConfig.plist to your root project
 
 #### 1.3. Use SDK to login
+
 ##### 1.3.1 Config SDK setting
-- Import SDK : ```#import <YKit/YKit.h>``` in AppController.m
+
+- Import SDK : `#import <YKit/YKit.h>` in AppController.m
 
 - Add these lines of code in Application didFinishLaunchingWithOptions function in AppController class, after window setup. You can get GoogleSignIn_ClientID in the YKitConfig.plist.
 
 ```
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Project config
-    
+
     // Start YKIT CONFIG
     YKit *launcher = [YKit getInstance];
-        
+
     launcher.isPotrait = NO;
-    
+
     // Handle login callback
     [launcher handleLoginWithCompletion:^(NSDictionary *data) {
          [launcher getFacebookInfo];
@@ -63,51 +68,51 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
          //  NSLog(@"sample %@" ,[launcher getFacebookInfo]);
          [launcher showButtonLauncherWithAnimation:YES];
     }];
-        
+
     // Handle logout callback
     [launcher handleLogoutWithCompletion:^{
             //do something
     }];
-    
+
     // handle payment callback
     [launcher handlePaymentWithCompletion:^(NSDictionary *data){
          NSLog(@"Payment success! %@", data);
     }];
-        
+
     //    NSLog(@"sample %@" ,[launcher getFacebookInfo]);
     [launcher setServerTest:NO];
-   
+
     if ([launcher silentLogin]) {
-            
+
     }
     // Example usage of silentLogin. For more information, check the public functions section.
-    
-    
+
+
     [launcher handleShowSDKCompletion:^{
         NSLog(@"I'm in YKit");
     }];
-    
+
     NSString* appID = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
     [launcher handleCloseSDKCompletion:^{
         NSLog(@"Closed");
     }];
-        
+
     NSDictionary *dict = @{kParamApplication: ATNonNilObject(application),
                            kParamOptions: ATNonNilObject(launchOptions)};
-    ATDispatchEvent(Event_AppDidFinishLaunching, dict);    
+    ATDispatchEvent(Event_AppDidFinishLaunching, dict);
 
 
     // [START configure_firebase]
     [FIRApp configure];
     // [END configure_firebase]
-    
+
     // [START set_messaging_delegate]
     [FIRMessaging messaging].delegate = (id)self;
     // [END set_messaging_delegate]
-    
-    
-    
-    
+
+
+
+
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
         // iOS 7.1 or earlier. Disable the deprecation warnings.
         #pragma clang diagnostic push
@@ -118,7 +123,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
          UIRemoteNotificationTypeBadge);
         [application registerForRemoteNotificationTypes:allNotificationTypes];
         #pragma clang diagnostic pop
-    } 
+    }
     else {
         // iOS 8 or later
         // [START register_for_notifications]
@@ -141,13 +146,13 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
             }];
       #endif
         }
-        
+
         [[UIApplication sharedApplication] registerForRemoteNotifications];
         // [END register_for_notifications]
     }
-    
+
     [launcher setReminderLogin:@"DDDDD" after:3];
-    
+
     if (@available(iOS 13.0, *)) {
        [_window setOverrideUserInterfaceStyle:UIUserInterfaceStyleLight];
     } else {
@@ -156,46 +161,48 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 
 
     // END YKIT CONFIG
-    
+
     return YES;
 }
 
 - DDDDD: remind content for user ( please ask value of `DDDDD` from YGame )
 
 ```
+
 - In the previous code, we provide two callback functions. There are handleLoginWithCompletion and handleLogoutWithCompletion. You may use these functions to call login or logout with your server
-            
-- Add function handle Facebook schemes 
+- Add function handle Facebook schemes
 
 ```
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)
-            sourceApplication annotation:(id)annotation { 
+            sourceApplication annotation:(id)annotation {
 
-            NSDictionary *dict = @{kParamApplication: ATNonNilObject(application), kParamUrl: ATNonNilObject(url), 
-            kParamSourceApplication: ATNonNilObject(sourceApplication), kParamAnnotation: ATNonNilObject(annotation)}; 
+            NSDictionary *dict = @{kParamApplication: ATNonNilObject(application), kParamUrl: ATNonNilObject(url),
+            kParamSourceApplication: ATNonNilObject(sourceApplication), kParamAnnotation: ATNonNilObject(annotation)};
 
-            ATDispatchEvent(Event_AppOpenUrl, dict); 
+            ATDispatchEvent(Event_AppOpenUrl, dict);
 
-            return YES; 
+            return YES;
 }
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
-    
+
     NSDictionary *dict = @{kParamApplication: ATNonNilObject(app),
                            kParamUrl: ATNonNilObject(url),
                            kParamOptions: ATNonNilObject(options)};
     ATDispatchEvent(Event_AppOpenUrlEx, dict);
-    
-    
+
+
     return YES;
 }
 ```
+
 ##### 1.3.2 Show login view
 
 Step 1: Must register view controller which presenting YKit login view
- param:
-     -rootViewController: the view controller will show SDK
-     -usingFacebookSDK: use FB to login // default NO
+param:
+-rootViewController: the view controller will show SDK
+-usingFacebookSDK: use FB to login // default NO
+
 ```
 - (void)viewDidload {
    [super viewDidload];
@@ -204,7 +211,9 @@ Step 1: Must register view controller which presenting YKit login view
 }
 
 ```
-Step 2: Show loginView 
+
+Step 2: Show loginView
+
 ```
 - (IBAction)onLoginButtonAction:(id)sender
 {
@@ -213,8 +222,8 @@ Step 2: Show loginView
 }
 ```
 
-
 #### 1.4. Setup Firebase Push-Notifications
+
 ##### 1.4.1 Setup Firebase framework
 
 - Drap and drop frameworks of Firebase into your project. (Remember to target your project)
@@ -233,20 +242,20 @@ Step 2: Show loginView
 
 ![](Images/firebase-h.png)
 
-- In Linked Frameworkds and Libraries. Click the + Icon down below and add there 3 frameworks: 
-    - libsqlite3.0.tbd
-    - GameController.framework
-    - UserNotifications.framework
+- In Linked Frameworkds and Libraries. Click the + Icon down below and add there 3 frameworks:
+  - libsqlite3.0.tbd
+  - GameController.framework
+  - UserNotifications.framework
 
-![](Images/linked-frameworks-libraries.png) 
+![](Images/linked-frameworks-libraries.png)
 
-![](Images/new-framework-add.png) 
+![](Images/new-framework-add.png)
 
 ![](Images/3-framework.png)
 
 ##### 1.4.2 Setup firebase code
 
-- In your appcontroller.h, ```#import "Firebase.h"``` and add FIRMessagingDelegate to the interface like picture below
+- In your appcontroller.h, `#import "Firebase.h"` and add FIRMessagingDelegate to the interface like picture below
 
 - Add these pre-defined macros for firebase above Implementation
 
@@ -273,7 +282,7 @@ Step 2: Show loginView
     // [START configure_firebase]
     [FIRApp configure];
     // [END configure_firebase]
-    
+
     // [START set_messaging_delegate]
     [FIRMessaging messaging].delegate = self;
     // [END set_messaging_delegate]
@@ -314,22 +323,23 @@ if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
             }];
 #endif
         }
-        
+
         [[UIApplication sharedApplication] registerForRemoteNotifications];
         // [END register_for_notifications]
     }
 ```
- - Setup handling message: Add these functions to your appcontroller.m
+
+- Setup handling message: Add these functions to your appcontroller.m
 
 ```
 // [START receive_message]
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    
+
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-   
+
     completionHandler(UIBackgroundFetchResultNewData);
 }
 // [END receive_message]
@@ -344,7 +354,7 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     NSDictionary *userInfo = notification.request.content.userInfo;
     //[[YKit getInstance] appDidReceiveMessage:userInfo];
     // Change this to your preferred presentation option
-    completionHandler(UNNotificationPresentationOptionAlert); 
+    completionHandler(UNNotificationPresentationOptionAlert);
 }
 
 // Handle notification messages after display notification is tapped by the user.
@@ -352,7 +362,7 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
 didReceiveNotificationResponse:(UNNotificationResponse *)response
          withCompletionHandler:(void(^)())completionHandler {
     NSDictionary *userInfo = response.notification.request.content.userInfo;
-    
+
     completionHandler();
 }
 #endif
@@ -381,22 +391,25 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 }
 ```
 
-
 ##### 1.4.3 Setup firebase for authentication (verify OTP)
-- Before setup firebase for authentication please ensure that you followed steps in 1.4.1 Setup Firebase framework
-Fist of all, you need to config URL type in your target following below instruction image or following this link: https://firebase.google.com/docs/auth/ios/phone-auth
-![](Images/SetupCapcha.png)
 
+- Before setup firebase for authentication please ensure that you followed steps in 1.4.1 Setup Firebase framework
+  Fist of all, you need to config URL type in your target following below instruction image or following this link: https://firebase.google.com/docs/auth/ios/phone-auth
+  ![](Images/SetupCapcha.png)
 
 - In your appcontroller.m, add YKitDelegate to listen request authentication code like code below:
+
 ```
 @interface AppController () <UNUserNotificationCenterDelegate, YKitDelegate>
 ```
-- In ```- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions``` method add delegate config to receive events:
+
+- In `- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions` method add delegate config to receive events:
+
 ```
  YKit *launcher = [YKit getInstance];
  launcher.delegate = self;
 ```
+
 - Add 2 method and call to FIRPhoneAuthProvider to verify
 
 ```
@@ -424,12 +437,12 @@ Fist of all, you need to config URL type in your target following below instruct
                                       callback(@"",error);
                                       return;
                                   }
-                                  
+
                                   if (authResult == nil) {
                                       callback(@"",nil);
                                       return;
                                   }
-                                  
+
                                   FIRUser *user = authResult.user;
                                   callback(user.uid, nil);
                               }];
@@ -438,6 +451,7 @@ Fist of all, you need to config URL type in your target following below instruct
 ```
 
 #### 1.5. Setup NotificationService
+
 - Add extension Notification Service Extension in Target with name "NotificationService"
 
 ![](Images/ykit_ios_060.png)
@@ -467,18 +481,20 @@ Fist of all, you need to config URL type in your target following below instruct
 ![](Images/ykit_ios_102.png)
 
 #### 1.6. Setup local push reminder to play the game
+
 ```
 //SETUP 3 DAY LATER NOTIFICATION IF USER HAVEN'T PLAYED
     [launcher setReminderLogin:@"xxxxxxxxxxxxxxxx" after:3];
-```    
+```
 
 #### 1.6. Public functions
-Here is the list of public functions you can call to customize the YKit in your game: 
 
-* setLauncherStickySide: You can specific the side that launcher can stick to via the or bitwise. 
-Ex: ATButtonStickySideTop | ATButtonStickySideBottom 
-* setServerTest: Use ygame server test
-* silentLogin: When open the app, maybe user is already logged in. Call this function to check if user is logged in or not, if not, you must call showLoginScreen function to show the login screen. 
+Here is the list of public functions you can call to customize the YKit in your game:
+
+- setLauncherStickySide: You can specific the side that launcher can stick to via the or bitwise.
+  Ex: ATButtonStickySideTop | ATButtonStickySideBottom
+- setServerTest: Use ygame server test
+- silentLogin: When open the app, maybe user is already logged in. Call this function to check if user is logged in or not, if not, you must call showLoginScreen function to show the login screen.
 
 ```
 if([[YKit getInstance] silentLogin])
@@ -489,18 +505,18 @@ else {
 }
 ```
 
-* showButtonLauncherWithAnimation: Show SDK hovering button. (set YES to enable fading animation and NO to instantly show)
-* hideButtonLauncherWithAnimation: Hide SDK hovering button. (set YES to enable fading animation and NO to instantly hide)
+- showButtonLauncherWithAnimation: Show SDK hovering button. (set YES to enable fading animation and NO to instantly show)
+- hideButtonLauncherWithAnimation: Hide SDK hovering button. (set YES to enable fading animation and NO to instantly hide)
 
 ```
 [launcher showButtonLauncherWithAnimation:YES];
 [launcher hideButtonLauncherWithAnimation:YES];
 ```
 
-* showLoginScreen: Show the login screen, if user not logged in yet
-* showPaymentScreen: You may want to show payment screen from your game
-* handleShowSDKCompletion: You can get the event show SDK here
-* handleCloseSDKCompletion: You can get the event show SDK here
+- showLoginScreen: Show the login screen, if user not logged in yet
+- showPaymentScreen: You may want to show payment screen from your game
+- handleShowSDKCompletion: You can get the event show SDK here
+- handleCloseSDKCompletion: You can get the event show SDK here
 
 #### 1.7. Turn on Application necessary Capabilities.
 
@@ -509,6 +525,7 @@ else {
 - Turn on Sign In With Apple
 
 ### 2. Buy item in game by using YCoin
+
 We provide a buy function, which used to buy the item from your game. You can buy with parameters:
 
 +serverId: User current server id
@@ -526,6 +543,7 @@ We provide a buy function, which used to buy the item from your game. You can bu
 ```
 (BOOL)buy:(NSString*)serverId char_id:(NSString*)charId payment_id:(NSString*)payment isConfirm:(bool)is_confirm server_name:(NSString*)serverName char_name:(NSString*)charName;
 ```
+
 Example usage
 
 ```
@@ -535,8 +553,10 @@ Example usage
 
 ### 3. Flow
 
-#### 3.1. Login flow: 
+#### 3.1. Login flow:
+
 ![](Images/loginFlow.png)
 
 #### 3.2. Payment flow:
+
 ![](Images/PaymentFlow.png)
