@@ -362,7 +362,7 @@ Replace `{T}` string with `FacebookClientToken` in file `config.xml`
           YKit.get().onActivityResult(requestCode, resultCode, data, this);
       }
 
-      YKit.get().setRemindContent("DDDDD");
+      YKit.get().setRemindContent("Đã 3 ngày rồi bạn không đăng nhập vào game, bạn bè đang đợi");
   }
 ```
 
@@ -373,7 +373,7 @@ In the previous code, we provide some callback functions:
 - `onInAppPurchase`: notify purchase success
 - `onPause`: call when game pause
 - `onResume`: call when game resume
-- `setRemindContent`: set remnind content for user ( please ask value of `DDDDD` from YGame )
+- `setRemindContent`: set remnind content for user
 
 ## C. Setup YCoin Support
 
