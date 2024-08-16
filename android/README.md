@@ -1,9 +1,5 @@
 # YKit for Android
 
-Video Tutorials: [file](files/How%20to%20integrate%20YKit%20to%20android.mp4) or [youtube](https://youtu.be/BQYVgPVMoV4)
-
-Note: the image or video may be out of date
-
 ## Index
 
 - [A. Prerequisites](#a-prerequisites)
