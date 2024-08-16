@@ -290,12 +290,7 @@ Replace `{C}` string with `Ads_Id` in file `config.xml`
 
 - Add `facebook_app_id`,`fb_login_protocol_scheme`,`facebook_client_token` to `app/res/values/strings.xml`
 
-<resources>
-    <string name="app_name" translatable="false">{Name of Game}</string>
-    <string name="facebook_app_id" translatable="false">{B}</string>
-    <string name="fb_login_protocol_scheme" translatable="false">fb{B}</string>
-    <string name="facebook_client_token" translatable="false">{T}</string>
-</resources>
+![](images/strings.png)
 
 Replace `{T}` string with `FacebookClientToken` in file `config.xml`
 
