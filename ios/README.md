@@ -22,9 +22,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 - Tick on checkbox: “Copy items into destination group's folder (if needed)”.
 - Add "YKit.framework, BAEMKit.framework, FBSDKCoreKit_Basics.framework, FBSDKCoreKit.framework, FBSDKLoginKit.framework, FBSDKShareKit.framework" into Frameworks, Libraries, and Embedded Content (select Embed & Sign)
   ![](Images/ykit_ios_103.png)
-- Add FacebookSDKStrings.bundle into Copy Bundle Resources in Build Phases
-  ![](Images/ykit_ios_051.png)
-- Add Run Script into Build Phases ( You can get content of script in file script.txt )
+- Add Run Script into Build Phases (You can get content of script in file script.txt)
   ![](Images/ykit_ios_052.png)
 
 #### 1.2. Add url schemes
