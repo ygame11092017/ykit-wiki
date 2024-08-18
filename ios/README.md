@@ -476,13 +476,6 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 ![](Images/ykit_ios_102.png)
 
-#### 1.6. Setup local push reminder to play the game
-
-```
-//SETUP 3 DAY LATER NOTIFICATION IF USER HAVEN'T PLAYED
-    [launcher setReminderLogin:@"xxxxxxxxxxxxxxxx" after:3];
-```
-
 #### 1.6. Public functions
 
 Here is the list of public functions you can call to customize the YKit in your game:
