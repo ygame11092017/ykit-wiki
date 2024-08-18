@@ -34,7 +34,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 - xxxxx: bundle id of game
 - yyyyy: GoogleSignIn_ReverseClientID in YKitConfig.plist
 - bbbbb: FacebookUrlSchemes in YKitConfig.plist
-- mmmmm: AdsKey in YKitConfig.plist
+- mmmmm,mmmm: AdsKey in YKitConfig.plist
 
 - In file info.plist of your project, add FacebookAppID, FacebookDisplayName and LSApplicationQueriesSchemes as below. You can get value of FacebookAppID and FacebookDisplayName in the YKitConfig.plist
 
