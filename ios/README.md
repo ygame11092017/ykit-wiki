@@ -12,7 +12,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 
 ## Note
 
-- Make sure our project's deployment target is 8.0 at least.
+- Make sure our project's deployment target is set Target 12.0
 
 ### 1. Setup YKit SDK
 
@@ -222,7 +222,7 @@ Step 2: Show loginView
 
 ##### 1.4.1 Setup Firebase framework
 
-- Drap and drop frameworks of Firebase into your project. (Remember to target your project)
+- Drap and drop frameworks of FIREBASE into your project. (Remember to target your project)
 
 ![](Images/firebase-framework.png)
 
@@ -454,7 +454,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 - Replace file NotificationService.m with file NotificationService.m in directory "NotificationService" of YGame
 - Set Version, Build are same as your project ( Note: Version, Build of NotificationService are required same with your project )
-- Set Target 10.0
+- Set Target 12.0
 
 ![](Images/ykit_ios_070.png)
 
