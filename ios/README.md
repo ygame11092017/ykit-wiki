@@ -32,7 +32,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 - xxxxx: bundle id of game
 - yyyyy: GoogleSignIn_ReverseClientID in YKitConfig.plist
 - bbbbb: FacebookUrlSchemes in YKitConfig.plist
-- mmmm: AdsKey in YKitConfig.plist
+- mmmmm: AdsKey in YKitConfig.plist
 
 - In file info.plist of your project, add FacebookAppID, FacebookDisplayName, FacebookClientToken and LSApplicationQueriesSchemes as below. You can get value of FacebookAppID, FacebookDisplayName,FacebookClientToken in the YKitConfig.plist
 
@@ -47,7 +47,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 - Import SDK : `#import <YKit/YKit.h>` in AppController.m
 
 - Add these lines of code in Application didFinishLaunchingWithOptions function in AppController class
-  (Please replace "mmmm" with AdsKey in the YKitConfig.plist )
+  (Please replace "mmmmm" with AdsKey in the YKitConfig.plist )
 
 ```
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -159,7 +159,7 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
     }
 
     // Đăng ký topic
-        NSString *topic = @"mmmm_ios";
+        NSString *topic = @"mmmmm_ios";
         [[FIRMessaging messaging] subscribeToTopic:topic
                                         completion:^(NSError * _Nullable error) {
             if (error != nil) {
