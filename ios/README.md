@@ -148,6 +148,19 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
 
         [[UIApplication sharedApplication] registerForRemoteNotifications];
         // [END register_for_notifications]
+
+        // Đăng ký topic
+        NSArray *topics = @[@"mmmmm_all", @"mmmmm_ios"];
+        for (NSString *topic in topics) {
+            [[FIRMessaging messaging] subscribeToTopic:topic
+                                            completion:^(NSError * _Nullable error) {
+                if (error != nil) {
+                    NSLog(@"Error subscribing to topic: %@", error);
+                } else {
+                    NSLog(@"Subscribed to topic: %@", topic);
+                }
+            }];
+        }
     }
 
     [launcher setReminderLogin:@"Đã 3 ngày rồi bạn không đăng nhập vào game, bạn bè đang đợi." after:3];
@@ -157,17 +170,6 @@ YKit SDK for iOS is the most simple way to intergrate user and payment to YGame 
     } else {
        // Fallback on earlier versions
     }
-
-    // Đăng ký topic
-        NSString *topic = @"mmmmm_ios";
-        [[FIRMessaging messaging] subscribeToTopic:topic
-                                        completion:^(NSError * _Nullable error) {
-            if (error != nil) {
-                NSLog(@"Error subscribing to topic: %@", error);
-            } else {
-                NSLog(@"Subscribed to topic: %@", topic);
-            }
-        }];
 
     // END YKIT CONFIG
 
