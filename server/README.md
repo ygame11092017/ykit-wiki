@@ -392,11 +392,11 @@ Params:
 
 Params:
 
-| Name        |                                                                                    Description                                                                                              |
-| ----------- | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| app_id      |                                             The id of your application is issued by YGame, use this parameter to classify android and ios                                                   |
-| number      |                                                                                        Number of top                                                                                        |
-| sign        | Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#14-api-payment-callback) |
+| Name        |                                                                                         Description                                                                                                    |
+| ----------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| app_id      |                                                   The id of your application is issued by YGame, use this parameter to classify android and ios                                                        |
+| number      |                                                                                             Number of top                                                                                              |
+| sign        | Used to verify the request. [Click here to know how to verify the signature](https://github.com/ygame11092017/ykit-wiki/blob/master/server/HowToCreateSignature.md#16-get-top-level-and-power-in-game) |
 
 Response:
 

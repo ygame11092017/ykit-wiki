@@ -205,7 +205,7 @@ var appSecret = "34bf3d41b69094a395bfbf7491ca4814"
 sign = md5 ( values + appSecret ) = 897243c07f2896917803bac11e4eb5db
 ```
 
-### 1.5. Get top level and power in game
+### 1.6. Get top level and power in game
 
 Method: HTTP GET
 Params:
