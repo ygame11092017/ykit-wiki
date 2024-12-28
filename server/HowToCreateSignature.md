@@ -1,7 +1,9 @@
 # How to create the signature from request parameters
 
 ## 1. Web Payment
+
 ### 1.1. API get list server game
+
 Method: HTTP GET
 Params:
 app_id: The id of your application is issued by YGame, use this parameter to classify android and ios
@@ -9,20 +11,22 @@ user_id: id of YKit account
 sign: Used to verify the request.
 
 - For example, we have the request URL below:
+
 ```
 https://yourdomain.com/get_list_server?app_id=ea2d5a18ebbd43871103b502f804db79&user_id=333&sign=ae5403d7469d07a11089593b5c4cc082
 ```
+
 - Have a look at the parameters. We will compute the sign by follow some steps below
 
-		app_id=ea2d5a18ebbd43871103b502f804db79&user_id=333
+      app_id=ea2d5a18ebbd43871103b502f804db79&user_id=333
 
 - Step 1: sort the name of parameters by A → Z
 
-		app_id > user_id
+      app_id > user_id
 
 - Step 2: get the values from ordered parameters. We have the final String
 
-		values = ea2d5a18ebbd43871103b502f804db79333
+      values = ea2d5a18ebbd43871103b502f804db79333
 
 - Step 3: create the signature
 
@@ -34,7 +38,9 @@ For example:
 var appSecret = "ff9af584ad6c9328930f3925f2c973f0"
 sign = md5 ( values + appSecret ) = ae5403d7469d07a11089593b5c4cc082
 ```
+
 ### 1.2. API get list characters
+
 Method: HTTP GET
 Params:
 app_id: The id of your application is issued by YGame, use this parameter to classify android and ios
@@ -43,20 +49,22 @@ server_id: id of server game. Get from the previous step
 sign: Used to verify the request.
 
 - For example, we have the request URL below:
+
 ```
 https://yourdomain.com/get_list_character?app_id=ea2d5a18ebbd43871103b502f804db79&user_id=888&server_id=4&sign=db53b60570662098176fc6e955af4af0
 ```
+
 - Have a look at the parameters. We will compute the sign by follow some steps below
 
-		app_id=ea2d5a18ebbd43871103b502f804db79&user_id=888&server_id=4
+      app_id=ea2d5a18ebbd43871103b502f804db79&user_id=888&server_id=4
 
 - Step 1: sort the name of parameters by A → Z
 
-		app_id > server_id > user_id
+      app_id > server_id > user_id
 
 - Step 2: get the values from ordered parameters. We have the final String
 
-		values = ea2d5a18ebbd43871103b502f804db794888
+      values = ea2d5a18ebbd43871103b502f804db794888
 
 - Step 3: create the signature
 
@@ -70,6 +78,7 @@ sign = md5 ( values + appSecret ) = db53b60570662098176fc6e955af4af0
 ```
 
 ### 1.3. API get list payment
+
 Method: HTTP GET
 Params:
 app_id: The id of your application, use this parameter to classify android and ios
@@ -79,20 +88,22 @@ server_id: id of server game
 sign: Used to verify the request.
 
 - For example, we have the request URL below:
+
 ```
 https://yourdomain.com/get_list_payment?app_id=ea2d5a18ebbd43871103b502f804db79&user_id=888&server_id=4&char_id=777&sign=c16372fb2336553338416671a008e13a
 ```
+
 - Have a look at the parameters. We will compute the sign by follow some steps below
 
-		app_id=ea2d5a18ebbd43871103b502f804db79&user_id=888&server_id=4&char_id=777
+      app_id=ea2d5a18ebbd43871103b502f804db79&user_id=888&server_id=4&char_id=777
 
 - Step 1: sort the name of parameters by A → Z
 
-		app_id > char_id > server_id > user_id
+      app_id > char_id > server_id > user_id
 
 - Step 2: get the values from ordered parameters. We have the final String
 
-		values = ea2d5a18ebbd43871103b502f804db797774888
+      values = ea2d5a18ebbd43871103b502f804db797774888
 
 - Step 3: create the signature
 
@@ -104,13 +115,15 @@ For example:
 var appSecret = "ff9af584ad6c9328930f3925f2c973f0"
 sign = md5 ( values + appSecret ) = c16372fb2336553338416671a008e13a
 ```
+
 ### 1.4. API Payment callback
+
 Method: HTTP GET
 Params:
-amount:	Value of the purchase
-app_id:	The id of your application, use this parameter to classify android and ios     
+amount: Value of the purchase
+app_id: The id of your application, use this parameter to classify android and ios  
 response_time: Purchase time
-transaction_id:	id of the transaction
+transaction_id: id of the transaction
 transaction_type: Type of purchase: COIN
 user_id: id of user, who make the request
 char_id: id of character - get from API get list server game
@@ -120,21 +133,23 @@ order_id: order id
 sign: Used to verify the request
 
 - For example, we have the request URL below:
+
 ```
 https://yourdomain.com/web_callback_payment?amount=1000&app_id=01570b2b4730a1e60d257ebd80db7027&response_time=1516441388&transaction_id=1516441388394co&transaction_type=COIN&user_id=113&char_id=2260001&server_id=1&payment_id=Bonus1500&order_id=87681734197&sign=1072316ca7e6e1c0cc2bea9ce8570c0a
 
 ```
+
 - Have a look at the parameters. We will compute the sign by follow some steps below
 
-		amount=1000&app_id=01570b2b4730a1e60d257ebd80db7027&response_time=1516441388&transaction_id=1516441388394co&transaction_type=COIN&user_id=113&char_id=2260001&server_id=1&payment_id=Bonus1500&order_id=87681734197
+      amount=1000&app_id=01570b2b4730a1e60d257ebd80db7027&response_time=1516441388&transaction_id=1516441388394co&transaction_type=COIN&user_id=113&char_id=2260001&server_id=1&payment_id=Bonus1500&order_id=87681734197
 
 - Step 1: sort the name of parameters by A → Z
 
-		amount > app_id > char_id > order_id > payment_id > response_time > server_id > transaction_id > transaction_type > user_id
+      amount > app_id > char_id > order_id > payment_id > response_time > server_id > transaction_id > transaction_type > user_id
 
 - Step 2: get the values from ordered parameters. We have the final String
 
-		values = 100001570b2b4730a1e60d257ebd80db7027226000187681734197Bonus1500151644138811516441388394coCOIN113
+      values = 100001570b2b4730a1e60d257ebd80db7027226000187681734197Bonus1500151644138811516441388394coCOIN113
 
 - Step 3: create the signature
 
@@ -147,35 +162,37 @@ var appSecret = "34bf3d41b69094a395bfbf7491ca4814"
 sign = md5 ( values + appSecret ) = 1072316ca7e6e1c0cc2bea9ce8570c0a
 ```
 
-### 1.4. API Push notification
+### 1.5. API Push notification
 
-appId     	The id of your application is issued by YGame, use this parameter to classify android and ios     
-accessToken	Get from YKit system
+appId The id of your application is issued by YGame, use this parameter to classify android and ios  
+accessToken Get from YKit system
 msgid
 
 Method: HTTP GET
 Params:
-appId:	The id of your application, use this parameter to classify android and ios     
-accessToken:	Get from YKit system
+appId: The id of your application, use this parameter to classify android and ios  
+accessToken: Get from YKit system
 msgid: equals to payment_id
 sign: Used to verify the request
 
 - For example, we have the request URL below:
+
 ```
 https://api.ygame.vn/v1/user/push_notify?appId=01570b2b4730a1e60d257ebd80db7027&accessToken=1516441388&msgid=1516441388&sign=897243c07f2896917803bac11e4eb5db
 
 ```
+
 - Have a look at the parameters. We will compute the sign by follow some steps below
 
-		appId=01570b2b4730a1e60d257ebd80db7027&accessToken=xxxxxxx&msgid=vip15
+      appId=01570b2b4730a1e60d257ebd80db7027&accessToken=xxxxxxx&msgid=vip15
 
 - Step 1: sort the name of parameters by A → Z
 
-		accessToken > appId > msgid
+      accessToken > appId > msgid
 
 - Step 2: get the values from ordered parameters. We have the final String
 
-		values = xxxxxxx01570b2b4730a1e60d257ebd80db7027vip15
+      values = xxxxxxx01570b2b4730a1e60d257ebd80db7027vip15
 
 - Step 3: create the signature
 
@@ -188,3 +205,39 @@ var appSecret = "34bf3d41b69094a395bfbf7491ca4814"
 sign = md5 ( values + appSecret ) = 897243c07f2896917803bac11e4eb5db
 ```
 
+### 1.5. Get top level and power in game
+
+Method: HTTP GET
+Params:
+app_id: The id of your application is issued by YGame, use this parameter to classify android and ios
+number: Number of top  
+sign: Used to verify the request.
+
+- For example, we have the request URL below:
+
+```
+https://yourdomain.com/get_list_top?app_id=ea2d5a18ebbd43871103b502f804db79&number=100&sign=ae5403d7469d07a11089593b5c4cc082
+```
+
+- Have a look at the parameters. We will compute the sign by follow some steps below
+
+      app_id=ea2d5a18ebbd43871103b502f804db79&number=100
+
+- Step 1: sort the name of parameters by A → Z
+
+      app_id > number
+
+- Step 2: get the values from ordered parameters. We have the final String
+
+      values = ea2d5a18ebbd43871103b502f804db79100
+
+- Step 3: create the signature
+
+```
+sign = md5( values + appSecret )
+* appSecret: the secret key of your application
+
+For example:
+var appSecret = "ff9af584ad6c9328930f3925f2c973f0"
+sign = md5 ( values + appSecret ) = 4895ffea9d8eefa41540cf25a4df548c
+```
